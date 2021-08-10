@@ -1,0 +1,10 @@
+include ':loginsocket'
+include ':memorythingbook'
+include ':memory'
+include ':player:test1'
+include ':player'
+include ':calculator'
+include ':image'
+include ':myapplication'
+include ':app'
+rootProject.name = "My Application"

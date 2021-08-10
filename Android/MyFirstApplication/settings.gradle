@@ -1,0 +1,4 @@
+include ':app:myapplication'
+include ':login:work1'
+include ':app', ':login'
+rootProject.name='My First Application'

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">New Application</string>
+    <string name="t1">
+        this is test begin
+        this is test end
+        ok!!!
+    </string>
+</resources>
