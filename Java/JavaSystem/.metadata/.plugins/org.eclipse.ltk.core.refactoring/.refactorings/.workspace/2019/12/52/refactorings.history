@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;AddressBookSystem_ConsoleEdition2&apos;" deleteContents="true" description="Delete resource &apos;AddressBookSystem_ConsoleEdition2&apos;" element1="/AddressBookSystem_ConsoleEdition2" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1577274091656"/>&#x0A;<refactoring comment="Delete resource &apos;AddressBookSystem_ConsoleEdition2&apos;" deleteContents="true" description="Delete resource &apos;AddressBookSystem_ConsoleEdition2&apos;" element1="/AddressBookSystem_ConsoleEdition2" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1577279018545"/>
+</session>

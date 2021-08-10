@@ -1,0 +1,59 @@
+package servlets;
+
+import java.io.File;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import entity.User;
+
+/**
+ * Servlet implementation class DoRegister
+ */
+@WebServlet("/register.do")
+public class DoRegister extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DoRegister() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		User user = new User();
+		user.setUserName(request.getParameter("userName"));
+		user.setPwd(request.getParameter("pwd"));
+		user.setGender(request.getParameter("gender"));
+		user.setCategory(request.getParameter("category"));
+		user.setInterest(request.getParameter("interest"));
+		user.setPhoto(request.getParameter("photo"));
+		
+		
+		// 获取存储用户信息文件的目录
+		String userDictionary = getServletContext().getRealPath("/WEB-INF/users");
+		// 创建用户文件对象
+		File userFile = new File(userDictionary + "/" + user.getUserName() + ".properites");
+	}
+
+}

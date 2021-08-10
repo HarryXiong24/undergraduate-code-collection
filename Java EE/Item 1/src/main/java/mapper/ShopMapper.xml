@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.ShopMapper">
+
+    <!-- 新增一个顾客 -->
+    <insert id="insertOrder" parameterType="entity.Order">
+        insert into orders (Id,CustomerName,CustomerAddress,CreateTime,TotalPrice)
+        values (#{Id},#{CustomerName},#{CustomerAddress},#{CreateTime},#{TotalPrice});
+    </insert>
+
+    <!-- 插入一个顾客买的物品-->
+    <insert id="insertOrderDetail" parameterType="entity.OrderDetail">
+        insert into orderdetail (OrderId,ProductName,ProductType,Price,Count)
+        values (#{OrderId},#{ProductName},#{ProductType},#{Price},#{Count});
+    </insert>
+
+    <!-- 删除一个顾客信息 -->
+    <delete id="delOrder" parameterType="int">
+        delete from orders where Id = #{Id}
+    </delete>
+
+    <!-- 删除一个顾客的购买记录 -->
+    <delete id="delOrderDetail" parameterType="int">
+        delete from orderdetail where OrderId = #{OrderId}
+    </delete>
+
+    <!-- 查询所有的顾客信息-->
+    <select id="getOrder" resultType="entity.Order">
+        SELECT * FROM orders
+    </select>
+
+    <!-- 查询指定名字的信息-->
+    <select id="getAssignedName" resultType="entity.Order">
+        SELECT * FROM orders where CustomerName like '%学%'
+    </select>
+
+</mapper>

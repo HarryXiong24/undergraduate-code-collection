@@ -1,0 +1,57 @@
+package servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class FirstServlet
+ */
+@WebServlet("/firstServlet")
+public class FirstServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FirstServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		response.getWriter().append("获取到的客户机信息如下:");
+		response.getWriter().append("请求的URL地址: http://coco:8080/ JSPCourse/ firstServ1et");
+		response.getWriter().append("请求的资源: /JSPCourse/ firstServ1et");
+		response.getWriter().append("请求的URL地址中附带的参数: nul1");
+		response.getWriter().append("来访者的IP地址: 192. 168. 18. 3");
+		response.getWriter().append("来访者的主机名: 192. 168. 18. 3");
+		response.getWriter().append("来访者的主机名: 192. 168. 18. 3");
+		response.getWriter().append("使用的端口号: 62136");
+		response.getWriter().append("remoteUser: nul1");
+		response.getWriter().append("请求使用的方法: GET");
+		response.getWriter().append("pathInfo: nu11");
+		response.getWriter().append("1oca1Addr: 192. 168. 18.3");
+		response.getWriter().append("1oca1Name: Coco");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

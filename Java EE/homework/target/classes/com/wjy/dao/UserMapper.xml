@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjy.dao.UserMapper">
+    <select id="SelectUser" resultType="com.wjy.pojo.User">
+            select * from user
+    </select>
+    <insert id="addUser" parameterType="com.wjy.pojo.User">
+        insert into user(username,password,token) values (#{username},#{password},#{token})
+    </insert>
+    <select id="showmovie"  resultType="com.wjy.pojo.Movielist">
+        SELECT *from movielist;
+    </select>
+    <select id="showcomment" resultType="com.wjy.pojo.Comment">
+        select *from comment
+    </select>
+    <insert id="releasemovie" parameterType="com.wjy.pojo.Movielist">
+         insert into movielist(MOVIEID, MOVIENAME, MOVIEACTOR, MOVIEINFO, MOVIEDETAIL, MOVIEPOINT, LAUNCHER) values (#{movieID},#{movieName},#{movieActor},#{movieInfo},#{movieDetail},#{moviePoint},#{launcher})
+    </insert>
+    <insert id="releaseComment" parameterType="com.wjy.pojo.Comment">
+        insert into comment(ID, name, comment, date, point) values (#{ID},#{name},#{comment},#{date},#{point})
+    </insert>
+    <delete id="RemoveComment" >
+        delete from comment where ID=#{id}
+    </delete>
+</mapper>

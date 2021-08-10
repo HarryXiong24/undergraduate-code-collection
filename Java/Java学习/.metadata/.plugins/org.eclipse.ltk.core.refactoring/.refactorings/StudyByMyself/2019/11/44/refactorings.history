@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;study12.Set.java&apos; to &apos;Collection.java&apos;&#x0D;&#x0A;- Original project: &apos;StudyByMyself&apos;&#x0D;&#x0A;- Original element: &apos;study12.Set.java&apos;&#x0D;&#x0A;- Renamed element: &apos;study12.Collection.java&apos;" description="Rename compilation unit &apos;Set.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;study12{Set.java" name="Collection.java" references="false" stamp="1572669565509" version="1.0"/>
+</session>

@@ -1,0 +1,58 @@
+package GUI;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+
+public class WelcomeGUI {
+
+	private JFrame frmXhw;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					WelcomeGUI window = new WelcomeGUI();
+					window.frmXhw.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public WelcomeGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmXhw = new JFrame();
+		frmXhw.getContentPane().setBackground(new Color(221, 160, 221));
+		frmXhw.getContentPane().setForeground(new Color(255, 255, 255));
+		frmXhw.setTitle("XHW通讯录(企业级)");
+		frmXhw.setResizable(false);
+		frmXhw.setBounds(100, 100, 536, 448);
+		frmXhw.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmXhw.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("欢迎使用通讯录！");
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("华文行楷", Font.BOLD, 45));
+		lblNewLabel.setBounds(68, 10, 418, 54);
+		frmXhw.getContentPane().add(lblNewLabel);
+	}
+}

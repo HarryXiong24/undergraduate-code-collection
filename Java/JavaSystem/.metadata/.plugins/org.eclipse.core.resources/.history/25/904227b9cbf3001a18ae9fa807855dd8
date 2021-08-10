@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" errorPage="error.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		double op1 = Double.valueOf(request.getParameter(op1));
+		double op2 = Double.valueOf(request.getParameter(op2));
+		String operator = request.getParameter(operator);
+		double res = 0;
+		
+		if (operator.equals("+")) {
+			res = op1 + op2;
+			response.getWriter().printf("%.1d + %.1d = %.1d", op1, op2, res);
+		} else if (operator.equals("-")) {
+			res = op1 - op2;
+			response.getWriter().printf("%.1d - %.1d = %.1d", op1, op2, res);
+		} else if (operator.equals("*")) {
+			res = op1 - op2;
+			response.getWriter().printf("%.1d * %.1d = %.1d", op1, op2, res);
+		} else if (operator.equals("/")) {
+			res = op1 - op2;
+			response.getWriter().printf("%.1d / %.1d = %.1d", op1, op2, res);
+		}
+	%>
+</body>
+</html>

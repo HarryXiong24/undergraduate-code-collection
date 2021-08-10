@@ -1,0 +1,65 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import java.awt.ScrollPane;
+
+public class One {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					One window = new One();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public One() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("选择功能");
+		lblNewLabel.setBounds(193, 10, 54, 15);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JFormattedTextField formattedTextField = new JFormattedTextField();
+		formattedTextField.setText("进入位置");
+		formattedTextField.setBounds(24, 65, 105, 21);
+		frame.getContentPane().add(formattedTextField);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setModel(new SpinnerNumberModel(0, 0, 10, 1));
+		spinner.setToolTipText("注意");
+		spinner.setBounds(24, 159, 59, 22);
+		frame.getContentPane().add(spinner);
+		
+		ScrollPane scrollPane = new ScrollPane();
+		scrollPane.setBounds(390, 10, 44, 241);
+		frame.getContentPane().add(scrollPane);
+	}
+}

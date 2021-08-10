@@ -1,0 +1,9 @@
+import java.io.Console;
+
+class ShadePassword {
+	
+	public static void shadePassword(char c) {
+		
+	}
+}
+

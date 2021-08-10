@@ -1,0 +1,3 @@
+183.txt123456
+班级名:183
+number		name		sex		Chinese		English		MathAverage

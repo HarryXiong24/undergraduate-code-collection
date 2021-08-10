@@ -1,0 +1,170 @@
+package GUI;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import javax.swing.JTextPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JEditorPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class RegistGUI extends JFrame {
+	
+	private JPanel contentPane;
+	private JTextField textField;
+	private JPasswordField passwordField;
+	private JPasswordField passwordField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	/*public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RegistGUI frame = new RegistGUI();
+					//frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}*/
+
+	/**
+	 * Create the frame.
+	 */
+	public RegistGUI() {
+		new JFrame();
+		setResizable(false);
+		setTitle("XHW多功能通讯录(企业级)");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(400, 100, 536, 448);
+		setVisible(true);
+		
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(245, 222, 179));
+		contentPane.setBorder(null);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 530, 100);
+		panel.setLayout(null);
+		panel.setBackground(Color.PINK);
+		contentPane.add(panel);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("D:\\编程\\Java\\Java学习\\工程实践2\\素材\\timg.jpg"));
+		label.setBounds(0, 0, 100, 100);
+		panel.add(label);
+		
+		JLabel label_1 = new JLabel("欢迎进行新用户注册！");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.RED);
+		label_1.setFont(new Font("华文行楷", Font.BOLD, 32));
+		label_1.setBounds(99, 23, 431, 56);
+		panel.add(label_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(240, 230, 140));
+		panel_1.setBounds(74, 121, 379, 246);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(255, 240, 245));
+		panel_2.setBounds(40, 45, 290, 28);
+		panel_1.add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("手机号");
+		lblNewLabel.setBounds(0, 0, 66, 28);
+		panel_2.add(lblNewLabel);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBackground(new Color(255, 255, 0));
+		lblNewLabel.setFont(new Font("楷体", Font.BOLD, 14));
+		
+		textField = new JTextField();
+		textField.setBounds(67, 0, 223, 28);
+		panel_2.add(textField);
+		textField.setColumns(10);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setLayout(null);
+		panel_3.setBackground(new Color(255, 240, 245));
+		panel_3.setBounds(40, 97, 290, 28);
+		panel_1.add(panel_3);
+		
+		JLabel label_2 = new JLabel("输入密码");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setFont(new Font("楷体", Font.BOLD, 14));
+		label_2.setBackground(Color.YELLOW);
+		label_2.setBounds(0, 0, 66, 28);
+		panel_3.add(label_2);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(67, 0, 223, 28);
+		panel_3.add(passwordField);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setLayout(null);
+		panel_4.setBackground(new Color(255, 240, 245));
+		panel_4.setBounds(40, 149, 290, 28);
+		panel_1.add(panel_4);
+		
+		JLabel label_3 = new JLabel("确认密码");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setFont(new Font("楷体", Font.BOLD, 14));
+		label_3.setBackground(Color.YELLOW);
+		label_3.setBounds(0, 0, 66, 28);
+		panel_4.add(label_3);
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(67, 0, 223, 28);
+		panel_4.add(passwordField_1);
+		
+		JButton btnNewButton = new JButton("提交");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setBackground(new Color(0, 191, 255));
+		btnNewButton.setFont(new Font("楷体", Font.BOLD, 18));
+		btnNewButton.setBounds(107, 202, 176, 34);
+		panel_1.add(btnNewButton);
+		
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setText("@由XHW提供技术支持");
+		editorPane.setFont(new Font("宋体", Font.PLAIN, 13));
+		editorPane.setBackground(new Color(245, 222, 179));
+		editorPane.setBounds(404, 397, 126, 22);
+		contentPane.add(editorPane);
+		
+		JButton btnNewButton_1 = new JButton("返回登录");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+				new WelcomeGUI();
+			}
+		});
+		btnNewButton_1.setBackground(new Color(245, 222, 179));
+		btnNewButton_1.setFont(new Font("楷体", Font.BOLD, 14));
+		btnNewButton_1.setBounds(0, 387, 101, 32);
+		contentPane.add(btnNewButton_1);
+	}
+}

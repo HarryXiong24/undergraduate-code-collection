@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;类与对象&apos; to &apos;Example&apos;&#x0D;&#x0A;- Original project: &apos;JavaStudy&apos;&#x0D;&#x0A;- Original element: &apos;JavaStudy/src/类与对象&apos;&#x0D;&#x0A;- Renamed element: &apos;JavaStudy/src/Example&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;类与对象&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;类与对象" name="Example" qualified="false" references="true" stamp="1573303166476" textual="false" version="1.0"/>
+</session>

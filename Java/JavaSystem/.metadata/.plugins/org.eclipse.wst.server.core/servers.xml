@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="21">
+    <list key="modules" value0="2018121015_1::org.eclipse.jst.jee.server:2018121015_1::jst.web::4.0" value1="2018121015_2::org.eclipse.jst.jee.server:2018121015_2::jst.web::4.0" value2="2018121015_3::org.eclipse.jst.jee.server:2018121015_3::jst.web::4.0" value3="2018121015_4::org.eclipse.jst.jee.server:2018121015_4::jst.web::4.0" value4="JSP::org.eclipse.jst.jee.server:JSP::jst.web::4.0" value5="2018121015_5::org.eclipse.jst.jee.server:2018121015_5::jst.web::4.0" value6="2018121015_6::org.eclipse.jst.jee.server:2018121015_6::jst.web::4.0" value7="2018121015_7::org.eclipse.jst.jee.server:2018121015_7::jst.web::4.0" value8="JSPTest::org.eclipse.jst.jee.server:JSPTest::jst.web::4.0"/>
+  </server>
+</servers>

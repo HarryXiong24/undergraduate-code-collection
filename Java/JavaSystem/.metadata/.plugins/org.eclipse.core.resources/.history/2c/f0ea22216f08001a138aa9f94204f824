@@ -1,0 +1,167 @@
+package GUI;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JEditorPane;
+import javax.swing.JInternalFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JPasswordField;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class WelcomeGUI {
+
+	private JFrame frmXhw;
+	private JTextField textField;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					WelcomeGUI window = new WelcomeGUI();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public WelcomeGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmXhw = new JFrame();
+		frmXhw.getContentPane().setBackground(new Color(221, 160, 221));
+		frmXhw.getContentPane().setForeground(new Color(255, 255, 255));
+		frmXhw.setTitle("XHW多功能通讯录(企业级)");
+		frmXhw.setResizable(false);
+		frmXhw.setBounds(400, 100, 536, 448);
+		frmXhw.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmXhw.setVisible(true);
+		frmXhw.getContentPane().setLayout(null);
+		
+		JEditorPane dtrpnxhw = new JEditorPane();
+		dtrpnxhw.setBackground(new Color(221, 160, 221));
+		dtrpnxhw.setFont(new Font("宋体", Font.PLAIN, 13));
+		dtrpnxhw.setText("@由XHW提供技术支持");
+		dtrpnxhw.setBounds(394, 387, 126, 22);
+		frmXhw.getContentPane().add(dtrpnxhw);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.PINK);
+		panel.setBounds(0, 0, 530, 100);
+		frmXhw.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("D:\\编程\\Java\\Java学习\\工程实践2\\素材\\timg.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 100, 100);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("XHW多功能通讯录(企业级)");
+		lblNewLabel_2.setFont(new Font("华文行楷", Font.BOLD, 32));
+		lblNewLabel_2.setForeground(new Color(255, 0, 0));
+		lblNewLabel_2.setBounds(110, 23, 410, 56);
+		panel.add(lblNewLabel_2);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(null);
+		panel_1.setBackground(new Color(221, 160, 221));
+		panel_1.setBounds(33, 128, 473, 208);
+		frmXhw.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(Color.CYAN);
+		panel_2.setBorder(null);
+		panel_2.setBounds(93, 40, 290, 30);
+		panel_1.add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(10, 0, 30, 30);
+		panel_2.add(lblNewLabel);
+		lblNewLabel.setIcon(new ImageIcon("D:\\编程\\Java\\Java学习\\工程实践2\\素材\\账号1.jpg"));
+		
+		textField = new JTextField();
+		textField.setToolTipText("账号");
+		textField.setBounds(50, 0, 239, 30);
+		panel_2.add(textField);
+		textField.setColumns(10);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(Color.ORANGE);
+		panel_3.setLayout(null);
+		panel_3.setBorder(null);
+		panel_3.setBounds(93, 84, 290, 30);
+		panel_1.add(panel_3);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("D:\\编程\\Java\\Java学习\\工程实践2\\素材\\密码1.jpg"));
+		label.setBounds(10, 0, 30, 30);
+		panel_3.add(label);
+		
+		passwordField = new JPasswordField();
+		passwordField.setColumns(16);
+		passwordField.setBounds(50, 0, 240, 30);
+		panel_3.add(passwordField);
+		
+		JButton btnNewButton = new JButton("安全登录");
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setIcon(new ImageIcon("D:\\编程\\Java\\Java学习\\工程实践2\\素材\\登录安全s.jpg"));
+		btnNewButton.setFont(new Font("华文行楷", Font.BOLD, 30));
+		btnNewButton.setBackground(Color.BLUE);
+		btnNewButton.setBounds(141, 136, 201, 50);
+		panel_1.add(btnNewButton);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(null);
+		panel_4.setBackground(new Color(221, 160, 221));
+		panel_4.setBounds(10, 346, 109, 63);
+		frmXhw.getContentPane().add(panel_4);
+		
+		// 点击注册账号,跳转到注册界面
+		JButton btnNewButton_1 = new JButton("注册账号");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frmXhw.dispose();
+				RegistGUI frame = new RegistGUI();
+				frame.setVisible(true);
+			}
+		});
+		
+		btnNewButton_1.setBackground(Color.WHITE);
+		btnNewButton_1.setFont(new Font("楷体", Font.BOLD, 16));
+		panel_4.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("找回密码");
+		btnNewButton_2.setBackground(Color.WHITE);
+		btnNewButton_2.setFont(new Font("楷体", Font.BOLD, 16));
+		panel_4.add(btnNewButton_2);
+	}
+}

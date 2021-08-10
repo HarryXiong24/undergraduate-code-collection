@@ -1,0 +1,15 @@
+TextOccurrenceIndicationColor=27, 98, 145
+breakpointIndicationColor=49,115,187
+eclipse.preferences.version=1
+hyperlinkColor=111,197,238
+hyperlinkColor.SystemDefault=false
+infoIndicationColor=86,194,170
+linked.slave.color=66,156,255
+overrideIndicatorColor=75,116,113
+overviewRuler_migration=migrated_3.1
+predarkestdark.AbstractTextEditor.Color.Background.SystemDefault=false
+predarkestdark.AbstractTextEditor.Color.Foreground.SystemDefault=false
+predarkestdark.AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+predarkestdark.AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+redhatTextOccurrenceIndicationColor=212,212,212
+spellingIndicationColor=253,170,211

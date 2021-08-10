@@ -1,0 +1,63 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import java.awt.ScrollPane;
+import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.SystemColor;
+import javax.swing.JLayeredPane;
+import javax.swing.JDesktopPane;
+
+public class One {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					One window = new One();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public One() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.getContentPane().setBackground(SystemColor.activeCaption);
+		frame.setBackground(SystemColor.desktop);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 467, 368);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("学生成绩系统欢迎您！");
+		lblNewLabel.setFont(new Font("楷体", Font.PLAIN, 30));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setBounds(60, 10, 376, 54);
+		frame.getContentPane().add(lblNewLabel);
+	}
+}

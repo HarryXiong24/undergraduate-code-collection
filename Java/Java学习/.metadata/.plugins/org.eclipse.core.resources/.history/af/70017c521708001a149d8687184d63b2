@@ -1,0 +1,86 @@
+package GUI;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+
+public class WelcomeGUI {
+
+	private JFrame frmXhw;
+	private JTextField txtxhw;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					WelcomeGUI window = new WelcomeGUI();
+					window.frmXhw.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public WelcomeGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmXhw = new JFrame();
+		frmXhw.getContentPane().setBackground(new Color(221, 160, 221));
+		frmXhw.getContentPane().setForeground(new Color(255, 255, 255));
+		frmXhw.setTitle("XHW通讯录(企业级)");
+		frmXhw.setResizable(false);
+		frmXhw.setBounds(100, 100, 536, 448);
+		frmXhw.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmXhw.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("欢迎使用通讯录！");
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("华文行楷", Font.BOLD, 45));
+		lblNewLabel.setBounds(68, 10, 418, 54);
+		frmXhw.getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("注册");
+		btnNewButton.setBackground(new Color(127, 255, 212));
+		btnNewButton.setBounds(106, 161, 120, 54);
+		frmXhw.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("登录");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton_1.setBackground(new Color(127, 255, 212));
+		btnNewButton_1.setBounds(291, 161, 120, 54);
+		frmXhw.getContentPane().add(btnNewButton_1);
+		
+		txtxhw = new JTextField();
+		txtxhw.setForeground(new Color(221, 160, 221));
+		txtxhw.setBackground(new Color(221, 160, 221));
+		txtxhw.setFont(new Font("宋体", Font.PLAIN, 13));
+		txtxhw.setText("@由XHW提供技术支持");
+		txtxhw.setBounds(393, 388, 127, 21);
+		frmXhw.getContentPane().add(txtxhw);
+		txtxhw.setColumns(10);
+	}
+}

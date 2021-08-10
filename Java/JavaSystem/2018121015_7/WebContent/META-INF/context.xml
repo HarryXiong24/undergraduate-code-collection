@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJAPLocking="true" path="/JDBC">
+	<Resource name="JDBC" auth="Container" type="javax.sql.DataSource" 
+	maxActive="100" maxIdle="30" maxWait="10000"
+	driverClassName="org.sqlite.JDBC" url="jdbc:sqlite:D:\\编程\\SQLite DB\\db.db" />
+</Context>

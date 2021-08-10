@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Servlet.examTest&apos; to &apos;examTest1&apos;&#x0D;&#x0A;- Original project: &apos;JSPTest&apos;&#x0D;&#x0A;- Original element: &apos;Servlet.examTest&apos;&#x0D;&#x0A;- Renamed element: &apos;Servlet.examTest1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;examTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Servlet{examTest.java[examTest" matchStrategy="1" name="examTest1" qualified="false" references="true" similarDeclarations="false" stamp="1593154330673" textual="false" version="1.0"/>
+</session>

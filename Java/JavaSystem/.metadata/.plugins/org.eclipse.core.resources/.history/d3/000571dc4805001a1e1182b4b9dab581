@@ -1,0 +1,129 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import java.awt.ScrollPane;
+import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.SystemColor;
+import javax.swing.JLayeredPane;
+import javax.swing.JDesktopPane;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import javax.swing.BoxLayout;
+import java.awt.FlowLayout;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
+import javax.swing.JScrollPane;
+
+public class One {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					One window = new One();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public One() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("学生成绩系统界面");
+		frame.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+		frame.setResizable(false);
+		frame.setVisible(true);
+		frame.getContentPane().setBackground(SystemColor.info);
+		frame.setBackground(SystemColor.desktop);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 467, 368);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("学生成绩系统欢迎您！");
+		lblNewLabel.setBounds(87, 10, 300, 35);
+		lblNewLabel.setFont(new Font("楷体", Font.PLAIN, 30));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBackground(Color.WHITE);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("登录");
+		btnNewButton.setBounds(34, 80, 71, 23);
+		btnNewButton.setForeground(SystemColor.windowText);
+		btnNewButton.setBackground(Color.PINK);
+		frame.getContentPane().add(btnNewButton);
+		
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBackground(Color.BLACK);
+		layeredPane.setBounds(136, 55, 132, 80);
+		frame.getContentPane().add(layeredPane);
+		layeredPane.setLayout(null);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(35, 25, 69, 25);
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D"}));
+		layeredPane.setLayer(comboBox, 5);
+		layeredPane.add(comboBox);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(133, 158, 175, 89);
+		frame.getContentPane().add(scrollPane);
+		
+		JList list = new JList();
+		scrollPane.setViewportView(list);
+		list.setValueIsAdjusting(true);
+		list.setModel(new AbstractListModel() {
+			String[] values = new String[] {"1", "2", "3", "4", "5", "6"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		
+		//添加监听事件
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Dialog1 ex = new Dialog1(frame);
+				ex.setVisible(true);              //这句不加则不会显示,也可以在Dialog1类中加入
+			}
+		});
+
+		
+	}
+}

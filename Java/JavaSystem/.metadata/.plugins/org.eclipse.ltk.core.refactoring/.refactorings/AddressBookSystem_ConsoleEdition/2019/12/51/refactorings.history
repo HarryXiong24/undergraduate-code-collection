@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Logined.BlacklistSet&apos; to &apos;BlacklistOperation&apos;&#x0D;&#x0A;- Original project: &apos;AddressBookSystem_ConsoleEdition&apos;&#x0D;&#x0A;- Original element: &apos;Logined.BlacklistSet&apos;&#x0D;&#x0A;- Renamed element: &apos;Logined.BlacklistOperation&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BlacklistSet&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Logined{BlacklistSet.java[BlacklistSet" matchStrategy="1" name="BlacklistOperation" qualified="false" references="true" similarDeclarations="false" stamp="1576414876411" textual="false" version="1.0"/>
+</session>

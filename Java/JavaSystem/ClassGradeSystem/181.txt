@@ -1,0 +1,21 @@
+181.txt123456
+班级名:181
+number		name		sex		Chinese		English		Math		Average
+
+10001		zhansgan		m		78.0		56.0		45.0		Average is:59.666666666666664
+10002		lisi		w		45.0		78.0		89.0		Average is:70.66666666666667
+10001		zhangsan		m		45.0		56.0		45.0		Average is:48.666666666666664
+10000		zhansan		m		45.0		78.0		89.0		Average is:70.66666666666667
+10001		zhansgan		m		45.0		56.0		78.0		Average is:59.666666666666664
+10001		zhansgan		m		45.0		56.0		78.0		Average is:59.666666666666664
+10001		zahnsgadn		m		45.0		56.0		78.0		Average is:59.666666666666664
+10001		zhangsan		m		45.0		89.0		78.0		Average is:70.66666666666667
+10001		zhansagn		m		45.0		89.0		45.0		Average is:59.666666666666664
+10001		zahnsagn		m		45.0		78.0		89.0		Average is:70.66666666666667
+10001		zahngsan		m		45.0		89.0		78.0		Average is:70.66666666666667
+10001		zhangsan		m		45.0		78.0		89.0		Average is:70.66666666666667
+10001		zhansgan		m		45.0		5689.0		45.0		Average is:1926.3333333333333
+10001		zhansagn		m		45.0		56.0		89.0		Average is:63.333333333333336
+10002		lisi		w		78.0		89.0		45.0		Average is:70.66666666666667
+10001		zhansgan		m		45.0		89.0		56.0		Average is:63.333333333333336
+10002		lisi		w		45.0		56.0		89.0		Average is:63.333333333333336

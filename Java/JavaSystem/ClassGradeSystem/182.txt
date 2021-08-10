@@ -1,0 +1,6 @@
+182.txt123456
+班级名:182
+number		name		sex		Chinese		English		Math		Average
+
+10001		zhangsan		m		45.0		89.0		78.0		Average is:70.66666666666667
+10002		lisi		w		45.0		56.0		89.0		Average is:63.333333333333336

@@ -1,0 +1,14 @@
+import java.io.Console;
+
+class ShadePassword {
+	public static void shadePassword() {
+		 Console cons;
+		 char[] passwd = null;
+		 if ((cons = System.console()) != null &&
+		     (passwd = cons.readPassword("[%s]", "Password:")) != null) {
+			 System.out.println(passwd);
+		     java.util.Arrays.fill(passwd, '*');
+		 }
+		 
+	}
+}

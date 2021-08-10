@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" errorPage="error.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		String str1 = "12.0"; //request.getParameter(op1);
+		String str2 = "12.0"; //request.getParameter(op2);
+		String operator = "*"; //request.getParameter(operator);
+		
+		double op1 = 0;
+		double op2 = 0;
+		
+	    try {
+			op1 = Double.valueOf(str1);
+			op2 = Double.valueOf(str1);
+		} catch(ArithmeticException zz) {
+			throw new ArithmeticException("Error!"); 
+		}
+	    
+		double res = 0;
+
+		if (operator.equals("+")) {
+			res = op1 + op2;
+			response.getWriter().printf("%.1d + %.1d = %.1d", op1, op2, res);
+		} else if (operator.equals("-")) {
+			res = op1 - op2;
+			response.getWriter().printf("%.1d - %.1d = %.1d", op1, op2, res);
+		} else if (operator.equals("*")) {
+			res = op1 - op2;
+			response.getWriter().printf("%.1d * %.1d = %.1d", op1, op2, res);
+		} else if (operator.equals("/")) {
+			res = op1 - op2;
+			response.getWriter().printf("%.1d / %.1d = %.1d", op1, op2, res);
+		}
+	%>
+</body>
+</html>

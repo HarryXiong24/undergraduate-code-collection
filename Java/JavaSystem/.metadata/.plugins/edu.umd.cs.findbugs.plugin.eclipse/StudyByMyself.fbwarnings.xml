@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="18" timestamp="1575859804978" analysisTimestamp="1575859804436" release="">
+  <Project projectName="StudyByMyself">
+    <Jar>D:\&#32534;&#31243;\Java\Java\JavaSystem\StudyByMyself\bin\study11\Student.class</Jar>
+    <AuxClasspathEntry>D:\&#32534;&#31243;\Java\Java\JavaSystem\StudyByMyself\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_211\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>D:\&#32534;&#31243;\Java\Java\JavaSystem\StudyByMyself\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="fgs">
+      <SourceLine classname="fgs" start="20" end="58" sourcefile="fgs.java" sourcepath="fgs.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="3" last="4" removedByChange="true">
+    <Class classname="study12.Collection">
+      <SourceLine classname="study12.Collection" sourcefile="Collection.java" sourcepath="study12/Collection.java"/>
+    </Class>
+    <Method classname="study12.Collection" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="study12.Collection" start="13" end="50" startBytecode="0" endBytecode="127" sourcefile="Collection.java" sourcepath="study12/Collection.java"/>
+    </Method>
+    <LocalVariable name="iterator2" register="5" pc="138" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="study12.Collection" start="31" end="31" startBytecode="136" endBytecode="136" sourcefile="Collection.java" sourcepath="study12/Collection.java"/>
+    <SourceLine classname="study12.Collection" start="31" end="31" startBytecode="136" endBytecode="136" sourcefile="Collection.java" sourcepath="study12/Collection.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="iterator2"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.TWO_STORES_MULTIPLE_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="16">
+    <Class classname="study12.myType">
+      <SourceLine classname="study12.myType" sourcefile="Collection.java" sourcepath="study12/Collection.java"/>
+    </Class>
+    <Field classname="study12.myType" name="obType" signature="Ljava/lang/Number;" isStatic="false">
+      <SourceLine classname="study12.myType" start="71" end="71" startBytecode="0" endBytecode="0" sourcefile="myType.java" sourcepath="study12/myType.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="IM_BAD_CHECK_FOR_ODD" priority="2" rank="13" abbrev="IM" category="STYLE" first="1">
+    <Class classname="study3_1.MyInteger">
+      <SourceLine classname="study3_1.MyInteger" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+    </Class>
+    <Method classname="study3_1.MyInteger" name="isOdd" signature="()Z" isStatic="false">
+      <SourceLine classname="study3_1.MyInteger" start="27" end="31" startBytecode="0" endBytecode="75" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+    </Method>
+    <SourceLine classname="study3_1.MyInteger" start="27" end="27" startBytecode="10" endBytecode="10" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+    <SourceLine classname="study3_1.MyInteger" start="27" end="27" startBytecode="10" endBytecode="10" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+  </BugInstance>
+  <BugInstance type="IM_BAD_CHECK_FOR_ODD" priority="2" rank="13" abbrev="IM" category="STYLE" first="1">
+    <Class classname="study3_1.MyInteger">
+      <SourceLine classname="study3_1.MyInteger" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+    </Class>
+    <Method classname="study3_1.MyInteger" name="isOdd" signature="(I)Z" isStatic="true">
+      <SourceLine classname="study3_1.MyInteger" start="61" end="65" startBytecode="0" endBytecode="69" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+    </Method>
+    <SourceLine classname="study3_1.MyInteger" start="61" end="61" startBytecode="4" endBytecode="4" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+    <SourceLine classname="study3_1.MyInteger" start="61" end="61" startBytecode="4" endBytecode="4" sourcefile="Demo1.java" sourcepath="study3_1/Demo1.java"/>
+  </BugInstance>
+  <BugInstance type="CNT_ROUGH_CONSTANT_VALUE" priority="2" rank="16" abbrev="CNT" category="BAD_PRACTICE" first="1">
+    <Class classname="study3_1.MyPoint">
+      <SourceLine classname="study3_1.MyPoint" sourcefile="Demo2.java" sourcepath="study3_1/Demo2.java"/>
+    </Class>
+    <Method classname="study3_1.MyPoint" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="study3_1.MyPoint" start="6" end="6" startBytecode="0" endBytecode="38" sourcefile="Demo2.java" sourcepath="study3_1/Demo2.java"/>
+    </Method>
+    <String value="3.14"/>
+    <String value="Math.PI"/>
+    <SourceLine classname="study3_1.MyPoint" start="6" end="6" startBytecode="0" endBytecode="0" sourcefile="Demo2.java" sourcepath="study3_1/Demo2.java"/>
+    <SourceLine classname="study3_1.MyPoint" start="6" end="6" startBytecode="0" endBytecode="0" sourcefile="Demo2.java" sourcepath="study3_1/Demo2.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 9 Dec 2019 10:50:04 +0800" total_classes="1" referenced_classes="11" total_bugs="5" total_size="13" num_packages="4" java_version="1.8.0_211" vm_version="25.211-b12" cpu_seconds="1.83" clock_seconds="0.55" peak_mbytes="1088.88" alloc_mbytes="1799.50" gc_seconds="0.00" priority_2="5">
+    <PackageStats package="study11" total_bugs="0" total_types="1" total_size="13">
+      <ClassStats class="study11.Student" sourceFile="Student.java" interface="false" size="13" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="220" invocations="304" avgMicrosecondsPerInvocation="723" maxMicrosecondsPerInvocation="10034" standardDeviationMircosecondsPerInvocation="1345"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="119" invocations="2" avgMicrosecondsPerInvocation="59939" maxMicrosecondsPerInvocation="108081" standardDeviationMircosecondsPerInvocation="48142"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="42" invocations="306" avgMicrosecondsPerInvocation="139" maxMicrosecondsPerInvocation="4213" standardDeviationMircosecondsPerInvocation="246"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="22" invocations="11" avgMicrosecondsPerInvocation="2032" maxMicrosecondsPerInvocation="7963" standardDeviationMircosecondsPerInvocation="2597"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="21" invocations="61" avgMicrosecondsPerInvocation="353" maxMicrosecondsPerInvocation="1845" standardDeviationMircosecondsPerInvocation="352"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1574647511994" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1574647511994" release="" codeSize="261" numClasses="14"/>
+    <AppVersion sequence="2" timestamp="1574647518102" release="" codeSize="29" numClasses="2"/>
+    <AppVersion sequence="3" timestamp="1575115583737" release="" codeSize="31" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1575115606082" release="" codeSize="30" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1575115649674" release="" codeSize="30" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1575115688876" release="" codeSize="31" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1575115724524" release="" codeSize="30" numClasses="1"/>
+    <AppVersion sequence="8" timestamp="1575115732517" release="" codeSize="30" numClasses="1"/>
+    <AppVersion sequence="9" timestamp="1575115755048" release="" codeSize="31" numClasses="1"/>
+    <AppVersion sequence="10" timestamp="1575115781560" release="" codeSize="32" numClasses="1"/>
+    <AppVersion sequence="11" timestamp="1575115791354" release="" codeSize="32" numClasses="1"/>
+    <AppVersion sequence="12" timestamp="1575115796757" release="" codeSize="32" numClasses="1"/>
+    <AppVersion sequence="13" timestamp="1575115909602" release="" codeSize="34" numClasses="1"/>
+    <AppVersion sequence="14" timestamp="1575116542487" release="" codeSize="38" numClasses="1"/>
+    <AppVersion sequence="15" timestamp="1575116556878" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="16" timestamp="1575119548298" release="" codeSize="41" numClasses="2"/>
+    <AppVersion sequence="17" timestamp="1575859678551" release="" codeSize="41" numClasses="2"/>
+  </History>
+</BugCollection>

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class NO1en_2017_p1_008 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double a[] = new double[6];
+		double x = 0, y = 0;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter a,b,c,d,e,f:");
+		
+		for(String strs : a){
+
+		a[i] = Integer.parseDouble(strs);//要捕捉一下异常，因为有可能输入字母
+
+		}
+		x = (e*d - b*f) / (a*d - b*c);
+		y = (a*f - e*c) / (a*d - b*c);
+		
+		input.close();
+		System.out.printf("x is %d and y is %d\n", x, y);
+	}
+
+}

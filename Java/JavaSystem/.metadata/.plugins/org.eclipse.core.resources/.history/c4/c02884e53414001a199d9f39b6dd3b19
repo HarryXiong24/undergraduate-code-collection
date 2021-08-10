@@ -1,0 +1,94 @@
+package Preparing;
+
+import java.util.Scanner;
+
+import Tools.CleanConsole;
+import Tools.LoginOperation;
+
+public class Login implements LoginOperation{
+	private String account;
+	private String password;
+	private String verifyPass;
+	private String classname;
+	
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getClassname() {
+		return classname;
+	}
+
+	public void setClassname() {
+		this.classname = account + password;
+	}
+
+	@Override
+	public void login() {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		boolean match = false;
+		
+		do {
+			System.out.println("请输入您的账户名(账户名即为用户手机号，11位数):");
+			String account  = input.next();
+			String accountErgex = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]";
+			match = account.matches(accountErgex);
+			if(match) {
+				break;
+			}
+			else {
+				CleanConsole.clear();
+				System.out.println("账号必须为11位数且只能为数字，请重新输入！");
+			}
+		}while(!match);
+		
+		do {
+			int flag = 0;
+			System.out.println("请输入您的密码：");
+			String password  = input.next();
+			String passwordErgex = "^[a-zA-Z0-9_]*$";             // 含字母和数字
+			match = password.matches(passwordErgex );
+			if(match  && password.length() >= 6) {
+				flag = 1;
+			}
+			else {
+				CleanConsole.clear();
+				System.out.println("密码必须含字母和数字，且必须大于等于6位数！");
+				match = false;
+			}
+			
+			if(flag == 1){
+				System.out.println("请确认您的密码：");
+				String verifypassword  = input.next();
+				if(verifypassword.equals(password)) {
+					break;
+				}
+				else{
+					CleanConsole.clear();
+					match = false;
+					System.out.println("两次输入不一致！");
+				}
+			}
+		}while(!match);
+		
+		setAccount(account);
+		setPassword(password);
+		setClassname();
+		System.out.println("注册成功！");
+	}
+	
+	
+}

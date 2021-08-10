@@ -1,0 +1,136 @@
+package OperateGUI;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.table.DefaultTableModel;
+
+public class OperateGUI {
+
+	private JFrame frame;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					OperateGUI window = new OperateGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public OperateGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 250, 205));
+		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(53, 42, 458, 300);
+		frame.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column"
+			}
+		));
+		table.setBackground(new Color(255, 250, 205));
+		scrollPane.setViewportView(table);
+		frame.setBounds(100, 100, 562, 445);
+		frame.setTitle("XHW多功能通讯录(企业级)");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(139, 69, 19));
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("新建联系人");
+		mnNewMenu.setFont(new Font("Microsoft YaHei UI", Font.BOLD, 12));
+		mnNewMenu.setHorizontalAlignment(SwingConstants.CENTER);
+		mnNewMenu.setForeground(new Color(255, 255, 255));
+		mnNewMenu.setBackground(new Color(255, 255, 255));
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem_3);
+		
+		JMenu mnNewMenu_1 = new JMenu("查询联系人");
+		mnNewMenu_1.setFont(new Font("Microsoft YaHei UI", Font.BOLD, 12));
+		mnNewMenu_1.setForeground(new Color(255, 255, 255));
+		mnNewMenu_1.setBackground(new Color(255, 255, 255));
+		menuBar.add(mnNewMenu_1);
+		
+		JMenu mnNewMenu_2 = new JMenu("修改联系人");
+		mnNewMenu_2.setForeground(new Color(255, 255, 255));
+		mnNewMenu_2.setFont(new Font("Microsoft YaHei UI", Font.BOLD, 12));
+		menuBar.add(mnNewMenu_2);
+		
+		JMenu mnNewMenu_3 = new JMenu("删除联系人");
+		mnNewMenu_3.setFont(new Font("Microsoft YaHei UI", Font.BOLD, 12));
+		mnNewMenu_3.setForeground(new Color(255, 255, 255));
+		menuBar.add(mnNewMenu_3);
+		
+		JMenu mnNewMenu_4 = new JMenu("查看分组");
+		mnNewMenu_4.setHorizontalAlignment(SwingConstants.TRAILING);
+		mnNewMenu_4.setForeground(new Color(255, 255, 255));
+		menuBar.add(mnNewMenu_4);
+		
+		JMenu mnNewMenu_5 = new JMenu("设置");
+		mnNewMenu_5.setForeground(new Color(255, 255, 255));
+		menuBar.add(mnNewMenu_5);
+	}
+}

@@ -1,0 +1,7 @@
+public interface AreaCalculatar {
+	abstract double getArea();
+}
+
+class Circle implements  {
+	
+}

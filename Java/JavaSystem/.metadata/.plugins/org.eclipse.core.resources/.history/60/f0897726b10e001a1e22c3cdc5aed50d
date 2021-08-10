@@ -1,0 +1,25 @@
+public class NO1cd_2019_003 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int temp = 1;
+		int sum = 0;
+		
+		for(int i = 2; i <= 100; i++)
+		{
+			while(temp <= i - 1)
+			{
+				if(i % temp == 0)
+				{
+					sum = sum + temp;
+				}
+			}
+			if(sum == i)
+			{
+				System.out.println(i);
+			}
+		}
+		
+	}
+
+}

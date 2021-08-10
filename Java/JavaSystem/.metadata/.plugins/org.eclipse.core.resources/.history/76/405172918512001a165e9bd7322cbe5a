@@ -1,0 +1,77 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import java.awt.BorderLayout;
+import javax.swing.JList;
+import javax.swing.ListSelectionModel;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
+
+public class Table {
+
+	private JFrame frame;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Table window = new Table();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Table() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, "", null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, "", null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, "", null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"New column", "New column", "list", "New column", "New column"
+			}
+		));
+		table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		table.setFillsViewportHeight(true);
+		table.setBounds(31, 10, 365, 226);
+		frame.getContentPane().add(table);
+		
+		
+		JList list = new JList();
+		list.setBounds(302, 218, -212, -110);
+		frame.getContentPane().add(list);
+	}
+}

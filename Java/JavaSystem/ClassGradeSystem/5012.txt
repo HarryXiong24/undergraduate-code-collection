@@ -1,0 +1,5 @@
+5012.txt123456
+班级名:5012
+number		name		sex		Chinese		English		Math		Average
+
+2018121015		周开滢		男		45.0		89.0		78.0		Average is:70.66666666666667

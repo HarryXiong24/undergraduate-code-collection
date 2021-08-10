@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;类与对象.area_calulation&apos; to &apos;area_calulation_colorsetting&apos;&#x0D;&#x0A;- Original project: &apos;JavaStudy&apos;&#x0D;&#x0A;- Original element: &apos;类与对象.area_calulation&apos;&#x0D;&#x0A;- Renamed element: &apos;类与对象.area_calulation_colorsetting&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;area_calulation&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;类与对象{area_calulation.java[area_calulation" matchStrategy="1" name="area_calulation_colorsetting" qualified="false" references="true" similarDeclarations="false" stamp="1559393238600" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="2" timestamp="1575030473353" analysisTimestamp="1575030469075" release="">
+  <Project projectName="JavaExam">
+    <Jar>D:\&#32534;&#31243;\Java\Java\JavaSystem\JavaExam\bin\NO4_50_2018_sw_exception_002.class</Jar>
+    <AuxClasspathEntry>D:\&#32534;&#31243;\Java\Java\JavaSystem\JavaExam\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_211\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>D:\&#32534;&#31243;\Java\Java\JavaSystem\JavaExam\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="VA_FORMAT_STRING_USES_NEWLINE" priority="2" rank="20" abbrev="FS" category="BAD_PRACTICE" first="1">
+    <Class classname="NO1cd_2019_007">
+      <SourceLine classname="NO1cd_2019_007" sourcefile="NO1cd_2019_007.java" sourcepath="NO1cd_2019_007.java"/>
+    </Class>
+    <Method classname="NO1cd_2019_007" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO1cd_2019_007" start="6" end="22" startBytecode="0" endBytecode="221" sourcefile="NO1cd_2019_007.java" sourcepath="NO1cd_2019_007.java"/>
+    </Method>
+    <Method classname="java.io.PrintStream" name="printf" signature="(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintStream"/>
+    </Method>
+    <String value="%.2f\n" role="STRING_FORMAT_STRING"/>
+    <SourceLine classname="NO1cd_2019_007" start="20" end="20" startBytecode="55" endBytecode="55" sourcefile="NO1cd_2019_007.java" sourcepath="NO1cd_2019_007.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="NO1cd_3_2019_006">
+      <SourceLine classname="NO1cd_3_2019_006" sourcefile="NO1cd_3_2019_006.java" sourcepath="NO1cd_3_2019_006.java"/>
+    </Class>
+    <Method classname="NO1cd_3_2019_006" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO1cd_3_2019_006" start="5" end="25" startBytecode="0" endBytecode="335" sourcefile="NO1cd_3_2019_006.java" sourcepath="NO1cd_3_2019_006.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="NO1cd_3_2019_006" start="7" end="7" startBytecode="16" endBytecode="16" sourcefile="NO1cd_3_2019_006.java" sourcepath="NO1cd_3_2019_006.java"/>
+    <SourceLine classname="NO1cd_3_2019_006" start="7" end="7" startBytecode="16" endBytecode="16" sourcefile="NO1cd_3_2019_006.java" sourcepath="NO1cd_3_2019_006.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="NO1en_2017_p1_006">
+      <SourceLine classname="NO1en_2017_p1_006" sourcefile="NO1en_2017_p1_006.java" sourcepath="NO1en_2017_p1_006.java"/>
+    </Class>
+    <Method classname="NO1en_2017_p1_006" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO1en_2017_p1_006" start="8" end="17" startBytecode="0" endBytecode="192" sourcefile="NO1en_2017_p1_006.java" sourcepath="NO1en_2017_p1_006.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="NO1en_2017_p1_006" start="8" end="8" startBytecode="7" endBytecode="7" sourcefile="NO1en_2017_p1_006.java" sourcepath="NO1en_2017_p1_006.java"/>
+    <SourceLine classname="NO1en_2017_p1_006" start="8" end="8" startBytecode="7" endBytecode="7" sourcefile="NO1en_2017_p1_006.java" sourcepath="NO1en_2017_p1_006.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="NO1en_2017_p1_008">
+      <SourceLine classname="NO1en_2017_p1_008" sourcefile="NO1en_2017_p1_008.java" sourcepath="NO1en_2017_p1_008.java"/>
+    </Class>
+    <Method classname="NO1en_2017_p1_008" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO1en_2017_p1_008" start="10" end="30" startBytecode="0" endBytecode="393" sourcefile="NO1en_2017_p1_008.java" sourcepath="NO1en_2017_p1_008.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="NO1en_2017_p1_008" start="10" end="10" startBytecode="7" endBytecode="7" sourcefile="NO1en_2017_p1_008.java" sourcepath="NO1en_2017_p1_008.java"/>
+    <SourceLine classname="NO1en_2017_p1_008" start="10" end="10" startBytecode="7" endBytecode="7" sourcefile="NO1en_2017_p1_008.java" sourcepath="NO1en_2017_p1_008.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="NO32018_sw_p3_b001">
+      <SourceLine classname="NO32018_sw_p3_b001" sourcefile="NO32018_sw_p3_b001.java" sourcepath="NO32018_sw_p3_b001.java"/>
+    </Class>
+    <Method classname="NO32018_sw_p3_b001" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO32018_sw_p3_b001" start="64" end="73" startBytecode="0" endBytecode="204" sourcefile="NO32018_sw_p3_b001.java" sourcepath="NO32018_sw_p3_b001.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="NO32018_sw_p3_b001" start="64" end="64" startBytecode="7" endBytecode="7" sourcefile="NO32018_sw_p3_b001.java" sourcepath="NO32018_sw_p3_b001.java"/>
+    <SourceLine classname="NO32018_sw_p3_b001" start="64" end="64" startBytecode="7" endBytecode="7" sourcefile="NO32018_sw_p3_b001.java" sourcepath="NO32018_sw_p3_b001.java"/>
+  </BugInstance>
+  <BugInstance type="BC_VACUOUS_INSTANCEOF" priority="2" rank="17" abbrev="BC" category="STYLE" first="1">
+    <Class classname="NO32019_ch_sw_p3_001">
+      <SourceLine classname="NO32019_ch_sw_p3_001" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Class>
+    <Method classname="NO32019_ch_sw_p3_001" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO32019_ch_sw_p3_001" start="44" end="54" startBytecode="0" endBytecode="54" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Method>
+    <Type descriptor="LCurrencyConverter;" role="TYPE_FOUND">
+      <SourceLine classname="CurrencyConverter" start="19" end="37" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Type>
+    <Type descriptor="LConverter;" role="TYPE_EXPECTED">
+      <SourceLine classname="Converter" start="5" end="12" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Type>
+    <SourceLine classname="NO32019_ch_sw_p3_001" start="51" end="51" startBytecode="102" endBytecode="102" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    <SourceLine classname="NO32019_ch_sw_p3_001" start="51" end="51" startBytecode="102" endBytecode="102" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="NO32019_ch_sw_p3_001">
+      <SourceLine classname="NO32019_ch_sw_p3_001" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Class>
+    <Method classname="NO32019_ch_sw_p3_001" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO32019_ch_sw_p3_001" start="44" end="54" startBytecode="0" endBytecode="248" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="NO32019_ch_sw_p3_001" start="44" end="44" startBytecode="7" endBytecode="7" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    <SourceLine classname="NO32019_ch_sw_p3_001" start="44" end="44" startBytecode="7" endBytecode="7" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" priority="2" rank="17" abbrev="RV" category="STYLE" first="1">
+    <Class classname="NO32019_ch_sw_p3_001">
+      <SourceLine classname="NO32019_ch_sw_p3_001" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Class>
+    <Method classname="NO32019_ch_sw_p3_001" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO32019_ch_sw_p3_001" start="44" end="54" startBytecode="0" endBytecode="248" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Method>
+    <Method classname="CurrencyConverter" name="convert" signature="(D)D" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="CurrencyConverter" start="37" end="37" startBytecode="0" endBytecode="58" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    </Method>
+    <SourceLine classname="NO32019_ch_sw_p3_001" start="49" end="49" startBytecode="46" endBytecode="46" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+    <SourceLine classname="NO32019_ch_sw_p3_001" start="49" end="49" startBytecode="46" endBytecode="46" sourcefile="NO32019_ch_sw_p3_001.java" sourcepath="NO32019_ch_sw_p3_001.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="NO3sw_extends_simple">
+      <SourceLine classname="NO3sw_extends_simple" sourcefile="NO3sw_extends_simple.java" sourcepath="NO3sw_extends_simple.java"/>
+    </Class>
+    <Method classname="NO3sw_extends_simple" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO3sw_extends_simple" start="48" end="54" startBytecode="0" endBytecode="172" sourcefile="NO3sw_extends_simple.java" sourcepath="NO3sw_extends_simple.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="NO3sw_extends_simple" start="49" end="49" startBytecode="15" endBytecode="15" sourcefile="NO3sw_extends_simple.java" sourcepath="NO3sw_extends_simple.java"/>
+    <SourceLine classname="NO3sw_extends_simple" start="49" end="49" startBytecode="15" endBytecode="15" sourcefile="NO3sw_extends_simple.java" sourcepath="NO3sw_extends_simple.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="2">
+    <Class classname="NO4_50_2018_sw_exception_002">
+      <SourceLine classname="NO4_50_2018_sw_exception_002" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+    </Class>
+    <Method classname="NO4_50_2018_sw_exception_002" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="NO4_50_2018_sw_exception_002" start="26" end="47" startBytecode="0" endBytecode="263" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="NO4_50_2018_sw_exception_002" start="26" end="26" startBytecode="7" endBytecode="7" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+    <SourceLine classname="NO4_50_2018_sw_exception_002" start="26" end="26" startBytecode="7" endBytecode="7" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+  </BugInstance>
+  <BugInstance type="ICAST_IDIV_CAST_TO_DOUBLE" priority="2" rank="17" abbrev="ICAST" category="STYLE" first="2">
+    <Class classname="NO4_50_2018_sw_exception_002">
+      <SourceLine classname="NO4_50_2018_sw_exception_002" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+    </Class>
+    <Method classname="NO4_50_2018_sw_exception_002" name="division" signature="(II)D" isStatic="false">
+      <SourceLine classname="NO4_50_2018_sw_exception_002" start="11" end="21" startBytecode="0" endBytecode="140" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+    </Method>
+    <SourceLine classname="NO4_50_2018_sw_exception_002" start="21" end="21" startBytecode="26" endBytecode="26" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+    <SourceLine classname="NO4_50_2018_sw_exception_002" start="21" end="21" startBytecode="26" endBytecode="26" sourcefile="NO4_50_2018_sw_exception_002.java" sourcepath="NO4_50_2018_sw_exception_002.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Fri, 29 Nov 2019 20:24:43 +0800" total_classes="1" referenced_classes="16" total_bugs="11" total_size="25" num_packages="1" java_version="1.8.0_211" vm_version="25.211-b12" cpu_seconds="12.11" clock_seconds="4.31" peak_mbytes="937.66" alloc_mbytes="1799.50" gc_seconds="0.08" priority_2="4" priority_1="7">
+    <PackageStats package="" total_bugs="11" total_types="8" total_size="25" priority_2="4" priority_1="7">
+      <ClassStats class="NO4_50_2018_sw_exception_002" sourceFile="NO4_50_2018_sw_exception_002.java" interface="false" size="25" bugs="2" priority_2="1" priority_1="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="630" invocations="2" avgMicrosecondsPerInvocation="315419" maxMicrosecondsPerInvocation="347887" standardDeviationMircosecondsPerInvocation="32472"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="453" invocations="353" avgMicrosecondsPerInvocation="1284" maxMicrosecondsPerInvocation="85856" standardDeviationMircosecondsPerInvocation="6203"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="144" invocations="16" avgMicrosecondsPerInvocation="9046" maxMicrosecondsPerInvocation="62271" standardDeviationMircosecondsPerInvocation="16337"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="62" invocations="16" avgMicrosecondsPerInvocation="3895" maxMicrosecondsPerInvocation="23678" standardDeviationMircosecondsPerInvocation="6084"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="57" invocations="353" avgMicrosecondsPerInvocation="161" maxMicrosecondsPerInvocation="3599" standardDeviationMircosecondsPerInvocation="217"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="48" invocations="16" avgMicrosecondsPerInvocation="3001" maxMicrosecondsPerInvocation="36632" standardDeviationMircosecondsPerInvocation="8771"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="47" invocations="71" avgMicrosecondsPerInvocation="673" maxMicrosecondsPerInvocation="4464" standardDeviationMircosecondsPerInvocation="839"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="47" invocations="3" avgMicrosecondsPerInvocation="15935" maxMicrosecondsPerInvocation="45639" standardDeviationMircosecondsPerInvocation="21009"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1574649801549" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1574649801551" release="" codeSize="205" numClasses="15"/>
+  </History>
+</BugCollection>

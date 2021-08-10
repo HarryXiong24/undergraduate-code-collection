@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class ShadePassword {
+	
+	public static void shadePassword(char c) {
+		Scanner input = new Scanner(System.in);
+		char str[] = new char[20];
+		String s = input.next();
+		str = s.toCharArray();
+		
+		for(char a : str) {
+			System.out.println("\b");
+		}
+	}
+	
+	public static main
+}
+
