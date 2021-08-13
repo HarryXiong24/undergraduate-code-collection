@@ -1,0 +1,99 @@
+{% extends 'admin/admin.html' %}
+
+{% block content %}
+<!--内容-->
+<section class="content-header">
+    <h1>e起去旅行管理系统</h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 游记管理</a></li>
+        <li class="active">编辑游记</li>
+    </ol>
+</section>
+<section class="content" id="showcontent">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">编辑游记</h3>
+                </div>
+                <form role="form" method="post" enctype="multipart/form-data">
+                    <div class="box-body">
+                        {% for msg in get_flashed_messages(category_filter=["err"]) %}
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×
+                                </button>
+                                <h4><i class="icon fa fa-ban"></i> 操作失败</h4>
+                                {{ msg }}
+                            </div>
+                        {% endfor %}
+                        {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×
+                                </button>
+                                <h4><i class="icon fa fa-check"></i> 操作成功</h4>
+                                {{ msg }}
+                            </div>
+                        {% endfor %}
+                        <div class="form-group">
+                            <label >{{ form.title.label }}</label>
+                            {{ form.title(value=travels.title) }}
+                            {% for err in form.title.errors %}
+                                <div class="col-md-12">
+                                    <p style="color: red">{{ err }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <label >{{ form.author.label }}</label>
+                            {{ form.author(value=travels.author) }}
+                            {% for err in form.author.errors %}
+                                <div class="col-md-12">
+                                    <p style="color: red">{{ err }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <label >{{ form.scenic_id.label }}</label>
+                            {{ form.scenic_id }}
+                            {% for err in form.scenic_id.errors %}
+                                <div class="col-md-12">
+                                    <p style="color: red">{{ err }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="form-group">
+                            <label >{{ form.content.label }}</label>
+                            {{ form.content }}
+                            {% for err in form.content.errors %}
+                                <div class="col-md-12">
+                                    <p style="color: red">{{ err }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        {{ form.csrf_token }}
+                        {{ form.submit }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--内容-->
+{% endblock %}
+
+{% block js %}
+     <script src="{{ url_for('static',filename='ckeditor/ckeditor.js') }}"></script>
+
+    <script>
+        CKEDITOR.replace('content', {
+            filebrowserUploadUrl: '/admin/ckupload/',
+        });
+        $(document).ready(function () {
+            $("#g-5").addClass("active");
+            $("#g-5-1").addClass("active");
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>e起去旅行</title>
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='base/css/login.css') }}" type="text/css">
+</head>
+
+<body>
+<!-- 导航栏开始 -->
+<div id="toolbar">
+  <a href="/" class="router-link-exact-active router-link-active">
+    <img src="{{url_for('static',filename='base/images/logo.png')}}" class="icon">
+    <h1>e起去旅行</h1></a>
+  <ul class="links">
+    <li>
+      <a href="/login/" class="">登录</a></li>
+    <li>
+      <a href="/register/" class="">注册</a></li>
+  </ul>
+</div>
+<!-- 导航栏结束 -->
+<!--内容-->
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+<!--内容-->
+<!--底部开始-->
+<div id="footer">
+    <div class="hr"></div>
+    <div class="login-container">
+        <p><span>Copyright © 2004 - 2018  明日科技版权所有</span></p>
+    </div>
+</div>
+
+</body>
+</html>

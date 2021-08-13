@@ -1,0 +1,80 @@
+﻿{% extends "home/home.html" %}
+{% import "common/home_page.html" as pg %}
+{% block content %}
+<div id="main">
+<div id="content">
+  <div class="container">
+    <div class="tabs_wrapper tabs1_wrapper">
+      <div class="tabs tabs2">
+        <div class="tabs_content tabs1_content">
+            <div id="tabs-1">
+              <div style="background: #fafafa;padding: 20px;border-bottom: 3px solid #1cbbb4;">
+                全部收藏
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  {% if not page_data.items %}
+                    <div class="txt1" style="padding: 20px">暂时没有收藏景区！</div>
+                  {% else %}
+                  <div class="row">
+                    {% for v in page_data.items %}
+                    <div class="col-sm-4">
+                      <div class="thumb4">
+                        <div class="thumbnail clearfix">
+                          <figure>
+                            <a href="{{url_for('home.info',id=v.scenic.id)}}">
+                            <img src="{{url_for('static',filename='uploads/'+ v.scenic.logo)}}" height='240px' class="img-responsive">
+                            </a>
+                          </figure>    
+                          <div class="caption">
+                            <div class="txt1">{{ v.scenic.title }}</div>
+                            <div class="txt3 clearfix">
+                              <div class="left_side">
+                                <div class="nums">{{ v.scenic.address }}</div>
+                              </div>
+                              <div class="right_side"><a href="javascript:;" class="collect-cancle btn-default btn1" value={{v.id}}>取消收藏</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% if page_data.items %}
+    <div class="page" style="text-align: center;">
+      {{ pg.page(page_data,'home.collect_list') }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+<script src="{{ url_for('static',filename='layer/layer.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $(".collect-cancle").click(function () {  // 触发点击事件
+            var id = $(this).attr("value");   // 获取收藏ID
+            $.ajax({
+                url: "{{ url_for('home.collect_cancel') }}", // 提交URL
+                type: "GET",         // 提交方式为GET
+                data:{id: id},       // 传递参数
+                dataType: "json",    // 设置数据类型为json
+                success: function (res) {  // 操作成功执行语句
+                    if (res.ok == 1) {
+                        layer.msg("取消收藏！",{icon:1,time:1000},function(){   // 弹出提示信息
+                          window.location.reload(); // 重新加载页面
+                        });
+                    } else {
+                        layer.msg("取消收藏失败！",{icon:2,time:2000}); // 弹出提示信息
+                    }
+                }
+            })
+        });
+    });
+</script>
+{% endblock %}

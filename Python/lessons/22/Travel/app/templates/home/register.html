@@ -1,0 +1,67 @@
+{% extends "home/layout.html" %}
+{% block content %}
+<div id="login" class="login-container">
+  <form role="form" method="POST" action="">
+    {% for msg in get_flashed_messages(category_filter=["err"]) %}
+        <p class="login-box-msg" style="color: red">{{ msg }}</p>
+    {% endfor %}
+    {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+        <p class="login-box-msg">{{ msg }}请去<a href="\login\">登录！</a></p>
+    {% endfor %}
+    <div class="form-control">
+      {{ form.username }}
+    </div>
+    {% for err in form.username.errors %}
+        <div class="form-control">
+          <ul class="errors">
+              <li>{{ err }}</li>
+          </ul>
+        </div>
+    {% endfor %}
+    <div class="form-control">
+      {{ form.email }}
+    </div>
+    {% for err in form.email.errors %}
+        <div class="form-control">
+          <ul class="errors">
+              <li>{{ err }}</li>
+          </ul>
+        </div>
+    {% endfor %}
+    <div class="form-control">
+        {{ form.pwd }}
+    </div>
+    {% for err in form.pwd.errors %}
+        <div class="form-control">
+          <ul class="errors">
+              <li>{{ err }}</li>
+          </ul>
+        </div>
+    {% endfor %}
+    <div class="form-control">
+        {{ form.repwd }}
+    </div>
+    {% for err in form.repwd.errors %}
+        <div class="form-control">
+          <ul class="errors">
+              <li>{{ err }}</li>
+          </ul>
+        </div>
+    {% endfor %}
+    {% for msg in get_flashed_messages(category_filter=["err"]) %}
+        <div class="form-control">
+          <ul class="errors">
+              <li>{{ msg }}</li>
+          </ul>
+        </div>
+    {% endfor %}
+    <div class="form-control">
+        {{ form.csrf_token }}
+        {{ form.submit }}
+    </div>
+  </form>
+  <div>
+    <p class="change-form">已有账号，直接去 <a href="\login\" >登录</a></p>
+  </div>
+</div>
+{% endblock %}

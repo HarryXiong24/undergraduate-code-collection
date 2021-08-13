@@ -1,0 +1,78 @@
+﻿{% extends "home/home.html" %}
+
+{% block content %}
+
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>CONTACT INFO</h3>
+        <h4>公司地址</h4>
+        <p>
+          吉林省长春市南关区财富领域<br>
+          电子邮件：<a href="#">mingrisoft@mingrisoft.com</a>
+        </p>
+
+        <br>
+        <h4>企业在线培训服务</h4>
+        <p>
+          联系电话：0431-84978981<br>
+          电子邮件：<a href="#">mingrisoft-company@mingrisoft.com</a>
+        </p>
+        <br>
+        <h4>客户服务</h4>
+        <p>
+          联系电话：0431-84978981<br>
+          电子邮件：<a href="#">mingrisoft-custom@mingrisoft.com</a>
+        </p>
+      </div>
+      <div class="col-sm-6">
+        <h3>意见建议</h3>
+        <div id="note"></div>
+        <div id="fields">
+        {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+            <div class="alert alert-success alert-dismissible">
+                <h4><i class="icon fa fa-check"></i> 操作成功</h4>
+                {{ msg }}
+            </div>
+        {% endfor %}
+          <form id="ajax-contact-form" class="form-horizontal" action="" method="post">
+            <div class="form-group">
+                <label>{{ form.name.lable}}</label>
+                {{ form.name }}
+                {% for err in form.name.errors %}
+                    <div class="notification_error">{{ err }}</div>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label >{{ form.email.label }}</label>
+                {{ form.email }}
+                {% for err in form.email.errors %}
+                    <div class="notification_error">{{ err }}</div>
+                {% endfor %}
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                    <label >{{ form.content.label }}</label>
+                    {{ form.content }}
+                    {% for err in form.content.errors %}
+                    <div class="notification_error">{{ err }}</div>
+                {% endfor %}
+                </div>
+              </div>
+            </div>
+                {{ form.csrf_token }}
+                {{ form.submit }}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,95 @@
+﻿{% extends "home/home.html" %}
+
+{% block content %}
+
+<div id="why1">
+  <div class="container">
+
+    <h2 class="animated">为什么选择我们</h2>
+
+    <div class="title1 animated">因为专注，所以专业。<br>专注旅游，我们是认真的！</div>
+    <br><br>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why1.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why1_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">神奇的旅行</div>
+                <div class="txt2">为您展示真实的旅游景区、精彩的旅游照片、全面的旅游攻略以及最新的旅游资讯</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why2.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why2_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">分享旅行</div>
+                <div class="txt2">交换资讯，分享旅行。帮助这里的这里朋友，或者是获得帮助。也可以交流攻略、美食、音乐、摄影日记，以及与旅行有关的零零种种...</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why3.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why3_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">发现惊喜</div>
+                <div class="txt2">只要你爱旅行，只要你有爱。这里的一切都是都由你和其他成员产生和决定。</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why4.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why4_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">优质的服务</div>
+                <div class="txt2">我们是一个高质量的旅游爱好者群体，钟情于自驾游，拥有专业的摄影技术，为您提供最优质的旅游服务。</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="company1">
+  <div class="container">
+
+    <h2 class="animated">关于我们</h2>
+    <div style="padding: 30px">
+      <div class="title1 animated">
+        明日学院，是吉林省明日科技有限公司倾力打造的在线实用技能学习平台，该平台于2016年正式上线，主要为学习者提供海量、优质的课程，课程结构严谨，用户可以根据自身的学习程度，自主安排学习进度。我们的宗旨是，为编程学习者提供一站式服务，培养用户的编程思维。
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

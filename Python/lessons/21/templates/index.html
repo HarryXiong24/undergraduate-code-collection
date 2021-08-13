@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container">
+    <h1>Hello World!</h1>
+    <form action="" method="post">
+        <div>
+        {{ form.name.label }}
+        {{ form.name }}
+        </div>
+        {% for err in form.name.errors %}
+            <div class="col-md-12">
+                <p style="color: red">{{ err }}</p>
+            </div>
+        {% endfor %}    
+        <div>
+        {{ form.password.label }}
+        {{ form.password }}
+        {% for err in form.password.errors %}
+            <div>
+                <p style="color: red">{{ err }}</p>
+            </div>
+        {% endfor %}
+        </div>
+        {{ form.csrf_token }}
+        {{ form.submit }}
+    </form>
+    {% if data  %} 
+        您输入的用户名为：{{ data['name'] }}
+        <br>
+        您输入的密码为：{{ data['password'] }}
+    {% endif %}
+</body>
+</html>
