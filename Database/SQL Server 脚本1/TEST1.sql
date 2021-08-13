@@ -1,0 +1,63 @@
+CREATE DATABASE Stu2018121015
+ON PRIMARY
+(
+	NAME = Stu_Data,
+	FILENAME = 'D:\编程\数据库\Stu2018121015\Stu_Data.mdf',
+	SIZE = 5,
+	MAXSIZE = UNLIMITED,
+	FILEGROWTH = 2
+)
+LOG ON
+(
+	NAME = Stu_log,
+	FILENAME = 'D:\编程\数据库\Stu2018121015\Stu.ldf',
+	SIZE = 5,
+	MAXSIZE = UNLIMITED,
+	FILEGROWTH = 10%
+)
+GO
+
+USE Stu2018121015
+CREATE TABLE Class
+(
+	Cno CHAR(4) PRIMARY KEY,
+	Cname VARCHAR(50),
+	Cmajor VARCHAR(100),
+	Counselor VARCHAR(50)
+)
+
+USE Stu2018121015
+CREATE TABLE Student
+(
+	Sno CHAR(8) PRIMARY KEY,
+	Sname VARCHAR(20) NOT NULL,
+	SIDcno VARCHAR(30) UNIQUE,
+	Ssex CHAR(2) CHECK (Ssex IN('M','W')),
+	Sbirth Date,
+	Cno CHAR(4) REFERENCES Class(Cno)
+)
+
+USE Stu2018121015
+CREATE TABLE Curriculum
+(
+	Cuno CHAR(5) PRIMARY KEY,
+	Cuname VARCHAR(50) NOT NULL,
+	Cupoint FLOAT CHECK(Cupoint >= 1 AND Cupoint <= 6)
+)
+	
+USE Stu2018121015
+CREATE TABLE Elective
+(
+	Cuno CHAR(5),
+	Sno CHAR(8),
+	Egrade INT CHECK(Egrade BETWEEN 0 AND 100),
+	FOREIGN KEY(Cuno) REFERENCES Curriculum(Cuno),
+	FOREIGN KEY(Sno) REFERENCES Student(Sno), 
+	PRIMARY KEY(Cuno, Sno)
+)
+
+USE Stu2018121015
+CREATE UNIQUE NONCLUSTERED INDEX Sname_index
+ON Student(Sname)
+CREATE UNIQUE NONCLUSTERED INDEX Cuname_index
+ON Curriculum(Cuname)
