@@ -1,0 +1,11 @@
+var val;
+val = 123;
+// val = '123';
+// val = true;
+console.log(val);
+var val1;
+val1 = true;
+console.log(val1);
+var val2;
+val2 = "hello world";
+console.log(val2);
