@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片的显示和隐藏</title>
+    <link rel="stylesheet" type="text/css" href="./css.css" />
+</head>
+<body>
+    <button id="btn01">Hide</button>
+    <div id="wrap">
+        <img src="big_pic1.jpg">
+    </div>
+</body>
+
+<script>
+    var btn01 = document.getElementById("btn01");
+    var pic = document.getElementsByTagName("img")[0];
+
+    btn01.onclick = function(){
+        if(btn01.innerHTML == "Hide"){
+            pic.style.display = "none";
+            btn01.innerHTML = "Show";
+        }
+        else if(btn01.innerHTML == "Show"){
+            pic.style.display = "block";
+            btn01.innerHTML = "Hide";
+        }
+    }
+</script>
+</html>

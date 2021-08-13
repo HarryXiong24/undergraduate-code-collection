@@ -1,0 +1,15 @@
+@sda: 5px;
+
+.function(@height, @width, @background-color){
+    height: @height;
+    width: @width;
+    background-color: @background-color;
+}
+
+.className{
+    margin: @sda auto;
+    .inner{
+        padding: 0;
+        .function(50px, 60px, pink);
+    }
+}

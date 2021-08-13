@@ -1,0 +1,12 @@
+#container-fluid {
+  background-color: #bb112d;
+}
+#container {
+  background-color: blue;
+}
+.container {
+  background-color: pink;
+}
+.container .rows div[class|=col] {
+  border: 1px black solid;
+}

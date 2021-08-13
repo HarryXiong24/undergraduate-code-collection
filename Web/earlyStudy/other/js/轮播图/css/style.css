@@ -1,0 +1,49 @@
+/* 样式表 */
+
+#wrap{
+    margin: 100px auto;
+    height: 400px;
+    width: 780px;
+    position: relative;
+    /* background-color: red; */
+    /* 裁剪溢出的内容 */
+    overflow: hidden;
+}
+
+#picture{
+    height: 400px;
+    list-style: none;
+    position: absolute;
+    left: 0px;
+}
+
+#picture li{
+    float: left;
+} 
+
+img{
+    height: 400px;
+    width: 760px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#nav{
+    z-index: 3;
+    position: absolute;
+    bottom: 10px;
+}
+
+#nav a{
+    float: left;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.8);
+    margin: 0 4px;
+    z-index: 3;
+}
+
+#nav a:hover{
+    background-color:gray;
+}

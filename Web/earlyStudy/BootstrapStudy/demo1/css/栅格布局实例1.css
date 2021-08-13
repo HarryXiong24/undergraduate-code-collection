@@ -1,0 +1,10 @@
+div[class="caption"] > a {
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  margin-top: 10px;
+}
+.newJumbotron {
+  margin-top: 70px;
+  margin-bottom: 30px;
+}

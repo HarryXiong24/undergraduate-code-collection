@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片切换</title>
+    <link rel="stylesheet" type="text/css" href="./css.css" />
+</head>
+<body>
+    <div class="box">
+        <img id="main" src="./big_pic1.jpg">
+        <ul id="wrap">
+           <li>
+               <a href="#">
+                   <img src="big_pic1.jpg">
+               </a>
+           </li>
+           <li>
+                <a href="#">
+                    <img src="big_pic2.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="big_pic3.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="big_pic4.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="big_pic5.jpg">
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    var img = document.getElementsByTagName("img");
+    var a = document.getElementsByTagName("a");
+    var mainPic = document.getElementById("main");
+
+    for(let i = 0; i < a.length; i++){
+        a[i].onclick = function() {
+            mainPic.setAttribute("src", `big_pic${i+1}.jpg`);
+        }
+        a[i].onmouseover = function() {
+            mainPic.setAttribute("src", `big_pic${i+1}.jpg`);
+        }
+    }
+</script>
+
+</html>

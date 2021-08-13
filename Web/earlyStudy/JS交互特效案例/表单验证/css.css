@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#wrap {
+  margin: 10px;
+}
+#wrap #input {
+  border: 2px darkgray solid;
+}
+#wrap #check {
+  font-size: 12px;
+  color: darkgray;
+}
+#wrap .right {
+  background-image: url(right.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 10px;
+  padding-left: 12px;
+  color: lightgreen !important;
+}
+#wrap .error {
+  background-image: url(error.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 10px;
+  padding-left: 12px;
+  color: red !important;
+}

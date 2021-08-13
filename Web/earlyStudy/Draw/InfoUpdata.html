@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>index</title>
+
+  <style type="text/css">
+    #svg {
+      height: 620px;
+      width: 620px;
+      margin: 10px auto;
+    }
+
+    #show {
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="app">
+
+    <div class="jumbotron top">
+      <div class="row">
+
+        <div class="col-lg-4">
+          <h2>六边形内模拟人的变化</h2>
+          <p>
+            Count(人数)<input type="text" v-model="count">
+            Second(间隔秒数)<input type="text" v-model="second">
+          </p>
+        </div> 
+
+        <div class="col-lg-8">
+          <div>
+            <div>
+              <h3>说明</h3>
+              <h6>采用随机数模拟后台数据，图标模拟人，设每次展示5个人的位置</h6>
+              <h6>六边形内每次生成count个点，定时器模拟后台每隔second秒刷新，五个点的位置发生变化</h6>
+              <h6>六边形顶点坐标为(100,40),(10,290),(100,560),(500,560),(590,290),(500,40)</h6>
+              <h6>Tip:画布大小为600*600</h6>
+              <p>
+                <button class="btn btn-primary" role="button" @click="start">开始模拟</button>
+                <button class="btn btn-primary" role="button" @click="end">结束模拟</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div> 
+    </div>
+
+    <div class="row">
+      <div class="col-md-offset-4 col-lg-offset-4col-xl-offset-4">{{nowTime}}</div>
+    </div>
+
+    <div class="row"> 
+
+      <div class="col-lg-2">
+      </div>
+
+      <div class="col-lg-8" id="svg">
+        <svg width="600px" height="600px">
+        </svg>
+      </div>
+
+      <div class="col-lg-2" id="show">
+        <ul class="list-group">
+          <li class="list-group-item">工号:{{id}}</li>
+          <li class="list-group-item">姓名:{{name}}</li>
+          <li class="list-group-item">性别:{{sex}}</li>
+          <li class="list-group-item"><p>获取时间:</p>{{time}}</li>
+          <li class="list-group-item">获取位置:{{position}}</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+  // 生成从minNum到maxNum的随机数
+  function randomNum(minNum, maxNum) {
+    switch (arguments.length) {
+      case 1:
+        return parseInt(Math.random() * minNum + 1, 10);
+        break;
+      case 2:
+        return parseInt(Math.random() * ( maxNum - minNum + 1 ) + minNum, 10);
+        break;
+      default:
+        return 0;
+        break;
+    }
+  } 
+
+  // 时间设置
+  function nowNumTime () {
+    // 获取时间
+    var now = new Date();
+    // 获取个数据
+		var hour  = now.getHours();       // 0~23
+		var minute = now.getMinutes();    // 0~59
+		var second = now.getSeconds();    // 0~59
+		var year = now.getFullYear();     
+		var month = now.getMonth() + 1;       // 0~11
+		var day = now.getDate();            // 1~31
+		var week = now.getDay();          // 0~6 周日~周六
+
+		var weekName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+		
+    // 24小时制
+    var time = '' + hour;
+		time  = time + (minute < 10 ? ':0' : ":") + minute;
+		time  = time + (second < 10 ? ':0' : ":") + second;
+		time = `${year}年${month}月${day}日  ${time} ${weekName[week]}`;
+		
+    return time
+	}
+
+
+  const App = new Vue({
+    el: "#app",
+    data () {
+      return {
+        cx: 0,
+        cy: 0,
+        hull: d3.polygonHull([ [100,40], [10,290], [100,560], [500,560], [590,290], [500,40] ]),
+        count: 5,
+        second: 3,
+        id: "",
+        name: "",
+        sex: "",
+        position: "",
+        time: "",
+        nowTime: ""
+      }
+    },
+    methods: {
+      start () {
+        let svg = d3.select("svg")
+      
+        this.timer = setInterval( () => {
+          svg.selectAll('image').remove()
+          svg.selectAll('text').remove()
+
+          for(let i = 0; i < this.count; i++) {
+            while (true) {
+              
+              if (d3.polygonContains(this.hull, [this.cx, this.cy]) === true) {
+                let cx = this.cx
+                let cy = this.cy
+                svg.append('image')
+                .attr("x", cx)
+                .attr("y", cy)
+                .attr("xlink:href", "./person.png")
+                .on("click", () => {
+                  this.id = i+1 + ""
+                  this.name = "xxx"
+                  this.sex = "男"
+                  this.position = `(${cx},${cy})`
+                  this.time = nowNumTime()
+                })
+
+                svg.append('text')
+                .attr("x", cx+1)
+                .attr("y", cy)
+                .attr("fill", "black")
+                .text(i+1)
+
+                this.cx = 0
+                this.cy = 0
+                break
+              } else {
+                this.cx = randomNum(15, 585)
+                this.cy = randomNum(45, 555)
+              }
+            }
+          }
+        }, this.second * 1000)
+      
+      },
+      end () {
+        let svg = d3.select("svg")
+        svg.selectAll('circle').remove()
+        clearInterval(this.timer)
+      },
+    },
+    mounted () {
+      // 创建好六边形
+      d3.select('svg').append('polygon')
+      .attr("points", this.hull)
+      .attr("fill", "pink")
+      .attr("stroke", "black")
+      .attr("stroke-width", 1)
+
+      setInterval( () => {
+        // 获取时间
+        var now = new Date();
+        // 获取个数据
+        var hour  = now.getHours();       // 0~23
+        var minute = now.getMinutes();    // 0~59
+        var second = now.getSeconds();    // 0~59
+        var year = now.getFullYear();     
+        var month = now.getMonth() + 1;       // 0~11
+        var day = now.getDate();            // 1~31
+        var week = now.getDay();          // 0~6 周日~周六
+
+        var weekName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        
+        // 24小时制
+        var time = '' + hour;
+        time  = time + (minute < 10 ? ':0' : ":") + minute;
+        time  = time + (second < 10 ? ':0' : ":") + second;
+        time = `${year}年${month}月${day}日  ${time} ${weekName[week]}`;
+        
+        this.nowTime = time
+      }, 10);
+    },
+
+  })
+
+</script>
+</html>

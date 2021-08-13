@@ -1,0 +1,56 @@
+.top {
+  position: relative;
+}
+.top .right {
+  position: absolute;
+  right: 20%;
+  bottom: 30%;
+}
+#rect .params .button {
+  float: right;
+  margin-right: 150px;
+}
+#rect .show {
+  height: 620px;
+  width: 620px;
+  margin: 100px auto;
+}
+#circle .params .button {
+  float: right;
+  margin-right: 150px;
+}
+#circle .show {
+  height: 620px;
+  width: 620px;
+  margin: 100px auto;
+}
+#ellipse .params .button {
+  float: right;
+  margin-right: 150px;
+}
+#ellipse .show {
+  height: 620px;
+  width: 620px;
+  margin: 100px auto;
+}
+#polygon .params .long {
+  width: 600px;
+}
+#polygon .params .button {
+  float: right;
+  margin-right: 150px;
+}
+#polygon .show {
+  height: 620px;
+  width: 620px;
+  margin: 100px auto;
+}
+#curveto .params .button {
+  float: right;
+  margin-right: 150px;
+}
+#curveto .show {
+  height: 620px;
+  width: 620px;
+  margin: 100px auto;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css.css" />
+</head>
+<body>
+    <div id="wrap"> 
+        <div id="commitment">
+            <textarea id="text" placeholder="请发表您的评论:" cols="80", rows="10"></textarea>
+            <button id="submit">发表</button>
+        </div>
+        <ul id="comment_content">
+
+		</ul>
+    </div>
+</body>
+
+<script>
+   var btn = document.getElementById("submit");
+   var ul = document.getElementById("comment_content");
+
+   btn.onclick = function() {
+        var text = document.getElementById("text");
+        if(text.value.length === 0){
+            alert("内容为空!");
+        }
+        else{
+            var newLi = document.createElement("li");
+            // href="javascript:void(0);"功能为清除a标签原本的跳转行为
+            newLi.innerHTML = `${text.value}<a href="javascript:void(0);">删除</a>`;
+            
+            // ul.appendChild(newLi);
+            ul.insertBefore(newLi, ul.children[0]);
+            text.value = "";
+        }
+
+        // 删除评论 
+        var delButtons = document.getElementsByTagName('a');
+        for(var i = 0; i < delButtons.length; i++){
+            delButtons[i].onclick = function(){
+                this.parentNode.remove();
+            }
+        }
+
+        
+
+   }
+
+ 
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XMLHttpRequest</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  var Ajax = new XMLHttpRequest()
+
+  Ajax.open("get", "http://localhost:3000/json", true)
+
+  Ajax.send()
+
+  Ajax.onreadystatechange = function() {
+    if (Ajax.readyState === 4) {
+      //确定http的状态码
+      if(Ajax.status >= 200 && Ajax.status < 300 || Ajax.status === 304) {
+        console.log(Ajax);
+      }
+    }
+  }
+</script>
+</html>

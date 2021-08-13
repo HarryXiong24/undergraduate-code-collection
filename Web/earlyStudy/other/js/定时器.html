@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1{
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #box2{
+            position: absolute;
+            left: 0;
+            top: 250px;
+            width: 100px;
+            height: 100px;
+            background-color:yellow;
+        }
+
+        #box3{
+            position: absolute;
+            left: 0;
+            top: 400px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .line{
+            position: absolute;
+            left: 800px;
+            top: 0px;
+            width: 0px;
+            height: 100%;
+            border-left: 1px solid blue;
+        }
+    </style>
+
+</head>
+<body>
+    <button id="btn01">点击按钮以后box1向右移动</button>
+    <button id="btn02">点击按钮以后box1向左移动</button>
+    <button id="btn03">点击按钮以后box2向右移动</button>
+    <button id="btn04">点击按钮以后box2向左移动</button>
+    <button id="btn05">点击按钮以后box3变换</button>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <div class="line"></div>
+</body>
+
+<script>
+    function getStyle(obj , name){
+        
+        if(window.getComputedStyle){
+            //正常浏览器的方式，具有getComputedStyle()方法
+            return getComputedStyle(obj , null)[name];
+        }else{
+            //IE8的方式，没有getComputedStyle()方法
+            return obj.currentStyle[name];
+        }       
+    }
+
+    /**
+    * attr 方向
+    * targe 移动和最终位置
+    * speed 移动的速度
+    * callback 回调函数
+    **/
+    function move(obj, attr, target, speed, callback){
+        // 防止多次点击速度不断加快
+        clearInterval(obj.timer);
+
+        obj.timer = setInterval(function(){
+            var oldValue = parseInt(getStyle(obj, attr));
+            var newValue = oldValue + speed;
+
+            if((newValue > target && speed > 0) || (newValue < target && speed < 0)){
+                newValue = target;
+            }
+
+            obj.style[attr] = newValue + "px";
+
+            if(newValue == target){
+                clearInterval(obj.timer);
+                callback() && callback;
+            }
+        }, 30);
+    }
+
+    var box1 = document.getElementById("box1");
+    var btn01 = document.getElementById("btn01");
+    var btn02 = document.getElementById("btn02");
+
+    var box2 = document.getElementById("box2");
+    var btn03 = document.getElementById("btn03");
+    var btn04 = document.getElementById("btn04");
+
+    var box3 = document.getElementById("box3");
+    var btn05 = document.getElementById("btn05");
+
+    btn01.onclick = function(){
+        move(box1, "left", 800, 14);
+    }  
+    btn02.onclick = function(){
+        move(box1, "left", 0, -14);
+    }
+    btn03.onclick = function(){
+        move(box2, "left", 800, 14);
+    }
+    btn04.onclick = function(){
+        move(box2, "left", 0, -14);
+    }
+
+    btn05.onclick = function(){
+        move(box3, "left", 800, 14, function(){
+            move(box3, "top", 100, -14, function(){
+                move(box3, "left", 0, -14, function(){
+                    move(box3, "top", 400, 14);
+                });
+            });
+        });
+    };
+
+    
+    
+</script>
+</html>

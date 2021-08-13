@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#nav {
+  width: 100%;
+  height: 20px;
+  background-color: grey;
+}
+#nav p {
+  text-align: right;
+  font-size: 8px;
+  line-height: 20px;
+  font-weight: bold;
+  margin: 0 20px;
+}
+#nav p:hover {
+  color: indigo;
+}
+#skinChoose {
+  width: 800px;
+  height: 120px;
+  position: absolute;
+  right: 0;
+  display: none;
+  z-index: 10;
+}
+#skinChoose ul {
+  position: absolute;
+  right: 0;
+  width: 700px;
+  height: 120px;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#skinChoose ul img {
+  width: 120px;
+  height: 100px;
+  float: left;
+}
+#skinChoose ul img:hover {
+  border: 1px rebeccapurple solid;
+}
+#skin {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url("skin1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+        <script src="./js/html5shiv.js"></script>
+        <script src="./js/respond.min.js"></script>
+    <![endif]-->
+
+    <title>浏览器博物馆</title>
+    <link href="./css/index.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- 导航 -->
+    <nav class="navbar navbar-inverse newNav">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">现代浏览器博物馆</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse activeDiv" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li no="1"><a href="#">综述<span class="sr-only">(current)</span></a></li>
+                    <li no="2"><a href="#">简述</a></li>
+                    <li no="3" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">特点<span class="caret"></span></a>
+                        <ul class="dropdown-menu" title="ul1">
+                            <li><a href="#Chrome" aria-controls="Chrome">Chrome</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#Firebox" aria-controls="Firebox">Firebox</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#Safari" aria-controls="Safari">Safari</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#Opera" aria-controls="Opera">Opera</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#IE" aria-controls="IE">IE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li no="4"><a href="#">更多</a></li>
+                    <li no="5" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">关于<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">作者</a></li>
+                            <li><a href="#">更新日期</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">其他</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- 轮播图 -->
+    <div id="carousel-example-generic" class="carousel slide CHeight" data-ride="carousel" data-interval="2000"
+        data-pause="hover">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner CHeight" role="listbox">
+            <div class="item active">
+                <img src="./img/chrome-big.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./img/firefox-big.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./img/safari-big.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./img/opera-big.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./img/ie-big.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- 三列分布 -->
+    <div class="container wrap">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="thumbnail noBorder">
+                    <img src="./img/chrome-logo-small.jpg" alt="..." class="imgSet">
+                    <div class="caption">
+                        <h3>Chrome</h3>
+                        <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+                        <p>
+                            <a href="#" class="btn btn-primary" role="button">进入</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="thumbnail noBorder">
+                    <img src="./img/firefox-logo-small.jpg" alt="..." class="imgSet">
+                    <div class="caption">
+                        <h3>Firefox</h3>
+                        <p>Mozilla Firefox，中文名通常称为“火狐”或“火狐浏览器”，是一个开源网页浏览器。</p>
+                        <p><a href="#" class="btn btn-primary" role="button">进入</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="thumbnail noBorder">
+                    <img src="./img/safari-logo-small.jpg" alt="..." class="imgSet">
+                    <div class="caption">
+                        <h3>Safari</h3>
+                        <p>Safari，是苹果计算机的最新操作系统Mac OS X中的浏览器。</p>
+                        <p><a href="#" class="btn btn-primary" role="button">进入</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分隔线 -->
+    <div class="container">
+        <hr class="line">
+    </div>
+
+    <!-- 标签页 -->
+    <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#Chrome" aria-controls="Chrome" role="tab"
+                    data-toggle="tab">Chrome</a></li>
+            <li role="presentation"><a href="#Firebox" aria-controls="Firebox" role="tab" data-toggle="tab">Firebox</a>
+            </li>
+            <li role="presentation"><a href="#Safari" aria-controls="Safari" role="tab" data-toggle="tab">Safari</a>
+            </li>
+            <li role="presentation"><a href="#Opera" aria-controls="Opera" role="tab" data-toggle="tab">Opera</a></li>
+            <li role="presentation"><a href="#IE" aria-controls="IE" role="tab" data-toggle="tab">IE</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="Chrome">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-7 col-sm-8">
+                            <h2>Chrome</h2>
+                            <p>Internet Explorer，原称Microsoft Internet Explorer(6版本以前)和Windows Internet
+                                Explorer(7，8，9，10版本)， 简称IE，是美国微软公司推出的一款网页浏览器。它采用的排版引擎(俗称内核)为Trident。</p>
+                        </div>
+                        <div class="col-lg-5 col-sm-4">
+                            <img src="./img/chrome-logo.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="Firebox">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-8">
+                            <h2>Firebox</h2>
+                            <p>Internet Explorer，原称Microsoft Internet Explorer(6版本以前)和Windows Internet
+                                Explorer(7，8，9，10版本)， 简称IE，是美国微软公司推出的一款网页浏览器。它采用的排版引擎(俗称内核)为Trident。</p>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-4">
+                            <img src="./img/firefox-logo.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="Safari">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-8">
+                            <h2>Safari</h2>
+                            <p>Internet Explorer，原称Microsoft Internet Explorer(6版本以前)和Windows Internet
+                                Explorer(7，8，9，10版本)， 简称IE，是美国微软公司推出的一款网页浏览器。它采用的排版引擎(俗称内核)为Trident。</p>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-4">
+                            <img src="./img/safari-logo.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="Opera">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <h2>Opera</h2>
+                            <p>Internet Explorer，原称Microsoft Internet Explorer(6版本以前)和Windows Internet
+                                Explorer(7，8，9，10版本)， 简称IE，是美国微软公司推出的一款网页浏览器。它采用的排版引擎(俗称内核)为Trident。</p>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <img src="./img/opera-logo.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="IE">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <h2>IE</h2>
+                            <p>Internet Explorer，原称Microsoft Internet Explorer(6版本以前)和Windows Internet
+                                Explorer(7，8，9，10版本)， 简称IE，是美国微软公司推出的一款网页浏览器。它采用的排版引擎(俗称内核)为Trident。</p>
+                        </div>
+                        <div class="col-lg-5  col-md-5 col-sm-12">
+                            <img src="./img/ie-logo.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="./js/bootstrap.min.js"></script>
+
+<script>
+    var lis = document.querySelectorAll("li[no]");
+
+    for (let i = 0; i < lis.length; i++) {
+
+        lis[i].onclick = function () {
+            lis[i].setAttribute("class", "active");
+            for (let j = 0; j < lis.length; j++) {
+                if (i !== j) {
+                    lis[j].className = "";
+                }
+            }
+        }
+    }
+</script>
+
+</html>

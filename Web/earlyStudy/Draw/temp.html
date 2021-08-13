@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <svg width="600px" height="600px">
+    <image xlink:href="./6.png" x="100" y="40"></image>
+  </svg>
+</body>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+  var hull = d3.polygonHull([ [100,40], [10,290], [100,560], [500,560], [590,290], [500,40] ])
+  d3.select('svg').append('polygon').attr("points", hull).attr("fill", "pink")
+
+  let x = 80
+  let y = 45
+  if (d3.polygonContains(hull, [x,y])) {
+    d3.select('svg').append('image').attr("x", x).attr("y", y).attr("xlink:href", "./person.png")
+  }
+  // let polygon = d3.select('polygon')
+  // let result = d3.polygonContains(hull, [1,1])
+  // console.log(result)
+</script>
+</html>

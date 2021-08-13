@@ -1,0 +1,223 @@
+/* 样式表 */
+
+body{
+    background: url(../img/background1.png) repeat-x;
+}
+
+/* 固定元素宽度 */
+.width{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.header{
+    padding-top: 37px;
+    padding-bottom: 50px;
+}
+
+.logo{
+    margin-left: 17px;
+    float: left;
+}
+
+.nav{
+    float: right;
+    margin-top: 20px;
+}
+
+.nav li{
+    float: left;
+    padding: 0 10px;
+    border-left: 1px dotted #d6d6d6 ;
+}
+
+.nav a{
+    font: bold 14px Georgia;
+    color: #666;
+    text-decoration: none;
+}
+
+.nav p{
+    color: #b7b7b7;
+    font: 11px tahoma;
+}
+
+.banner{
+    height: 346px;
+    background: url(../img/shade.png) no-repeat;
+    background-position: bottom center;
+}
+
+.content h1{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    font: bold 24px Georgia;
+}
+
+.content .left, .content .middle, .content .right, 
+.contact .social, .contact .con, .contact .news{
+    margin-top: 26px;
+    margin-bottom: 26px;
+    width: 300px;
+    height: 408px;
+    float: left;
+}
+
+.content .middle,
+.contact .con{
+    margin-left: 18px;
+    margin-right: 18px;
+    float: left;
+}
+
+.content h2{
+    font-style: Georgia;
+    font-size: 21px;
+    font-weight: bold;
+    color: #1183b8;
+}
+
+.content .p1{
+    font: Helvetica;
+    font-size: 12px;
+    color: #8c8c8c;
+}
+
+.content .p2{
+    height: 92px;
+    color: #3e3e3e;
+    font: Helvetica;
+    font-size: 13px;
+}
+
+.content div img{
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.content a{
+    width: 163px;
+    height: 40px;
+    background-image: url(../img/buttons.png);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 40px;
+}
+
+.contact h2{
+    font-size: 21px;
+    font-variant: Georgia;
+    font-weight: bold;
+    color: black;
+    border-bottom: 1px dotted #d6d6d6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.contact .txt{
+    height: 40px;
+    width: 300px;
+    background: url(../img/text.png) no-repeat;
+    border: none;
+}
+
+.contact .txt2{
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.contact .textarea{
+    height: 142px;
+    width: 304px;
+    background: url(../img/textarea.png) no-repeat;
+    border: none;
+    overflow: auto;
+}
+
+.button{
+    background: url(../img/buttons.png) no-repeat;
+    border: none;
+    width: 163px;
+    height: 40px;
+    color: white;
+    margin-left: 3px;
+    margin-top: 10px;
+}
+
+.social .p1{
+    color: #444;
+    font: 12px Helvetica;
+}
+
+.icon{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.icon a{
+    text-decoration: none;
+}
+
+.social .txt{
+    height: 40px;
+    width: 300px;
+    background: url(../img/text.png) no-repeat;
+    border: none;
+    margin-top: 7px;
+    margin-bottom: 6px;
+    margin-right: 2px;
+}
+
+.news .has-margin{
+    color: #444;
+    font: 12px Helvetica;
+    height: 58px;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #d6d6d6;
+}
+
+/* 图片设置浮动，才能让文字环绕 */
+.news img{
+    float: left;
+    margin-right: 8px;
+}
+
+.news .no-margin{
+    color: #444;
+    font: 12px Helvetica;
+    height: 58px;
+    padding-bottom: 14px;
+    margin-bottom: 9px;
+    border-bottom: 1px dotted #d6d6d6;
+}
+
+.footer{
+    height: 174px;
+    background-color: #333;
+    border-top: 10px solid #4c4c4c;
+}
+
+.footer a,.footer p{
+    color: #999;
+    font: 11px Helvetica;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: #d1d2d2;
+    text-decoration: underline;
+}
+
+.footer .copy{
+    float: right;
+}
+
+.footer .w{
+    padding-top:18px;
+}

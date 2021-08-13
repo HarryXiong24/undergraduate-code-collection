@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日期特效</title>
+    <link rel="stylesheet" type="text/css" href="./css.css" />
+</head>
+<body>
+    <div id="date">
+        <p id="nowDate">
+    
+        </p>
+        <p id="day">
+
+        </p>
+    </div>
+</body>
+
+<script>
+// 1.获取标签
+	var nowDate = document.getElementById('nowDate');
+	var Day = document.getElementById('day');
+	// 用定时器 更新时间的变化
+	setInterval(nowNumTime, 10);
+
+	function nowNumTime(){
+        // 获取时间
+		var now = new Date();
+        // 获取个数据
+		var hour  = now.getHours();       // 0~23
+		var minute = now.getMinutes();    // 0~59
+		var second = now.getSeconds();    // 0~59
+		var year = now.getFullYear();     
+		var month = now.getMonth() + 1;       // 0~11
+		var day = now.getDate();            // 1~31
+		var week = now.getDay();          // 0~6 周日~周六
+
+		var weekName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+		
+        // 24小时制
+        var time = '' + hour;
+		time  = time + (minute < 10 ? ':0' : ":") + minute;
+		time  = time + (second < 10 ? ':0' : ":") + second;
+		time = `${year}年${month}月${day}日  ${time} ${weekName[week]}`;
+		nowDate.innerHTML = time;
+
+        // 中间方框显示日期
+        Day.innerHTML = day;
+	}
+
+</script>
+
+</html>

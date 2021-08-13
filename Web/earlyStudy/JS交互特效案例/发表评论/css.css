@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#wrap {
+  width: 700px;
+  height: 1000px;
+  margin: 10px auto;
+}
+#wrap #commitment {
+  width: 700px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrap #commitment #submit {
+  align-self: flex-end;
+  margin: 24px 0;
+}
+#wrap ul {
+  margin-top: 20px;
+  list-style: none;
+  border-top: black 2px dashed;
+}
+#wrap ul li {
+  width: 700px;
+  border: 1px black solid;
+  position: relative;
+  margin: 20px 0;
+}
+#wrap ul li a {
+  position: absolute;
+  right: 0;
+}

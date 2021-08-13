@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>长图滚动</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./css.css" /> -->
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        #box {
+            width: 658px;
+            height: 400px;
+            border: 1px solid #ff6700;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #box span {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            left: 0;
+            cursor: pointer;
+        }
+        #box #top {
+            top: 0;
+        }
+        #box #bottom {
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="./timer.jpeg" alt="">
+		<span id="top"></span>
+		<span id="bottom"></span>
+    </div>
+</body>
+
+<script>
+    var img = document.getElementsByTagName("img")[0];
+    var divTop = document.getElementById("top");
+    alert(divTop);
+    var divBottom = document.getElementById("bottom");
+    alert(divBottom);
+    var box = document.getElementById("box");
+
+    var num = 0;
+    var timer = null;
+
+    divTop.onmouseover = function() {
+        clearInterval(timer);
+        timer = setInterval(function(){
+            num = num - 20;
+            if(num >= -3666){
+                img.style.top = num + "px";
+            }else{
+                clearInterval(timer);
+            }
+        }, 100);
+    }
+
+    divBottom.onmouseover = function() {
+			clearInterval(timer);
+			timer = setInterval(function() {
+				 num += 20;
+				if(num <= 0){
+					img.style.top = num + 'px'; 
+				}else{
+					clearInterval(timer);
+				}
+			},100);
+		}
+
+    box.onmouseout = function() {
+		clearInterval(timer);
+	}
+
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片切换</title>
+    <link rel="stylesheet" type="text/css" href="./css.css" />
+</head>
+<body>
+    <div id="wrap">
+        <img src="./big_pic1.jpg" id="picture">
+    </div>
+    <button id="last">Last</button>
+    <button id="next">Next</button>
+
+    <script>
+        //var pic = document.getElementsByTagName("img");
+        // 返回一个集合，不是img标签，要改成document.getElementsByTagName("img")[0];
+        var pic = document.getElementById("picture");
+        // 返回第一次出现的该标签
+        //var pic = document.querySelector("img");
+        // 返回第一次出现的该标签
+        //alert(pic);
+        var lastButton = document.getElementById("last");
+        var nextButton = document.getElementById("next");
+        var index = 1;
+    
+        nextButton.onclick = function() {
+           index++;
+           if(index == 5){
+               index = 1;
+           }
+    
+           pic.setAttribute('src', `./big_pic${index}.jpg`);
+           //setAttribute()方法只对element有用，对返回的集合对象无用
+        }
+
+        lastButton.onclick = function() {
+            index--;
+            if(index == 0){
+                index = 4;
+            }
+    
+           pic.setAttribute('src', `./big_pic${index}.jpg`);
+        }
+    
+    </script>
+</body>
+</html>

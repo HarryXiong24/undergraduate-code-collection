@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draw</title>
+</head>
+<body>
+  <div id="svg"></div>
+</body>
+<script src="./d3.min.js"></script>
+<script type="text/javascript"> 
+  // 创造画布
+  const height = 800
+  const width = 800
+  const svg = d3.select("#svg").append("svg").attr("height", height).attr("width", width).attr("padding", 20)
+  /**
+   * rect 元素的 width 和 height 属性可定义矩形的高度和宽度
+   * style 属性用来定义 CSS 属性
+   * fill 属性定义矩形的填充颜色（rgb 值、颜色名或者十六进制值）
+   * stroke-width 属性定义矩形边框的宽度
+   * stroke 属性定义矩形边框的颜色
+  */
+  const createRect = (obj, param) => {
+    obj.attr("width", param.width)
+    .attr("height", param.height)
+    .attr("fill", param.fill)
+    .attr("stroke-width", param.strokeWidth)
+    .attr("stroke", param.stroke)
+    .attr("opacity", 0.1)
+  }
+
+  // 画图形
+  // 参数为画布名，要画的形状名(String)，相应的画形状的方法, 图形的参数
+  const init = (svgName, shapeName, method, data) => {
+    method(svgName.append(shapeName), data)
+  }
+
+  // 更新相应的图形
+  // 参数为画布名，要画的形状名(String)，相应的画形状的方法, 图形的参数
+  const update = (svgName, shapeName, method, data) => {
+    svgName.selectAll(shapeName).remove()
+    method(svgName.append(shapeName), data)
+  }
+
+  let reckData = {
+    width: 100,
+    height: 100,
+    fill: "red",
+    strokeWidth: 0,
+    stroke: "red"
+  }
+  let newReckData = {
+    width: 500,
+    height: 500,
+    fill: "red",
+    strokeWidth: 1,
+    stroke: "red"
+  }
+  init(svg, "rect", createRect, reckData)
+  //update(svg, "rect", createRect, newReckData)
+
+
+// M = moveto(M X,Y) ：将画笔移动到指定的坐标位置
+// L = lineto(L X,Y) ：画直线到指定的坐标位置
+// H = horizontal lineto(H X)：画水平线到指定的X坐标位置
+// V = vertical lineto(V Y)：画垂直线到指定的Y坐标位置
+// C = curveto(C X1,Y1,X2,Y2,ENDX,ENDY)：三次贝赛曲线
+// S = smooth curveto(S X2,Y2,ENDX,ENDY)
+// Q = quadratic Belzier curve(Q X,Y,ENDX,ENDY)：二次贝赛曲线
+// T = smooth quadratic Belzier curveto(T ENDX,ENDY)：映射
+// A = elliptical Arc(A RX,RY,XROTATION,FLAG1,FLAG2,X,Y)：弧线
+// Z = closepath()：关闭路径
+
+ 
+</script>
+</html>

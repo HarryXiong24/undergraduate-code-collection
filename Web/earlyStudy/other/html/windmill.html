@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windmill</title>
+
+    <style type="text/css">
+
+        .windmill{
+            margin: 100px auto;
+            width: 410px;
+            height: 410px;
+
+            animation-name: move;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: 3s;
+        }
+
+        .windmill .p1{
+            float: left;
+            background: linear-gradient( rgb(216, 3, 3), rgb(217, 255, 0), rgb(153, 0, 255));
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+
+        .windmill .p2{
+            float: right;
+            background: linear-gradient( rgb(216, 3, 3), rgb(217, 255, 0), rgb(153, 0, 255));
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+
+        .windmill .p3{
+            float: left;
+            background: linear-gradient(to top, rgb(216, 3, 3), rgb(217, 255, 0), rgb(153, 0, 255));
+            width: 200px;
+            height: 200px;
+        }
+
+        .windmill .p4{
+            float: right;
+            background: linear-gradient(to top, rgb(216, 3, 3), rgb(217, 255, 0), rgb(153, 0, 255));
+            width: 200px;
+            height: 200px;
+        }
+
+        .windmill .p1, .windmill .p4{
+            border-radius: 0 100px 0 100px;
+        }
+
+        .windmill .p2, .windmill .p3{
+            border-radius: 100px 0 100px 0;
+        }
+
+        /* .windmill:hover{
+            transform: rotate(720deg);
+        } */
+
+        @keyframes move{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(720deg);
+            }
+        }
+
+        .flow{
+            margin: 50px auto;
+            width: 600px;
+            height: 80px;
+            background-color: black;
+        }
+
+        .flow h1{
+            text-align: center;
+            line-height: 80px;
+            color: rgba(255,255,255,0.3);
+            background: linear-gradient(120deg, rgba(255,255,255,0),  rgba(255,255,255,1) 100px,  rgba(255,255,255,0) 160px);
+            /* chrome特有 */
+            -webkit-background-clip: text; 
+            transition-duration: 3s;  
+        }
+
+        .flow h1:hover{
+            background-position: 600px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flow">
+        <h1>My dream will come true.</h1>
+    </div>
+    <div class="windmill">
+        <div class="p1"></div>
+        <div class="p2"></div>
+        <div class="p3"></div>
+        <div class="p4"></div>
+    </div>
+
+</body>
+</html>

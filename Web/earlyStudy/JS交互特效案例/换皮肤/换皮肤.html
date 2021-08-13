@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css.css" />
+</head>
+<body>
+    <div id="nav"> 
+        <p id="btn">换肤</p>
+    </div>
+
+    <div id="skinChoose">
+        <ul>
+            <li>
+                <img src="skin1.jpg">
+            </li>
+            <li>
+                <img src="skin2.jpg">
+            </li>
+            <li>
+                <img src="skin3.jpg">
+            </li>
+            <li>
+                <img src="skin4.jpg">
+            </li>
+        </ul>
+    </div>
+
+    <!-- 这里必须要用背景图片的形式，不能直接<img src="">，因为如果这样，则背景图片的尺寸不好调节 -->
+    <div id="skin"></div>
+</body>
+
+<script>
+    var skin = document.querySelector("#skin");
+    var skinChoose = document.getElementById("skinChoose");
+    var img = document.querySelectorAll("#skinChoose li img");
+    var btn = document.getElementById("btn");
+
+    btn.onmouseover = function() {
+        skinChoose.style.display = "block";
+    }
+
+    skinChoose.onmouseover = function() {
+        skinChoose.style.display = "block";
+    }
+
+    btn.onmouseout = function() {
+        skinChoose.style.display = "none";
+    }
+
+    skinChoose.onmouseout = function() {
+        skinChoose.style.display = "none";
+    }
+
+    for(let i = 0; i < img.length; i++){
+        img[i].index = i + 1;
+        img[i].onclick = function() {
+            skin.style.backgroundImage = `url('skin${this.index}.jpg')`;
+        }
+    }
+
+</script>
+
+</html>

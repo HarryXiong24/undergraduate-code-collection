@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>request</title>
+</head>
+<body>
+    <a href="content.txt" id="ajax">request</a>
+    <div id="content"></div>
+</body>
+
+<script>
+    var a = document.getElementById("ajax");
+
+    a.onclick = function() {
+        var url = a.href + "?time" + new Date();
+        var method = "GET";
+
+        var request = new XMLHttpRequest();
+        request.open(method, url, true);
+        request.send();
+
+        request.onreadystatechange = function() {
+
+            if(request.readyState === 4){
+            //确定http的状态码
+                if(request.status >= 200 && request.status < 300 || request.status === 304){
+                    document.getElementById("content").innerHTML = request.responseText;
+                }
+            }
+        }
+
+        return false;
+    }
+    
+</script>
+</html>

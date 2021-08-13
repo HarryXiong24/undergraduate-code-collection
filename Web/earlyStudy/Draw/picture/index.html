@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="svg">
+
+  </div>
+</body>
+<script src="./d3.min.js"></script>
+<script type="text/javascript"> 
+  // 服务器发的数据集
+  const dataset = [50, 43, 120, 87, 99, 167, 142]
+
+  // 创造画布
+  const height = 400
+  const width = 400
+  const svg = d3.select("#svg").append("svg").attr("height", height).attr("width", width)
+
+ 
+  // data一对一绑定数据，datum一对多绑定数据
+  // enter为原本没有要生成新的rect，attr()为给矩形添加属性
+  // 这一部分是原有的，称为update，即update = svg.selectAll("rect").data(dataset)
+
+  // svg.selectAll("rect").data(dataset).enter().append("rect")
+  // .attr("fill", "red")
+  // .attr("x",(d,i) => padding.left + i * rectStep)
+  // .attr("y",(d,i) => height - padding.bottom - d)
+  // .attr("width", rectWidth)
+  // .attr("height",d=>d)
+
+  // 添加文本
+
+  // svg.selectAll("text").data(dataset).enter().append("text")
+  // .attr("font-size", "14px")
+  // .attr("color", "white")
+  // .attr("font-anchor", "middle") // 文字锚点
+  // .attr("x",(d,i) => padding.left + i * rectStep)
+  // .attr("y",(d,i) => height - padding.bottom - d)
+  // .text(d => d)
+  // .attr("dx", 4)
+  // .attr("dy", -10)
+
+
+  const createBar = (obj) => {
+    // 给每个矩形的边距
+    const padding = {top:20, left:20, right:20, bottom:20};
+    // 矩形的宽+间隔
+    const rectStep = 35;
+    // 矩形的宽
+    const rectWidth = 30;
+
+    obj.attr("fill", "red")
+    .attr("x",(d,i) => padding.left + i * rectStep)
+    .attr("y",(d,i) => height - padding.bottom - d)
+    .attr("width", rectWidth)
+    .attr("height",d=>d)
+  }
+
+  const createText = (obj) => {
+    obj.attr("font-size", "14px")
+    .attr("color", "white")
+    .attr("font-anchor", "middle") // 文字锚点
+    .attr("x",(d,i) => padding.left + i * rectStep)
+    .attr("y",(d,i) => height - padding.bottom - d)
+    .text(d => d)
+    .attr("dx", 4)
+    .attr("dy", -10)
+  }
+
+  const createText = (obj, width, height) => {
+    obj.attr("width", width)
+  }
+
+  // 初始化图形
+  // 参数为传入的数据集，画布名，要画的形状名（String），相应的画形状的方法
+  const init = (dataset, svgName, shapeName, method) => {
+    method( svgName.selectAll(shapeName).data(dataset).enter().append(shapeName) )
+  }
+
+  // 更新相应的图形
+  // 参数为传入的数据集，画布名，要画的形状名，相应的画形状的方法
+  const update = (dataset, svgName, shapeName, method) => {
+    method(svgName.selectAll(shapeName).data(dataset))
+  }
+
+  init(dataset, svg, "rect", createRect)
+  init(dataset, svg, "text", createText)
+  update([50, 43, 120, 87, 99, 167, 180], svg, "rect", createRect)
+
+
+
+
+  // 比例尺
+  // scaleLinear()线性比例尺
+  // domain()定义域
+  // range()值域
+  // range/domain 缩小或放大的倍数
+  const xScale = d3.scaleLinear().domain([0,1000]).range([0, 200])
+
+</script>
+</html>

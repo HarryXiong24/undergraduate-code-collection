@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>盒子模型</title>
+        <style type="text/css">
+
+            /*把浏览器默认的margin和padding去掉*/
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            /*解决高度塌陷问题*/
+            .clearfix:after{
+                /*添加一个内容*/
+                content: "";
+                /*转换为一个块元素*/
+                display:block;
+                /*清除两边的样式*/
+                clear:both;
+            }
+
+            .header{
+                width: 1000px;
+                height: 100px;
+                margin: 0 auto;
+                background-color: rgb(255, 196, 0);
+            }
+
+            .content{
+                width: 1000px;
+                height: 400px;
+                margin: 0 auto ;
+                background-color: rgb(0, 102, 255);
+            }
+
+            .left{
+                width: 200px;
+                height: 400px;
+                background-color: rgb(81, 255, 0);
+                float: left;
+            }
+
+            .center{
+                width: 580px;
+                height: 400px;
+                background-color: rgb(255, 0, 0);
+                float: left;
+                margin: 0 10px;
+            }
+
+            .right{
+                width: 200px;
+                height: 400px;
+                background-color: rgb(247, 0, 255);
+                float: left;
+            }
+
+            .footer{
+                width: 1000px;
+                height: 100px; 
+                margin: 0 auto;
+                background-color: rgb(0, 4, 255);
+            }
+
+            .left1{
+                width: 160px;
+                height: 100px;
+                margin: 10px auto;
+                background-color: rgb(17, 0, 255);
+            }
+
+            .left2{
+                width: 140px;
+                height: 200px;
+                margin: 50px auto;
+                background-color: rgb(255, 115, 1);
+            }
+            
+            .nav{
+                /*清除样式符号*/
+                list-style: none;
+                background-color: rgb(80, 121, 255);
+                width: 1000px;
+                margin: 0px auto;
+            }
+
+            .nav li{
+                float: left;
+            }
+
+            .nav a{
+                /*a为内联元素，内联元素不能设置宽度，所以要转换成块元素*/
+                display: block;
+                /*设置宽度*/
+                width: 250px;
+                text-align: center;
+                color: black;     
+                /*去除下划线*/
+                text-decoration: none;   
+                font-weight: bold;       
+            } 
+
+            .nav a:hover{
+                background-color:coral;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="header"></div>
+
+        <div>
+            <ul class="nav clearfix">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">购买</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <div class="left1"></div>
+                <div class="left2"></div>
+            </div>
+            <div class="center">
+
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>

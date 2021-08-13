@@ -1,0 +1,9 @@
+.className {
+  margin: 5px auto;
+}
+.className .inner {
+  padding: 0;
+  height: 50px;
+  width: 60px;
+  background-color: pink;
+}

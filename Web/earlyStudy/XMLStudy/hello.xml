@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="./hello.css"?>
+
+<!-- XML文件必须要手动拖进浏览器里面才能运行 -->
+<book>
+    <name>Hello World!</name>
+    <author>XML</author>
+    <data>2020.2.22</data>
+</book>

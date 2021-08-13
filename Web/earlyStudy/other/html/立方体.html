@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            /* 居中写法 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+
+
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+
+            perspective: 200px;
+        }
+
+        .wrap > .box{
+            /* 居中写法 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 188, 199);
+
+            transform-style: preserve-3d;
+            transform-origin: center center -50px;
+            transition-duration: 3s;
+        }
+
+        .wrap > .box > div{
+            position: absolute;
+
+            text-align: center;
+            line-height: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 188, 199);
+            font-size: 50px;
+        }
+
+        .wrap > .box > div:nth-child(5){
+            top: -100px;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+            backface-visibility: hidden;
+        }
+        .wrap > .box > div:nth-child(3){
+            left: -100px;
+            transform-origin: right;
+            transform: rotateY(-90deg);
+            backface-visibility: hidden;
+        }
+        .wrap > .box > div:nth-child(4){
+            right: -100px;
+            transform-origin: left;
+            transform: rotateY(90deg);
+            backface-visibility: hidden;
+        }
+        .wrap > .box > div:nth-child(6){
+            bottom: -100px;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+            backface-visibility: hidden;
+        }
+        .wrap > .box > div:nth-child(2){
+            transform: translateZ(-100px) rotateX(180deg);
+            backface-visibility: hidden;
+        }
+        .wrap > .box > div:nth-child(1){
+            z-index: 1;
+            backface-visibility: hidden;
+        }
+
+        .wrap:hover .box{
+            transform: rotate3d(1,2,3,720deg);
+        }
+
+        @keyframes move{
+            from{
+                transform: rotate3d(0,0,0,0deg);
+            }
+            to{
+                transform: rotate3d(1,2,3,720deg);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+            <div>前</div>
+            <div>后</div>
+            <div>左</div>
+            <div>右</div>
+            <div>上</div>
+            <div>下</div>
+        </div>
+    </div>
+</body>
+
+</html>

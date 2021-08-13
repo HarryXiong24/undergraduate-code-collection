@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style type="text/css">
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .nav{
+            width: 136px;
+            height: 136px;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+        }
+
+        .nav > .inner > img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+        }
+
+       .nav > .home > img{
+            width: 136px;
+            height: 136px;
+            position: absolute;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            transition-duration: 5s;
+        }
+
+        .nav > .home > img:hover{
+            transform: rotate(720deg);
+            border-radius: 50%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="nav">
+        <div class="inner">
+            <img src="img/2.jpg">
+            <img src="img/2.jpg">
+            <img src="img/2.jpg">
+            <img src="img/2.jpg">
+            <img src="img/2.jpg">
+        </div>
+        <div class="home">
+            <img src="img/1.jpg">
+        </div>
+    </div>
+</body>
+</html>

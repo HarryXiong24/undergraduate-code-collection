@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script>
+      // 在浏览器里弹出一个警告
+      // alert("ALERT!");
+      // 在浏览器输出文字
+      // document.write("Hello world!");
+      // 在控制台输出文字
+      // console.log("This is log!");
+
+      // var a = 5;
+      // a = a++;
+
+      // document.write(a);
+
+      // var i,j;
+      // for(i = 1; i <= 5; i++){
+      //     for(j = 1; j <= 5; j++){
+      //         console.log(i + "*" + j + "=" + i*j);
+      //     }
+      //     console.log("<br \>");
+      // }
+
+      function Person(name, sex, age) {
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+      }
+
+      Person.prototype.sayName = function() {
+        alert("I am " + this.name);
+      };
+
+      let person = new Person("Harry", "Man", "19");
+
+      person.sayName();
+
+    </script>
+
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <div class="asd"></div>
+  </body>
+</html>

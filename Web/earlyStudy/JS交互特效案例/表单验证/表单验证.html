@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css.css" />
+</head>
+<body>
+    <div id="wrap"> 
+       <label for="input">您的成绩是:</label>
+       <input id="input" type="text" placeholder="请输入分数">
+       <span id="check" class="error">成绩不能为空!</span>
+    </div>
+</body>
+
+<script>
+   var input = document.getElementById("input");
+   var tip = document.getElementById("check");
+
+   input.onblur = function() {
+        var value = parseFloat(this.value);
+        if(isNaN(value) == true){
+            tip.innerHTML = "输入的成绩非法!";
+            tip.className = "error";
+        }
+        else{
+            if(value < 0 || value > 100){
+                tip.innerHTML = "输入和成绩不正确!";
+                tip.className = "error";
+                input.style.borderColor = "red";
+            }
+            else{
+                tip.innerHTML = "输入和成绩正确!"
+                tip.className = "right";
+                input.style.borderColor = "lightgreen";
+            }
+        }
+   }
+
+   // input输入框获取焦点 恢复原来的状态
+    input.onfocus = function(){
+        tip.innerHTML = "成绩不能为空!";
+        tip.className = "error";
+        input.style.borderColor = "";
+    }
+
+</script>

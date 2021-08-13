@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#wrap {
+  width: 180px;
+  height: 360px;
+  position: relative;
+}
+#wrap img {
+  position: absolute;
+  right: 0;
+}
+#wrap #close {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+  text-align: center;
+  line-height: 18px;
+  border: 1px #e0e0e0 solid;
+  cursor: pointer;
+}
+#wrap #close:hover {
+  background-color: grey;
+}

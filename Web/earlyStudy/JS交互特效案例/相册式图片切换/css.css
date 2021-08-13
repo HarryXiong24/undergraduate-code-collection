@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  display: block;
+  margin: 0 auto;
+  width: 430px;
+  height: 600px;
+}
+.box #wrap {
+  height: 84px;
+  width: 420px;
+  margin: 20px auto;
+}
+.box #wrap li {
+  list-style: none;
+}
+.box #wrap a img {
+  width: 80px;
+  height: 80px;
+  margin: 0 1px;
+  float: left;
+}
+.box #wrap a img:hover {
+  border: blue 1px solid;
+}
