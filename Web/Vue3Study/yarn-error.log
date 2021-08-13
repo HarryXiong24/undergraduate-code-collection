@@ -1,0 +1,40 @@
+Arguments: 
+  E:\VScode\Node.js\node.exe D:\编程\WebDevelopment\Workspace\node_global\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;E:\Microsoft Visual Studio\Python36_64\Scripts;E:\Microsoft Visual Studio\Python36_64;"E:\Java201906\JDK8.0.1\bin;";E:\Java\eclipse\jre\bin\javaw.exe;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;"E:\Java201906\JDK8.0.1\jre\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;E:\VScode\Node.js\";E:\VScode\Node.js;D:\编程\WebDevelopment\Workspace\node_global;D;\编程\WebDevelopment\Workspace\node_cache;E;\MongoDB\bin;%QUARTUS_ROOTDIR%\bin;E:\VScode\Yarn\bin\;E:\VScode\Yarn\bin;E:\Git\Git\cmd;C:\Users\Lenovo\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Lenovo\AppData\Local\Programs\Python\Python38\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;E:\Microsoft Visual Studio\Python36_64;%PyCharm Community Edition%;E:\VScode\Microsoft VS Code\bin;C:\Users\Lenovo\AppData\Roaming\npm;E:\VScode\Node.js;D:\编程\WebDevelopment\Workspace\node_global;D:\编程\WebDevelopment\Workspace\node_cache;C:\Users\Lenovo\AppData\Local\Yarn\bin;E:\IntelliJ IDEA\IntelliJ IDEA 2020.2\bin;;
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.14.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Lenovo\AppData\Local\Yarn\Cache\v6\npm-color-name-1.1.3-a7d0558bd89c42f795dd42328f740831ca53bc25-integrity\node_modules\color-name\index.js' -> 'D:\编程\WebDevelopment\Workspace\StudySpace\Vue3.0Study\init\node_modules\chalk\node_modules\color-name\index.js'
+
+npm manifest: 
+  {
+    "name": "init",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build"
+    },
+    "dependencies": {
+      "vue": "^3.0.0-rc.1"
+    },
+    "devDependencies": {
+      "vite": "^1.0.0-rc.1",
+      "@vue/compiler-sfc": "^3.0.0-rc.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

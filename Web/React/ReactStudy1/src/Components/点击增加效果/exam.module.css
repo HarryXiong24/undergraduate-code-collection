@@ -1,0 +1,52 @@
+:global(*) {
+  padding: 0;
+  margin: 0;
+}
+#wrap {
+  width: 600px;
+  height: 400px;
+  background-color: grey;
+}
+#wrap p {
+  width: 600px;
+  height: 60px;
+  display: inline-block;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+#add {
+  width: 500px;
+  height: 66px;
+  background-color: hotpink;
+}
+#add input {
+  height: 20px;
+  width: 240px;
+  display: inline-block;
+  margin: 20px;
+}
+#add button {
+  height: 26px;
+  width: 100px;
+  display: inline-block;
+}
+#list {
+  width: 500px;
+  height: 240px;
+  margin: 10px 0;
+  background-color: #33f8d7;
+}
+#list ul {
+  list-style: none;
+  width: 400px;
+  height: 240px;
+  background-color: #4fe756;
+  margin: 0 20px;
+}
+#list ul li {
+  font-size: 15px;
+  padding: 3px;
+}

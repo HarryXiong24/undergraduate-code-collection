@@ -1,0 +1,32 @@
+/* css模块化
+在create-react-app里自带css module
+用法将css文件命名为xxx.module.css文件
+
+css模块化只对类选择器和id选择器有用
+:global()为全局只用，只需className=""或id=""即可
+默认为:local()，可省略，必须{类名.属性}调用 */
+.box {
+  width: 600px;
+  height: 800px;
+  border: 1px black solid;
+  margin: 0 auto;
+}
+
+:global(.h1){
+  text-align: center;
+  color: blue;
+}
+
+.box h1 {
+  text-align: center;
+  color: blue;
+}
+.box > div {
+  width: 560px;
+  height: 100px;
+  border: 1px black solid;
+  margin: 20px auto;
+}
+.box > div h3 {
+  color: chartreuse;
+}

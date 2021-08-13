@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifAndshow</title>
+</head>
+<body>
+    <div id="app">
+
+        <h2>Is a number?</h2>
+        <input type="text" placeholder="Input" v-model="value">
+        <button @click="check">Check</button>
+        <!-- 条件渲染里面可以写表达式 -->
+        <p v-if="res === true">True</p>
+        <p v-else>False</p>
+
+        <!-- v-show相当于display的切换 -->
+        <p v-show="ok">v-show</p>
+        <button @click="change">Change</button>
+    </div>
+
+</body>
+
+<script text="javascript" src="./vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+
+        data: {
+            value: "",
+            res: false,
+            ok: "true",
+        },
+
+        methods: {
+            check() {
+                if( isNaN(Number(this.value)) === false) {
+                    this.res = true;
+                }
+                else {
+                    this.res = false;
+                }
+            },
+            change() {
+                if(this.ok === true){
+                    this.ok = false;
+                }
+                else{
+                    this.ok = true;
+                }
+            }
+        },
+    })
+</script>
+</html>

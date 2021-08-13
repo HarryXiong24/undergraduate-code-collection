@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>startVue</title>
+</head>
+<body>
+    <div id="app">
+        <!-- {{}}双大括号表达式，里面是js代码 -->
+        <p>{{msg}}</p>
+
+        <!-- 相当于innerText -->
+        <p v-text="str"></p>
+        <!-- 相当于innerHTML -->
+        <p v-html="str"></p>
+
+        <!-- 强制绑定事件, 简写方式: -->
+        <a v-bind:href="url">Baidu</a>
+        <!-- 绑定事件监听, 简写方式@ -->
+        <button v-on:click="test">Submit</button>
+
+        <!-- 双向绑定事件 -->
+        <div> 
+            <input type="text" v-model="input" placeholder="Please input">
+            <p>{{input}}</p>
+        </div>
+
+        <!-- 计算属性 -->
+        <div>
+            FirstName<input type="text" v-model="firstName" placeholder="Please input">
+            LastName<input type="text" v-model="lastName" placeholder="Please input">
+            <br>
+            FullNameComputed<input type="text" v-model="fullName1">
+            <br>
+            FullName2Watch<input type="text" v-model="fullName2">
+            <br>
+            FullNameSet<input type="text" v-model="fullName3">
+        </div>
+
+
+    </div>
+</body>
+
+<script text="javascript" src="./vue.js"></script>
+<script text="javascript">
+    const app = new Vue({
+        el: "#app",
+
+        // data属性中包含着在el中使用的使用的变量或属性
+        data:{
+            msg: 'xhw',
+            str: '<a href="#">XHW</a>',
+            url: 'https://www.baidu.com',
+            input: '',
+            firstName: '',
+            lastName: '',
+        },
+        /**
+         * 也可以写成(在组件里必须写成这个)
+         * data() {
+         *     return {
+         *         
+         * }
+         * },
+        */
+        
+        // methods属性包含着需要使用的方法
+        methods: {
+            test () {
+                alert("!!!");
+            }
+        },
+
+        computed: {
+            fullName1: function() {
+                // this就是指app这个Vue的实例对象
+                return this.firstName + " " + this.lastName;
+            },
+
+            fullName3: {
+                get() {
+                    return this.firstName + " " + this.lastName;
+                },
+                set(newValue) {
+                    var names = newValue.split(' ')
+                    this.firstName = names[0]
+                    this.lastName = names[names.length - 1]
+                }
+            }
+        },
+
+        watch: {
+            firstName: function(value) {
+                this.fullName2 = value + " " + this.lastName;
+            },
+            lastName: function(value) {
+                return this.fullName2 = this.firstName + " " + value;
+            }
+        }
+    });
+</script>
+</html>

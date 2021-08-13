@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classAndstyle</title>
+
+    <style type="text/css">
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app">
+
+        <!-- 一下都是需要动态操作css所采用的方法,如果只是普通的绑定css,则直接原生法绑定即可 -->
+
+        <h2>class绑定</h2>
+        <!-- 参数绑定 -->
+        <p :class="color">111111</p>
+        <!-- 对象绑定,后面的参数为布尔值 -->
+        <p :class="{red: isred, blue: isblue}">222222</p>
+        <!-- 数组绑定,可接若干个,用''括起 -->
+        <p :class="['red']">333333</p>
+        <button @click="update(color)">更新</button>
+
+
+        <h2>style绑定</h2>
+        <!-- 对于属性:属性值,可以只有属性,然后再data里写属性值;也可以写好属性:属性值,然后在data里写属性值;
+            记住要用驼峰命名法,否则则要用""标注,比如"background-color"
+        -->
+        <p :style="{color:activeColor, fontSize, backgroundColor: value}">aaaaaa</p>
+        <!-- 也可以用数组的形式 -->
+        <p :style="[foo,foo2]">bbbbbb</p>
+    </div>
+
+</body>
+
+<script text="javascript" src="./vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+
+        data: {
+            color: "red",
+            isred: true,
+            isblue: false,
+            activeColor: "green",
+            fontSize: "30px",
+            //backgroundColor: "blue",
+            value: "blue",
+            foo:{color:'red','font-size':'40px'},
+            foo2:{fontWight:200},
+        },
+
+        methods: {
+            update(color) {
+                if(color === "blue"){
+                    this.color = "red";
+                    this.isred = true;
+                    this.isblue = false;
+                }
+                else if(color === "red"){
+                    this.color = "blue";
+                    this.isred = false;
+                    this.isblue = true;
+                }
+            }
+        },
+    })
+</script>
+</html>

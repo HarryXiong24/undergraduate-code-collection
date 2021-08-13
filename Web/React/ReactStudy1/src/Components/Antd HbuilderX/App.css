@@ -1,0 +1,345 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#nav {
+  width: 100%;
+  height: 216px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 3px 2px rgba(167, 165, 165, 0.3);
+  z-index: 4;
+}
+#nav .top {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #e1e5e9;
+  background-color: white;
+}
+#nav .top .logo {
+  width: 149px;
+  height: 52px;
+  margin: 10px 10px;
+  float: left;
+}
+#nav .top .Items {
+  width: auto;
+  height: 40px;
+  float: right;
+  font-size: 16px;
+  margin-top: 30px;
+}
+#nav .top .Items :hover {
+  color: green;
+  border-bottom-color: green;
+}
+#nav .top .Items .ant-menu-item-selected {
+  color: green;
+  border-bottom-color: green;
+}
+#nav .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+#nav .bottom .title1 {
+  border-left: 3px solid green;
+  width: 76px;
+  height: 30px;
+  align-self: flex-start;
+  padding-left: 3px;
+}
+#nav .bottom .title2 {
+  border-left: 3px solid #00eeff;
+  width: 76px;
+  height: 30px;
+  align-self: flex-start;
+  padding-left: 3px;
+}
+#nav .bottom div {
+  margin-top: 13px;
+  display: flex;
+  flex-direction: column;
+  width: 76px;
+  height: 104px;
+  align-items: center;
+  transform: scale(0.9, 0.9);
+  transition-duration: 400ms;
+}
+#nav .bottom div img {
+  width: 50px;
+  height: 50px;
+}
+#nav .bottom div h4 {
+  letter-spacing: 0.8px;
+  font-size: 16px;
+  text-align: center;
+}
+#nav .bottom div span {
+  font-size: 12px;
+  color: #7c7c7c;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+  text-align: center;
+}
+#nav .bottom div:hover {
+  transform: scale(1, 1);
+}
+.ant-carousel .slick-slide {
+  text-align: center;
+  line-height: 160px;
+}
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+.ant-carousel .slick-dots li button {
+  background-color: #5c5757;
+  width: 16px;
+  height: 10px;
+  border-radius: 4px;
+}
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: orangered;
+  width: 32px;
+  height: 10px;
+  border-radius: 4px;
+}
+.carousel {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.carousel div {
+  padding-top: 10px;
+  position: relative;
+}
+.carousel div h2 {
+  color: #414141;
+  letter-spacing: 1px;
+  font-size: 36px;
+  margin: 0;
+}
+.carousel div p {
+  color: #3a9e46;
+  font-weight: 100;
+  font-size: 55px;
+  line-height: 55px;
+  letter-spacing: 12px;
+  margin: 40px 0;
+}
+.carousel div .button {
+  border-color: rgba(0, 128, 0, 0.6);
+  color: rgba(0, 128, 0, 0.6);
+}
+.carousel div .button:hover {
+  border-color: #008000;
+  color: #008000;
+}
+.carousel div img {
+  width: 480px;
+  position: absolute;
+  bottom: 0;
+}
+.carousel .left {
+  position: absolute;
+  width: 41px;
+  height: 69px;
+  bottom: 180px;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.301);
+}
+.carousel .left:hover {
+  background-color: rgba(0, 0, 0, 0.801);
+}
+.carousel .right {
+  position: absolute;
+  width: 41px;
+  height: 69px;
+  bottom: 180px;
+  right: 0px;
+  float: right;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.301);
+}
+.carousel .right:hover {
+  background-color: rgba(0, 0, 0, 0.801);
+}
+.WeDo {
+  margin: 80px;
+  height: 80px;
+  text-align: center;
+}
+.WeDo h4 {
+  font-size: 32px;
+  letter-spacing: 6px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.WeDo span {
+  font-size: 14px;
+  color: #c4c4c4;
+  font-weight: 300;
+  margin: 14px 0;
+}
+.WeDo div {
+  position: relative;
+  text-align: center;
+  margin: 10px auto;
+  color: #e17d63;
+  font-size: 14px;
+  height: 20px;
+  width: 118px;
+  line-height: 20px;
+}
+.WeDo div:before {
+  content: "";
+  height: 1px;
+  width: 20px;
+  position: absolute;
+  top: 9px;
+  left: -28px;
+  background: #e17d63;
+}
+.WeDo div:after {
+  content: "";
+  height: 1px;
+  width: 20px;
+  position: absolute;
+  top: 9px;
+  right: -28px;
+  background: #e17d63;
+}
+.content .col1 {
+  padding: 10px;
+  border: 1px solid #f2f2f2;
+}
+.content .col1 img {
+  width: 518px;
+  height: 245.75px;
+}
+.content .line {
+  height: 3px;
+  background: #f5f5f5;
+  margin: 10px 0;
+}
+.content .text {
+  width: 498px;
+  height: 115px;
+  padding: 0 10px;
+  text-align: left;
+  position: relative;
+}
+.content .text:before {
+  height: 11px;
+  width: 3px;
+  background: #2ab32a;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+.content .text h4 a {
+  color: #515151;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+}
+.content .text h4 a:hover {
+  color: green;
+}
+.content .text span {
+  font-size: 12px;
+  color: #c4c4c4;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  transform: scale(0.95);
+}
+.content .text p {
+  font-size: 13px;
+  color: #767676;
+  line-height: 22px;
+  height: 48px;
+  word-break: break-all;
+  white-space: normal;
+  display: -webkit-box;
+  overflow: hidden;
+}
+.TheySay {
+  margin: 80px;
+  height: 80px;
+  text-align: center;
+}
+.TheySay h4 {
+  font-size: 32px;
+  letter-spacing: 6px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.TheySay span {
+  font-size: 14px;
+  color: #c4c4c4;
+  font-weight: 300;
+  margin: 14px 0;
+}
+.TheySay div {
+  position: relative;
+  text-align: center;
+  margin: 10px auto;
+  color: #e17d63;
+  font-size: 14px;
+  height: 20px;
+  width: 118px;
+  line-height: 20px;
+}
+.TheySay div:before {
+  content: "";
+  height: 1px;
+  width: 20px;
+  position: absolute;
+  top: 9px;
+  left: -28px;
+  background: #e17d63;
+}
+.TheySay div:after {
+  content: "";
+  height: 1px;
+  width: 20px;
+  position: absolute;
+  top: 9px;
+  right: -28px;
+  background: #e17d63;
+}
+.footer {
+  margin-top: 90px;
+  background: #efefef;
+  border: none;
+  font-size: 12px;
+  padding: 30px 0;
+  color: #8d9095;
+  height: 85px;
+}
+.footer img {
+  margin: 0 10px;
+  float: left;
+}
+.footer p {
+  margin: 0;
+  padding-left: 20px;
+  border-left: 1px solid #e8e9ea;
+  float: left;
+  color: #8f8f94;
+  font-size: 14px;
+}
+.footer p a:nth-child(1) {
+  color: #00c3ff;
+  font-weight: bold;
+}
+.footer p a:nth-child(2) {
+  color: orangered;
+  font-weight: bold;
+}
+.footer .right {
+  float: right;
+  padding-right: 20px;
+}

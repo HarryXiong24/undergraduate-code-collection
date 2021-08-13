@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for</title>
+
+</head>
+<body>
+    <div id="app">
+       <h2>搜索</h2>
+       姓名搜索: <input type="text" placeholder="Please input name" v-model="value">
+
+       <ul>
+           <!-- v-for的使用方法，filterPeople是一个计算属性 -->
+           <li v-for="(person, index) in filterPeople" :key="index">
+                {{index}}---{{person.name}}---{{person.age}}
+           </li>
+       </ul>
+
+       <button @click="sort(1)">年龄升序</button>
+       <button @click="sort(2)">年龄降序</button>
+       <button @click="sort(0)">原本顺序</button>
+
+    </div>
+
+</body>
+
+<script text="javascript" src="./vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+
+        data: {
+           value: "",
+           people: [
+               {name: 'jack', age:18},
+               {name: 'jackson', age:19},
+               {name: 'pete', age:20},
+               {name: 'peter', age:22},
+               {name: 'john', age:20},
+               {name: 'james', age:45},
+               {name: 'frack', age:6},
+               {name: 'susan', age:46},
+           ],
+           sortWay: 0,
+        },
+
+        computed: {
+            filterPeople: function() {
+                var newArr = [...this.people];
+
+                if( this.value.trim() ) {
+                    newArr = this.people.filter(
+                        (item) => {
+                            return item.name.indexOf(this.value) !== -1;
+                        }
+                    )
+                }
+
+                // 0代表不排序
+                if(this.sortWay) {
+                    newArr.sort(
+                        function(p1, p2) {
+                            if(this.sortWay === 1) {
+                                return p1.age - p2.age;
+                            }
+                            else {
+                                return p2.age - p1.age;
+                            }
+                        } 
+                    )
+                    console.log(this.sortWay);
+                }
+                return newArr;
+            }
+        },
+
+        methods: {
+            sort(res) {
+                this.sortWay = res;
+            }
+        },
+
+    })
+</script>
+</html>

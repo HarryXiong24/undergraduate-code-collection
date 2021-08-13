@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ref</title>
+  <style>
+     
+  </style>
+</head>
+
+<body>
+ 
+  <div id="app">
+    <!-- 给需要获取的标签去一个ref属性的别名 -->
+    <p ref="content">Hello ref!</p>
+    <button @click="get">Get</button>
+  </div>
+
+  <script type="text/javascript" src="./vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+        el: "#app",
+
+        data() {
+           return {
+
+           }
+        },
+        
+        methods: {
+            get() {
+                // 调用this.$refs.xxx获取到相应的标签
+                alert(this.$refs.content.innerHTML);
+            }
+        },
+    })
+  </script>
+</body>
+
+</html>
