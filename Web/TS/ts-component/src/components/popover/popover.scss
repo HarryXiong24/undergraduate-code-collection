@@ -1,0 +1,167 @@
+@import "../../assets/variable";
+
+$popover-shadow: 0 0 0 1px rgba(16, 22, 26, .1), 0 2px 4px rgba(16, 22, 26, .2);
+$popover-transition-pd: 12px;
+
+.#{$prefix}-popover {
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: $popover-shadow;
+  &-content {
+    max-width: 350px;
+    padding: 20px;
+    position: relative;
+    border-radius: 3px;
+    background-color: $white;
+  }
+  &-arrow {
+    &[data-placement^="left"] {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 12px;
+      height: 24px;
+      overflow: hidden;
+    }
+    &[data-placement^="left"]:after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 0;
+      top: 50%;
+      border-radius: 2px;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      background-color: $white;
+      box-shadow: $popover-shadow;
+    }
+    &[data-placement^="right"] {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 12px;
+      height: 24px;
+      overflow: hidden;
+    }
+    &[data-placement^="right"]:after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 0;
+      top: 50%;
+      border-radius: 2px;
+      transform: translate(50%, -50%) rotate(-45deg);
+      background-color: $white;
+      box-shadow: $popover-shadow;
+    }
+    &[data-placement^="top"] {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 24px;
+      height: 12px;
+      overflow: hidden;
+    }
+    &[data-placement^="top"]:after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-radius: 2px;
+      background-color: $white;
+      box-shadow: $popover-shadow;
+    }
+    &[data-placement^="bottom"] {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      width: 24px;
+      height: 12px;
+      overflow: hidden;
+    }
+    &[data-placement^="bottom"]:after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 50%;
+      transform: translate(-50%, 50%) rotate(45deg);
+      border-radius: 2px;
+      background-color: $white;
+      box-shadow: $popover-shadow;
+    }
+  }
+}
+
+.#{$prefix}-popover-transition {
+  transition: opacity 0.3s cubic-bezier(.4, 1, .75, .9) 0s;
+  &[data-placement^="top"] {
+    .#{$prefix}-popover {
+      margin-bottom: $popover-transition-pd;
+      &-minimal {
+        margin-bottom: $popover-transition-pd / 2;
+      }
+    }
+  }
+  &[data-placement^="bottom"] {
+    .#{$prefix}-popover {
+      margin-top: $popover-transition-pd;
+      &-minimal {
+        margin-top: $popover-transition-pd / 2;
+      }
+    }
+  }
+  &[data-placement^="left"] {
+    .#{$prefix}-popover {
+      margin-right: $popover-transition-pd;
+      &-minimal {
+        margin-right: $popover-transition-pd / 2;
+      }
+    }
+  }
+  &[data-placement^="right"] {
+    .#{$prefix}-popover {
+      margin-left: $popover-transition-pd;
+      &-minimal {
+        margin-left: $popover-transition-pd / 2;
+      }
+    }
+  }
+  .#{$prefix}-popover {
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(.54, 1.12, .38, 1.11) 0s;
+  }
+  &-enter {
+    .#{$prefix}-popover {
+      transform: scale(0);
+      &-minimal {
+        transform: scale(1);
+      }
+    }
+    opacity: 0;
+    &-done {
+      .#{$prefix}-popover {
+        transform: scale(1);
+      }
+      opacity: 1;
+    }
+  }
+  &-exit {
+    .#{$prefix}-popover {
+      transform: scale(1);
+    }
+    opacity: 1;
+    &-done {
+      .#{$prefix}-popover {
+        transform: scale(0);
+        &-minimal {
+          transform: scale(1);
+        }
+      }
+      opacity: 0;
+    }
+  }
+}

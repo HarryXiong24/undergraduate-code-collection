@@ -1,0 +1,51 @@
+// prefix
+$prefix: 'ts';
+
+// colors
+$white: white;
+$black: black;
+
+// grey
+$grey-1: #222;
+$grey-2: #333;
+$grey-3: #555;
+$grey-4: #777;
+$grey-5: #999;
+$grey-6: #b5b5b5;
+$grey-7: #ddd;
+$grey-8: #eee;
+$grey-9: #f7f7f7;
+
+// situation colors
+$active: #2c7cec;
+$success: #22c93d;
+$warning: #ff9110;
+$info: #84c2fd;
+$danger: #ff3939;
+
+// situation
+$situations: (
+        primary:$active,
+        success:$success,
+        info:$info,
+        warning:$warning,
+        danger:$danger
+);
+
+// font
+$font-color: $grey-1;
+$font-family: 'Helvetica Neue', 'Helvetica,Arial', 'Sans-serif';
+$font-size-small: 12px;
+$font-size: 14px;
+$font-size-large: 16px;
+$primary-color: $active;
+$divider-color: rgba($black, 0.1);
+
+// h1~h6
+$font-size-h1: 36px;
+$font-size-h2: 30px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-h5: 14px;
+$font-size-h6: 12px;
+

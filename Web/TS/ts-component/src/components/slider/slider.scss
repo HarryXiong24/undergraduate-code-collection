@@ -1,0 +1,60 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+@mixin slider-label() {
+  display: inline-block;
+  padding: 2px 5px;
+  vertical-align: top;
+  line-height: 1;
+  font-size: 12px;
+}
+
+.#{$prefix}-slider {
+  position: relative;
+  height: 40px;
+  outline: none;
+  &-axis {
+    &-label {
+      @include slider-label();
+      position: absolute;
+      transform: translate(-50%,20px);
+    }
+  }
+  &-track {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    left: 0;
+    height: 6px;
+    background-color: $grey-8;
+    &-process {
+      height: 6px;
+      position: absolute;
+      left: 0;
+      background-color: $primary-color;
+    }
+  }
+  &-handler {
+    @include focus();
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: $white;
+    box-shadow: 0 0 0 1px rgba($black, .1), 0 1px 1px rgba($black, .1);
+    &-active {
+      outline: none !important;
+    }
+    &-label {
+      @include slider-label();
+      margin-left: 8px;
+      position: absolute;
+      left: 0;
+      color: $white;
+      transform: translate(-50%, 20px);
+      border-radius: 3px;
+      background-color: #394b59;
+    }
+  }
+}

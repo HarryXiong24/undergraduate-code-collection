@@ -1,0 +1,119 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+// size
+$control-size-small: 12px;
+$control-size-normal: 16px;
+$control-size-large: 20px;
+
+@mixin base-indicator($border-radius) {
+  position: relative;
+  margin-right: 10px;
+  width: $control-size-normal;
+  height: $control-size-normal;
+  border: 1px solid $grey-7;
+  background-color: $white;
+  border-radius: $border-radius;
+}
+
+// control
+.#{$prefix}-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  input[type=checkbox],
+  input[type=radio] {
+    position: absolute;
+    width: $control-size-normal;
+    height: $control-size-normal;
+    outline: none;
+    opacity: 0;
+    &:focus + .#{$prefix}-control-indicator {
+      outline: 2px auto rgba($primary-color, .6);
+      outline-offset: 2px;
+    }
+  }
+  &-disabled {
+    cursor: not-allowed;
+    // increase weight
+    input + .#{$prefix}-control-indicator.#{$prefix}-control-indicator.#{$prefix}-control-indicator.#{$prefix}-control-indicator {
+      border-color: $grey-8;
+      background-color: $grey-8;
+    }
+    // increase weight
+    input[type=radio]:checked + .#{$prefix}-control-indicator.#{$prefix}-control-indicator.#{$prefix}-control-indicator {
+      background-color: $white;
+      &:after {
+        background-color: $grey-8;
+      }
+    }
+  }
+}
+
+// checkbox
+.#{$prefix}-checkbox {
+  .#{$prefix}-control-indicator {
+    @include base-indicator(3px);
+  }
+  input[type=checkbox]:checked + .#{$prefix}-control-indicator {
+    border-color: $primary-color;
+    background-color: $primary-color;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 10%;
+      width: 80%;
+      height: 40%;
+      transform: rotate(-45deg);
+      border-left: 2px solid $white;
+      border-bottom: 2px solid $white;
+      box-sizing: border-box;
+    }
+  }
+
+  // checkbox group
+  &-group-label {
+    margin-bottom: 10px;
+  }
+  &-group-inline {
+    .#{$prefix}-control {
+      display: inline-flex;
+      margin-right: 20px;
+    }
+  }
+}
+
+// radio
+.#{$prefix}-radio {
+  .#{$prefix}-control-indicator {
+    @include base-indicator(100%);
+  }
+  input[type=radio]:checked + .#{$prefix}-control-indicator {
+    border-color: $primary-color;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      border-radius: 100%;
+      background-color: $primary-color;
+      box-sizing: border-box;
+    }
+  }
+
+  // radio group
+  &-group-label {
+    margin-bottom: 10px;
+  }
+  &-group-inline {
+    .#{$prefix}-control {
+      display: inline-flex;
+      margin-right: 20px;
+    }
+  }
+}

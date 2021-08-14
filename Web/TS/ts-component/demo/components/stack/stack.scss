@@ -1,0 +1,13 @@
+.stack {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  &-vertical {
+    flex-direction: column;
+  }
+  &-item {
+    margin-left: 16px;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+}

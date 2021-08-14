@@ -1,0 +1,63 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+.#{$prefix}-menu {
+  margin: 0;
+  border-radius: 2px;
+  background: $white;
+  min-width: 180px;
+  padding: 6px;
+  list-style: none;
+  text-align: left;
+  color: $grey-1;
+  &-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 7px;
+    font-size: 14px;
+    border-radius: 2px;
+    line-height: 20px;
+    user-select: none;
+    &:active,
+    &:hover,
+    &-active {
+      background-color: $grey-8;
+    }
+    &[disabled],
+    &-disabled {
+      @include disabled();
+    }
+    &-fill {
+      flex: 1;
+    }
+    .#{$prefix}-icon {
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &-divider,
+  &-header {
+    display: block;
+    margin: 5px;
+    border-top: 1px solid $grey-7;
+  }
+  &-header {
+    cursor: default;
+    &-title {
+      @include overflow-ellipsis();
+      color: $grey-1;
+      font-weight: bold;
+      padding: 10px 0 4px;
+      font-size: 16px;
+      line-height: 17px;
+    }
+  }
+}
+
+.#{$prefix}-submenu {
+  .#{$prefix}-popover-content {
+    padding: 0;
+  }
+}

@@ -1,0 +1,10 @@
+@import "./variable";
+
+.#{$prefix}-focus-disabled {
+  :focus {
+    outline: none !important;
+  }
+  :focus + * {
+    outline: none !important;
+  }
+}

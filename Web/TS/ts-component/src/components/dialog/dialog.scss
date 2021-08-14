@@ -1,0 +1,62 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+.#{$prefix}-overlay-dialog {
+  .#{$prefix}-overlay-content {
+    position: fixed;
+  }
+}
+
+.#{$prefix}-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  user-select: none;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    border-radius: 4px;
+    background: #fff;
+    width: 500px;
+    padding-bottom: 20px;
+    pointer-events: all;
+    user-select: text;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &-header {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 1px 0 $divider-color;
+    background: $white;
+    min-height: 40px;
+    padding-right: 5px;
+    padding-left: 20px;
+
+    .#{$prefix}-icon {
+      padding-right: 5px;
+    }
+
+    .#{$prefix}-icon-close {
+      padding: 5px 10px;
+    }
+
+    &-title {
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      flex: 1 1 auto;
+      @include overflow-ellipsis();
+    }
+  }
+}

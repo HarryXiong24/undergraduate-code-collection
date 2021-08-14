@@ -1,0 +1,14 @@
+@import "../../assets/variable";
+
+.#{$prefix}-tree {
+  &-node-content {
+    display: flex;
+    padding: 8px 0;
+    align-items: center;
+  }
+  @for $i from 0 through 10 {
+    &-node-content-#{$i} {
+      padding-left: 20px * $i;
+    }
+  }
+}

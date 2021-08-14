@@ -1,0 +1,22 @@
+@import "../../assets/variable";
+
+$overlay-background-color: rgba($black, 0.7);
+
+body.#{$prefix}-document-overlay {
+  overflow: hidden;
+}
+
+.#{$prefix}-overlay {
+  &-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $overlay-background-color;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

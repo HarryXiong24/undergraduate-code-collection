@@ -1,0 +1,35 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+.#{$prefix}-pagination {
+  display: flex;
+  justify-content: flex-start;
+  &-center {
+    justify-content: center;
+  }
+  &-right {
+    justify-content: flex-end;
+  }
+  &-item {
+    padding: 10px 16px;
+    overflow: hidden;
+    border: 1px solid $grey-7;
+    cursor: pointer;
+    margin-left: -1px;
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    &:last-child {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    &-active {
+      cursor: default;
+      background-color: $grey-8;
+    }
+    &-disabled {
+      @include disabled()
+    }
+  }
+}

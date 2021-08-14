@@ -1,0 +1,15 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+.#{$prefix}-icon {
+  display: inline-block;
+  line-height: 0;
+  @each $name, $color in $situations {
+    &-#{$name} {
+      color: $color;
+    }
+  }
+  &-disabled {
+    @include disabled()
+  }
+}

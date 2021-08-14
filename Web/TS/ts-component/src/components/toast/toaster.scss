@@ -1,0 +1,60 @@
+@import "../../assets/variable";
+
+.#{$prefix}-toaster {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  &-top {
+    top: 0;
+  }
+  &-right {
+    align-items: flex-end;
+  }
+  &-left {
+    align-items: flex-start;
+  }
+  &-bottom {
+    bottom: 0;
+  }
+  .#{$prefix}-toast {
+    display: flex;
+    margin-top: 8px;
+    padding: 12px 8px;
+    min-width: 300px;
+    max-width: 500px;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: $white;
+    transition: all 0.3s cubic-bezier(.54,1.12,.38,1.11) 0s;
+    box-shadow: 0 0 0 1px rgba(16, 22, 26, .1), 0 2px 4px rgba(16, 22, 26, .2);
+    &-transition {
+      &-enter {
+        transform: translateY(-40px);
+        opacity: 0;
+        &-done {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+      &-exit {
+        opacity: 1;
+        &-done {
+          opacity: 0;
+        }
+      }
+    }
+    &-message {
+      flex: 1;
+    }
+    @each $name, $color in $situations {
+      &-#{$name} {
+        color: $white;
+        background-color: $color;
+      }
+    }
+  }
+}

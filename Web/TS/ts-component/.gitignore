@@ -1,0 +1,32 @@
+# dependencies
+node_modules
+
+# builds
+build
+dist
+
+# misc
+.DS_Store
+.rpt2_cache
+
+#package
+package-lock.json
+
+# log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ide
+.idea
+.vscode
+.cache
+
+# private
+todo.md
+
+# Ignores compiled TypeScript files
+demo/**/*.js.map
+demo/**/*.js
+src/**/*.js.map
+src/**/*.js

@@ -1,0 +1,101 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+// padding
+$btn-pd: 8px 16px;
+$btn-pd-large: 10px 20px;
+$btn-pd-small: 6px 12px;
+
+// border
+$btn-border-width: 1px;
+$btn-radius: 4px;
+$btn-bd-color: $grey-8;
+
+// color
+$btn-color: $grey-2;
+$btn-color-disabled: $grey-6;
+
+// background
+$btn-bg-color: $white;
+$btn-bg-color-disabled: $grey-8;
+
+// darken
+$btn-hover-darken: 6%;
+$btn-focus-darken: 12%;
+
+$btn-situation-color: $white;
+
+@mixin btn-size($pd, $font-size) {
+  padding: $pd;
+  font-size: $font-size;
+}
+
+@mixin btn-hover($bg-color) {
+  &:hover {
+    background-color: darken($bg-color, $btn-hover-darken);
+    border-color: darken($bg-color, $btn-hover-darken);
+  }
+}
+
+@mixin btn-active($bg-color) {
+  &:active {
+    background-color: darken($bg-color, $btn-focus-darken);
+    border-color: darken($bg-color, $btn-focus-darken);
+    outline: none;
+  }
+}
+
+@mixin btn-situation($color) {
+  color: $btn-situation-color;
+  background-color: $color;
+  border-color: $color;
+  @include btn-hover($color);
+  @include btn-active($color);
+  &-disabled,
+  &[disabled] {
+    color: $btn-color-disabled;
+    border-color: $btn-bg-color-disabled;
+    background-color: $btn-bg-color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.#{$prefix}-btn {
+  color: $btn-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $btn-radius;
+  border: $btn-border-width solid $btn-bd-color;
+  background-color: $white;
+  outline: none;
+  @include btn-size($btn-pd, $font-size);
+  @include btn-hover($btn-bd-color);
+  @include btn-active($btn-bd-color);
+  @include focus();
+  &-disabled,
+  &[disabled] {
+    color: $btn-color-disabled;
+    border-color: $btn-bg-color-disabled;
+    background-color: $btn-bg-color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.#{$prefix}-btn-small {
+  @include btn-size($btn-pd-small, $font-size-small);
+}
+
+.#{$prefix}-btn-large {
+  @include btn-size($btn-pd-large, $font-size-large);
+}
+
+@each $name, $color in $situations {
+  .#{$prefix}-btn-#{$name} {
+    @include btn-situation($color);
+  }
+}
+

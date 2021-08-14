@@ -1,0 +1,50 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+.#{$prefix}-tabs {
+
+}
+
+.#{$prefix}-tab-list {
+  position: relative;
+  display: flex;
+}
+
+.#{$prefix}-tab {
+  @include overflow-ellipsis();
+  @include focus();
+  line-height: 30px;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &-disabled {
+    color: $grey-6;
+    cursor: not-allowed;
+  }
+  &-selected {
+    color: $primary-color;
+  }
+  &-panel {
+    margin-top: 18px;
+  }
+  &-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: height, transform, width;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+    &-block {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $primary-color;
+      height: 3px;
+    }
+  }
+}
+
+

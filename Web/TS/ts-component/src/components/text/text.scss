@@ -1,0 +1,6 @@
+@import "../../assets/variable";
+@import "../../assets/mixin";
+
+.#{$prefix}-text-ellipsis {
+  @include overflow-ellipsis()
+}

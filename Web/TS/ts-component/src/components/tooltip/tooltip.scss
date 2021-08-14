@@ -1,0 +1,22 @@
+@import "../../assets/variable";
+
+.#{$prefix}-tooltip {
+  .#{$prefix}-popover-content {
+    padding: 10px 12px;
+  }
+}
+
+@each $name, $color in $situations {
+  .#{$prefix}-tooltip-#{$name} {
+    .#{$prefix}-popover {
+      &-content {
+        color: $white;
+        background-color: $color;
+      }
+      &-arrow:after {
+        background-color: $color;
+      }
+    }
+  }
+}
+
