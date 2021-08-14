@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+    明日科技
+</title>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+<!-- Documentation extras -->
+<style>
+body {
+    position: relative; /* For scrollspy */
+}
+
+/* Keep code small in tables on account of limited space */
+.table code {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+/* Inline code within headings retain the heading's background-color */
+h2 code,
+h3 code,
+h4 code {
+  background-color: inherit;
+}
+
+/* Outline button for use within the docs */
+.btn-outline {
+  color: #563d7c;
+  background-color: transparent;
+  border-color: #563d7c;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  color: #fff;
+  background-color: #563d7c;
+  border-color: #563d7c;
+}
+
+/* Inverted outline button (white on dark) */
+.btn-outline-inverse {
+  color: #fff;
+  background-color: transparent;
+  border-color: #cdbfe3;
+}
+.btn-outline-inverse:hover,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:active {
+  color: #563d7c;
+  text-shadow: none;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/* Bootstrap "B" icon */
+.bs-docs-booticon {
+  display: block;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  cursor: default;
+  background-color: #563d7c;
+  border-radius: 15%;
+}
+.bs-docs-booticon-sm {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 28px;
+}
+.bs-docs-booticon-lg {
+  width: 144px;
+  height: 144px;
+  font-size: 90px;
+  line-height: 140px;
+}
+.bs-docs-booticon-inverse {
+  color: #563d7c;
+  background-color: #fff;
+}
+.bs-docs-booticon-outline {
+  background-color: transparent;
+  border: 1px solid #cdbfe3;
+}
+
+/*
+ * Main navigation
+ *
+ * Turn the `.navbar` at the top of the docs purple.
+ */
+
+.bs-docs-nav {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 0;
+}
+.bs-home-nav .bs-nav-b {
+  display: none;
+}
+.bs-docs-nav .navbar-brand,
+.bs-docs-nav .navbar-nav > li > a {
+  font-weight: 500;
+  color: #563d7c;
+}
+.bs-docs-nav .navbar-nav > li > a:hover,
+.bs-docs-nav .navbar-nav > .active > a,
+.bs-docs-nav .navbar-nav > .active > a:hover {
+  color: #463265;
+  background-color: #f9f9f9;
+}
+.bs-docs-nav .navbar-toggle .icon-bar {
+  background-color: #563d7c;
+}
+.bs-docs-nav .navbar-header .navbar-toggle {
+  border-color: #fff;
+}
+.bs-docs-nav .navbar-header .navbar-toggle:hover,
+.bs-docs-nav .navbar-header .navbar-toggle:focus {
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+}
+
+/*
+ * Homepage
+ *
+ * Tweaks to the custom homepage and the masthead (main jumbotron).
+ */
+
+/* Share masthead with page headers */
+.bs-docs-masthead,
+.bs-docs-header {
+  position: relative;
+  padding: 30px 0;
+  color: #cdbfe3;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  background-color: #6f5499;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
+  background-image: -webkit-linear-gradient(top, #563d7c 0%, #6f5499 100%);
+  background-image:      -o-linear-gradient(top, #563d7c 0%, #6f5499 100%);
+  background-image:         linear-gradient(to bottom, #563d7c 0%, #6f5499 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background-repeat: repeat-x;
+}
+
+/* Masthead (headings and download button) */
+.bs-docs-masthead .bs-docs-booticon {
+  margin: 0 auto 30px;
+}
+.bs-docs-masthead h1 {
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+}
+.bs-docs-masthead .lead {
+  margin: 0 auto 30px;
+  font-size: 20px;
+  color: #fff;
+}
+.bs-docs-masthead .version {
+  margin-top: -15px;
+  margin-bottom: 30px;
+  color: #9783b9;
+}
+.bs-docs-masthead .btn {
+  width: 100%;
+  padding: 15px 30px;
+  font-size: 20px;
+}
+
+@media (min-width: 480px) {
+  .bs-docs-masthead .btn {
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .bs-docs-masthead {
+    padding: 80px 0;
+  }
+  .bs-docs-masthead h1 {
+    font-size: 60px;
+  }
+  .bs-docs-masthead .lead {
+    font-size: 24px;
+  }
+}
+</style>
+
+<!-- Analytics
+================================================== -->
+</head>
+  <body class="bs-docs-home">
+    <!-- Docs master nav -->
+  <header class="navbar navbar-static-top bs-docs-nav" id="top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">明日学院</a>
+    </div>
+    <nav id="bs-navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="http://www.mingrisoft.com/selfCourse.html" >课程</a>
+        </li>
+        <li>
+          <a href="http://www.mingrisoft.com/book.html">读书</a>
+        </li>
+        <li>
+          <a href="http://www.mingrisoft.com/bbs.html">社区</a>
+        </li>
+        <li>
+          <a href="http://www.mingrisoft.com/servicecenter.html">服务</a>
+        </li>
+        <li>
+          <a href="/contact.html">联系我们</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <!-- Page content of course! -->
+    <main class="bs-docs-masthead" id="content" tabindex="-1">
+  <div class="container">
+    <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">MR</span>
+    <p class="lead">明日学院，是吉林省明日科技有限公司倾力打造的在线实用技能学习平台，该平台于2016年正式上线，主要为学习者提供海量、优质的课程，课程结构严谨，用户可以根据自身的学习程度，自主安排学习进度。我们的宗旨是，为编程学习者提供一站式服务，培养用户的编程思维。</p>
+    <p class="lead">
+      <a href="/contact.html" class="btn btn-outline-inverse btn-lg">联系我们</a>
+    </p>
+  </div>
+</main>
+</body>
+</html>
