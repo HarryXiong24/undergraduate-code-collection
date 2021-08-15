@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        结果：{{ result }}
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+               first: 1,
+               last: 2,
+               // result是上面两个属性相加的结果， 不能在data中访问this
+               // result: this.first + this.last
+            },
+            // 计算属性,可以访问this
+            computed: {
+                // 声明result属性,函数需要有返回值，然后可以result可以和data在模板中渲染。
+                result(){
+                    // result在模板中渲染的值由return决定的
+                    return this.first + this.last;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

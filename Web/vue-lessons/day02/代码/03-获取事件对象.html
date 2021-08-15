@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="handleClick">确定</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+            },
+            // methods存放页面的事件函数的
+            methods: {
+                handleClick(event){
+                    console.log(event)
+                }
+            }
+        })
+
+
+    </script>
+</body>
+</html>

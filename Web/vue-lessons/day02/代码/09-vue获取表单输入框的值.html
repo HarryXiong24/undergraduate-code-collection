@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form>
+            用户名：
+            <!-- 1.input事件 -->
+            <input :value="username" @input="handleInput"/>
+
+            <!-- 3.渲染用户名数据 -->
+            {{ username }}
+        </form>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                username: "abc123", // 用户名
+            },
+            methods: {
+                // 2.用户名输入框input事件
+                handleInput(event){
+                    // 2.获取到输入框的值赋值给data中的username
+                    this.username = event.target.value;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

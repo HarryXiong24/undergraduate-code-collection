@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 在模板中绑定事件的时候，事件函数可以写括号，也可以不写，
+        如果需要给事件函数传递参数的话，就在括号中传入参数 -->
+        <button v-on:click="handleClick(99, $event)">确定</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+            },
+            // methods存放页面的事件函数的
+            methods: {
+                // 函数可以传递过来的参数
+                handleClick(number, event){
+                    alert(number)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

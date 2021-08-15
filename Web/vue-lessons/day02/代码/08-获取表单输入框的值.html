@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form>
+            用户名：
+            <!-- change事件 -->
+            <!-- <input onchange="handleChange(this)"/> -->
+
+            <!-- input事件 -->
+            <input oninput="handleInput(this)"/>
+        </form>
+    </div>
+    <script>
+        // 输入框的change事件
+        // function handleChange(input){
+        //     console.log(input.value)
+        // }
+
+        // 输入框的input事件
+        function handleInput(input){
+            console.log(input.value)
+        }
+    </script>
+
+    <script>
+        // var app = new Vue({
+        //     el: "#app",
+        //     data: {
+        //     }
+        // })
+    </script>
+</body>
+</html>

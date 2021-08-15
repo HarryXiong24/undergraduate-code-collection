@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <!-- 2.改组件可以接收title属性，可以传递一个title -->
+        <goods title="苹果手机原装正品" price="1000"></goods>
+
+        <goods title="华为手机" price="800"></goods>
+    </div>
+
+    <script>
+        // 使用局部组件的方式创建一个商品组件
+        var goods = {
+            // 1.声明组件可以接收的什么值 [重点]
+            props: ["title", "price"],
+            // 模板字符串，props的属性可以和data一样在模板中调用
+            template: `<div>
+                <p>标题：{{ title }} </p>
+                <p>价格: {{ price }}</p>
+            </div>`
+        }
+
+        // 根实例
+        var app = new Vue({
+            el: "#app",
+            // 注册组件
+            components: {
+                // 组件名不能用大写字母
+                goods
+            }
+        })
+    </script>
+</body>
+</html>

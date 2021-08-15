@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        #app{
+            padding: 100px;
+            display: flex;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: gray;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 根实例的模板 -->
+    <div id="app">
+        
+        <!-- 输入颜色的组件，组件A -->
+        <color @getcolor="getcolor"></color>
+
+        <!-- 方块组件 -->
+        <box :colorful="colorful"></box>
+    </div>
+
+    <script>
+        /**
+            1.先实现组件A传值给父组件
+            2.把输入框的值先保存起来
+            3.给确定按钮添加一个点击事件
+            4.在根实例组件中准备接收颜色的函数
+            5.把接收颜色的函数传递给组件A
+            6.父组件接收子组件传递的颜色
+
+            7.父组件把颜色保存到data中
+            8.把输入框的颜色传递给组件B
+        */
+        
+
+        // 输入颜色的组件 组件A
+        var color = {
+            data(){
+                return {
+                    // 输入框的颜色值
+                    colorful: ""
+                }
+            },
+            methods: {
+                // 点击确定按钮的事件
+                handleClick(){
+                    // 把颜色丢给父组件
+                    // console.log(this.colorful);
+                    this.$emit("getcolor", this.colorful)
+                }
+            },
+            template: `
+                <div>
+                    <input placeholder="请输入颜色" v-model="colorful"></input></br>
+                    <button @click="handleClick">确定</button>
+                </div>
+            `
+        }
+
+        // 方块 组件B
+        var box = {
+            // 声明组件可以接收的属性
+            props: ['colorful'],
+            template: `
+                <div class="box" :style=" 'background:' + colorful"></div>
+            `
+        }
+
+        // 根实例
+        var app = new Vue({
+            el: "#app",
+            data: {
+                // 输入框的颜色
+                colorful: ""
+            },
+            // 注册组件
+            components: {
+                color,
+                box
+            },
+            methods: {
+                // 传递给组件A接受颜色
+                getcolor(value){
+                    console.log("组件A传递的颜色：", value)
+
+                    // 保存颜色到data中
+                    this.colorful = value;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

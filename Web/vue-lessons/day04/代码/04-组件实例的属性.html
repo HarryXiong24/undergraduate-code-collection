@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <!-- 3.调用局部的组件 -->
+       <children></children>
+
+       <children></children>
+
+       <children></children>
+    </div>
+
+    <script>
+        // 1.创建一个局部的组件
+        var child = {
+            // 组件内部的data
+            // 总结：组件内部的data不能等于对象，必须是一个函数，函数必须返回一个对象
+            // 对象里面才是组件的data数据
+            data(){
+                return {
+                    message: "组件中的data"
+                }
+            },
+            methods: {
+                handleClick(){
+                    alert("组件的事件")
+                }
+            },
+            // 指定组件的模板
+            template:`<div @click='handleClick'> hello {{message}}</div>`,
+        }
+
+        // 根实例
+        var app = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            // 2.注册组件，把需要引用的组件注册一下
+            components: {
+                children: child
+            },
+        })
+    </script>
+</body>
+</html>

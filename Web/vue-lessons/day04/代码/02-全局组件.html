@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+       <!-- 2.调用全局组件 -->
+       <children></children>
+    </div>
+
+    <script>
+        // 1.创建第一个全局组件, 第一个参数组件的名字,任意的字符串
+        // children是组件名
+        Vue.component("children", {
+            data(){
+                return {
+                    message: "组件中的data"
+                }
+            },
+            // template存放html字符串模板
+            template: "<div>hello 第一个全局组件</div>"
+        })
+
+        // 根实例
+        var app = new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>

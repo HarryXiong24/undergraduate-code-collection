@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="padding: 50px 100px;">
+        <!-- 按钮 -->
+        <div>
+            <!-- 点击切换面板的按钮列表 -->
+            <!-- handleClick的参数index是索引值 -->
+            <button 
+            v-for="(item, index) in btns"
+            v-on:click="handleClick(index)"
+            :class="current === index ? 'active' : ''"
+            >
+                {{item}}
+            </button> 
+        </div>
+
+        <div class="content" v-if="current === 0">
+            <p>新闻列表</p>
+            <p>新闻列表</p>
+            <p>新闻列表</p>
+            <p>新闻列表</p>
+            <p>新闻列表</p>
+        </div>
+
+        <div class="content" v-if="current === 1">
+            <p>娱乐新闻列表</p>
+            <p>娱乐新闻列表</p>
+            <p>娱乐新闻列表</p>
+            <p>娱乐新闻列表</p>
+            <p>娱乐新闻列表</p>
+        </div>
+
+        <div class="content" v-if="current === 2">
+            <p>体育新闻列表</p>
+            <p>体育新闻列表</p>
+            <p>体育新闻列表</p>
+            <p>体育新闻列表</p>
+            <p>体育新闻列表</p>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                // 按钮列表
+                btns: ["新闻", "娱乐", "体育"],
+                // 记录当前显示的新闻列表
+                current: 0
+            },
+            // 页面的事件函数
+            methods: {
+                // 点击按钮时候触发的函数
+                handleClick(index){
+                    // 修改data的中值，data的属性可以通过this来访问
+                    this.current = index;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

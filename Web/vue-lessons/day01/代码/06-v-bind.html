@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 模板容器 -->
+    <div class="app">
+        <!-- 如果在标签的属性中渲染data的数据，比如图片的src, 需要在前面加上v-bind: -->
+        <!-- <img v-bind:src="imageUrl"> -->
+
+        <!-- v-bind：可以用于任何的标签属性 -->
+        <!-- <a v-bind:href="src" v-bind:data-title="title">跳转到百度</a> -->
+
+        <!-- v-bind可以缩写成冒号 ： -->
+        <!-- <img :src="imageUrl">
+        <a :href="src" :data-title="title">跳转到百度</a>  -->
+
+
+        <!-- v-bind:的值是可以运算 -->
+        <!-- <div :style=" 'background:' + color">红色的背景</div> -->
+        <div :style="`background: ${color}`">红色的背景</div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script>
+        // 通过 Vue构造函数构造出一个对象
+        var app = new Vue({
+            // 指定一个vue的模板容器
+            el: ".app",
+            // 模板的数据
+            data: {
+                imageUrl: "https://www.baidu.com/img/bd_logo1.png",
+                src: "https://www.baidu.com/",
+                title: "这个是百度的链接",
+                color: "blue"
+            }
+        })
+    </script>
+</body>
+</html>

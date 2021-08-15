@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model="user.name">
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                // 对象类型
+                user: {
+                    name: ""
+                }
+            },
+            watch: {
+                // 不能这样监听对象类型，因为对象的内存地址没有变化！！！！
+                // user(){
+                //     console.log("user发生了变化");
+                // }
+                
+                // 需要这样监听对象内部属性的变化
+                "user.name"(){
+                    console.log("user.name发生了变化");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

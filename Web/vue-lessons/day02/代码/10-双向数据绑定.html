@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form>
+            用户名：
+            <!-- input事件 -->
+            <!-- v-model相当于给元素绑定了一个value属性,并且还包含了input事件，
+                当输入框的值发生变化的时候会自动修改data中的username -->
+            <input v-model="username"/>
+
+            <!-- 渲染用户名数据 -->
+            {{ username }}
+        </form>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                username: "abc123", // 用户名
+            }
+        })
+    </script>
+</body>
+</html>

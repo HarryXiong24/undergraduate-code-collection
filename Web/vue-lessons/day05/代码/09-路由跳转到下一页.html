@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <!-- 导入路由的js文件 -->
+    <script src="https://cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js"></script>
+</head>
+<body>
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <router-link to="/login">跳转到登录页</router-link>
+
+        <!-- 展示组件的坑 -->
+        <router-view></router-view>
+    </div>
+
+    <script>
+        // 登录页
+        var login = {
+            methods: {
+                handleClick(){
+                    // 跳转到指定的页面，用户详情页, /user就是要跳转的路径
+                    // this.$router.push("/user")
+
+                    this.$router.replace("/user")
+                }
+            },
+            template: `
+                <div>
+                    <p><input></input></p>    
+                    <button @click="handleClick">登录</button>
+                </div>
+            `
+        }
+
+        // 用户信息组件，路径是 "/user"展示该组件
+        var user = {
+            methods: {
+                handleClick(){
+                    // 返回上一页
+                    this.$router.back();
+                }
+            },
+            template: `
+                <div>
+                    用户详情页
+                    <button @click="handleClick">返回上一页</button>
+                </div>
+            `
+        }
+
+        // 2.创建路由配置, 路由配置最重要的就是一个路径对应一个组件
+        var routes = [
+            {
+                // 一级路由必须要带斜杠
+                path: "/login",
+                component: login,
+            },
+            {
+                // 一级路由必须要带斜杠
+                path: "/user",
+                component: user,
+            }
+        ];
+
+        // 3.创建一个路由实例
+        var router = new VueRouter({
+            // 左边的routes属性是固定的
+            routes
+        })
+
+        // 根实例，父组件
+        var app = new Vue({
+            el: "#app",
+            // 4.挂载到根实例, router是固定的属性
+            router
+        })
+    </script>
+</body>
+</html>

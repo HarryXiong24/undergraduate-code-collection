@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <!-- 导入路由的js文件 -->
+    <script src="https://cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js"></script>
+</head>
+<body>
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <router-link to="/user">跳转到用户详情页</router-link>
+
+        <!-- 展示组件的坑 -->
+        <router-view></router-view>
+    </div>
+
+    <script>
+        // 1.用户信息组件，路径是 "/user"展示该组件
+        var user = {
+            template: `
+                <div>
+                    <p>姓名：张三</p>    
+                    <p>性别：男</p>   
+
+                    <!-- 展示用户的文章列表 -->
+                    <router-link to="/user/post">展示文章列表</router-link>
+
+                    <!-- 子路由对应的组件的坑位 -->
+                    <router-view></router-view>
+                </div>
+            `
+        }
+
+        // 文章列表的组件
+        var posts = {
+            template: `
+                <div>
+                    <p>文章列表内容</p>    
+                    <p>文章列表内容</p>  
+                </div>
+            `
+        }
+
+        // 2.创建路由配置, 路由配置最重要的就是一个路径对应一个组件
+        var routes = [
+            {
+                // 一级路由必须要带斜杠
+                path: "/user",
+                component: user,
+                // 配置/user下子路由
+                children: [
+                    {
+                        // 也是一个路径对应一个组件,子路由的路径不能带斜杆
+                        // 最终完整的路由 /user/post
+                        path: "post",
+                        component: posts
+                    }
+                ]
+            }
+        ];
+
+        // 3.创建一个路由实例
+        var router = new VueRouter({
+            // 左边的routes属性是固定的
+            routes
+        })
+
+        // 根实例，父组件
+        var app = new Vue({
+            el: "#app",
+            // 4.挂载到根实例, router是固定的属性
+            router
+        })
+    </script>
+</body>
+</html>

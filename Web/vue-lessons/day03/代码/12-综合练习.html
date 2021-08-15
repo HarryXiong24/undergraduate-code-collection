@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        .goods-item{
+            margin-bottom: 20px;
+            border-bottom: 1px #eee solid;
+            padding-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 这里的内容都可以改，可以随意替换，但是界面的效果要实现 -->
+    <div id="app">
+        <div class="goods-item">
+            <p>标题：苹果手机</p>
+            <p>单价： 10 元</p>
+            <p>数量: <button>-</button> 1 <button>+</button> </p>
+        </div>
+        <div class="goods-item">
+            <p>标题：华为手机</p>
+            <p>单价： 20 元</p>
+            <p>数量: <button>-</button> 1 <button>+</button> </p>
+        </div>
+        <p><input type="checkbox">优惠券 -5</p>
+        <div>总价：30</div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>

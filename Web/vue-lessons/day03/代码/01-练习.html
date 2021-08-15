@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+
+        }
+        #app{
+            width:500px;
+            margin: 100px auto;
+            background: #eee;
+        }
+        .tab{
+            display: flex;
+            height: 60px;
+        }
+
+        .tab span{
+            display: block;
+            flex: 1;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none; /*该样式不允许鼠标划字*/
+            box-sizing: border-box;
+        }
+
+        .tab .active{
+            border-bottom: 1px red solid;
+            color: red;
+        }
+
+        .form{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .form-item{
+            margin: 10px 0;
+        }
+
+        .form-item label{
+            display: inline-block;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        
+        <!-- tab头部切换 -->
+        <div class="tab">
+            <!-- 循环遍历出两个span。注意数组可以直接写在v-for指令里面。不一定要写到data -->
+            <span v-for="(item, index) in ['登录', '注册']"             
+            @click="handleClick(index)"
+            :class="current === index ? 'active' : '' ">
+                {{item}}
+            </span>
+        </div>
+
+        <!-- 登录表单 -->
+        <div class="form" v-if="current === 0">
+            <div class="form-item">
+                <label>用户名</label>
+                <!-- 绑定data中登录数据中的username -->
+                <input type="text" v-model="loginForm.username">
+            </div>
+            <div class="form-item">
+                <label>密码</label>
+                <!-- 绑定data中登录数据中的password -->
+                <input type="password" v-model="loginForm.password">
+            </div>
+            <div class="form-item">
+                <!-- 点击打印表单的值 -->
+                <button @click="handleLogin">登录</button>
+            </div>
+        </div>
+
+        <!-- 注册表单 -->
+        <div class="form" v-if="current === 1">
+            <div class="form-item">
+                <label>用户名</label>
+                <!-- 绑定data中登录数据中的username -->
+                <input type="text" v-model="registerForm.username">
+            </div>
+            <div class="form-item">
+                <label>密码</label>
+                <!-- 绑定data中登录数据中的password -->
+                <input type="password" v-model="registerForm.password">
+            </div>
+            <div class="form-item">
+                <label>城市</label>
+                <!-- 选择城市 -->
+                <select v-model="registerForm.city">
+                    <option value="广州">广州</option>
+                    <option value="深圳">深圳</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <label>性别</label>
+                <input type="radio" name="gender" value="男" v-model="registerForm.gender" checked>男
+                <input type="radio" name="gender" value="女" v-model="registerForm.gender">女
+            </div>
+
+            <div class="form-item">
+                <!-- 点击打印表单的值 -->
+                <button @click="handleRegister">注册</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    
+    <script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+           // 记录当前的索引
+           current: 0,
+           // 登录的数据
+           loginForm: {
+               username: "",
+               password: ""
+           },
+           // 注册的数据
+           registerForm: {
+               username: "",
+               password: "",
+               city: "",
+               gender: "男"
+           }
+        },
+        // 模板事件
+        methods: {
+            // 点击tab栏的事件, index是点击时候传过来的索引值
+            handleClick(index){
+                this.current = index;
+            },
+            // 点击登录按钮的事件
+            handleLogin(){
+                console.log(this.loginForm);
+            },
+            // 点击注册按钮的事件
+            handleRegister(){
+                console.log(this.registerForm)
+            }
+        }
+    })
+    </script>
+</body>
+</html>

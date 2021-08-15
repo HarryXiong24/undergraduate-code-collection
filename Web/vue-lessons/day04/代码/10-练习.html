@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        #app{
+            padding: 100px;
+            display: flex;
+        }
+        
+        #app > div{
+            width: 200px;
+            padding: 50px;
+            margin-left: 20px;
+            border: 1px #999 solid;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <!-- 商品列表 -->
+        <left></left>
+
+        <!-- 购物车列表 -->
+        <right></right>
+    </div>
+
+    <script>
+        // 这里面的所有内容都可以改，只要实现功能
+        var left = {
+            template: `
+                <div class="left">
+                    <div>
+                        <p>标题：iphone 11</p>
+                        <p>价格：1000</p>
+                        <button>加入购物车</button>
+                    </div>
+                    <div>
+                        <p>标题：iphone 8</p>
+                        <p>价格：1000</p>
+                        <button>加入购物车</button>
+                    </div>
+                    <div>
+                        <p>标题：iphone 6</p>
+                        <p>价格：1000</p>
+                        <button>加入购物车</button>
+                    </div>
+                </div>
+            `
+        }
+
+        var right = {
+            template: `
+                <div class="right"></div>
+            `
+        }
+
+        // 根实例
+        var app = new Vue({
+            el: "#app",
+            components: {
+                left,
+                right
+            }
+        })
+    </script>
+</body>
+</html>

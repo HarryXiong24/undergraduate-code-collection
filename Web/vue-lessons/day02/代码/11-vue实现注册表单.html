@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        #app{
+            padding-top:50px;
+        }
+        #app div, button{
+            margin: 20px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- action是为了表单提交时候不刷新 -->
+        <form action="#">
+            <div>
+                用户名：<input v-model="username"/>
+            </div>
+            <div>
+                密码：<input type="password" v-model="password"/>
+            </div>
+            <div>
+                城市：
+                <!-- v-model针对非input元素也可以双向绑定value的值，
+                    用于change事件来实现监听，因为只会变化一次 -->
+                <select v-model="city">
+                    <option value="广州">广州</option>
+                    <option value="东莞">东莞</option>
+                    <option value="深圳">深圳</option>
+                </select>
+            </div>
+            <!-- handleRegister是点击按钮的事件函数 -->
+            <button @click="handleRegister">注册</button>
+        </form>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                username: "", // 用户名
+                password: "", // 密码
+                city: "深圳" // 城市
+            },
+            methods: {
+                // 点击注册按钮的事件
+                handleRegister(){
+                    // 获取到表单的值
+                    console.log("用户名：", this.username);
+                    console.log("密码：", this.password);
+                    console.log("城市：", this.city)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

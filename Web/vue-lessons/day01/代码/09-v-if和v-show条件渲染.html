@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 模板容器 -->
+    <div class="app">
+        <!-- v-if如果值是true就显示，false不会在dom的结构中生成的 -->
+        <p v-if="number == 1">v-if 你们猜能不能看到我？</p>
+
+         <!-- v-show如果值是true就显示，false通过display:none来隐藏 -->
+        <!-- <p v-show="isShow"> v-show 你们猜能不能看到我？</p> -->
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script>
+        // 通过 Vue构造函数构造出一个对象
+        var app = new Vue({
+            // 指定一个vue的模板容器
+            el: ".app",
+            // 模板的数据
+            data: {
+                isShow: false,
+                number: 1
+            }
+        })
+    </script>
+</body>
+</html>

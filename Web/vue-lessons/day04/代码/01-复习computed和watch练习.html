@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        .goods-item{
+            margin-bottom: 20px;
+            border-bottom: 1px #eee solid;
+            padding-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 这里的内容都可以改，可以随意替换，但是界面的效果要实现 -->
+    <div id="app">
+        <!-- 循环出多个商品 -->
+        <div class="goods-item" v-for="(item, index) in goods">
+            <p>标题：{{ item.title }}</p>
+            <p>单价： {{ item.price }} 元</p>
+            <p>数量: 
+                <!-- 点击数量减一, disabled可以禁用按钮 -->
+                <button @click="handleReduce(index)" :disabled="item.number === 0">-</button> 
+                {{ item.number }} 
+                <!-- 点击数量加一 -->
+                <button @click="handleAdd(index)">+</button> 
+            </p>
+        </div>
+        <!-- checkbox返回布尔值，选中就返回true，不选中就返回false -->
+        <p><input type="checkbox" v-model="isCheck">优惠券 -5</p>
+        <div>总价：{{amount}}</div>
+    </div>
+    <script>
+
+        /**
+            1.实现数量加1
+            2.实现数量减1,当商品数量等于0时候禁用减1的按钮
+            3.监听数量的变化计算总价格
+        */
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                // 购物车的数据
+                goods: [
+                    {
+                        title: "苹果手机",
+                        price: 10,
+                        number: 1
+                    },
+                    {
+                        title: "华为手机",
+                        price: 20,
+                        number: 1
+                    }
+                ],
+
+                // 是否选中了优惠券的按钮
+                isCheck: false,
+            },
+
+            // 计算属性
+            computed: {
+                // 总价格, 计算属性会监听函数内部引用的this属性的变化
+                // 如果this的属性发生了变化，函数会重新执行，返回新的值
+                // 计算属性的监听不区分深度和不深度，只要内部属性的都可以监听，深度监听只在watch中有区分
+                amount(){
+                    let price = 0;
+                    // 循环相加得到总价格,v是数组的每一项
+                    this.goods.forEach(v => {
+                        // 单价乘以数量
+                        price += v.price * v.number;
+                    });
+
+                    // 如果勾选了优惠券
+                    if(this.isCheck){
+                        price = price - 5;
+                    }
+
+                    // 总价格不能是负数
+                    if(price < 0){
+                        price = 0;
+                    }
+
+                    return price;
+                }
+            },
+
+            // 页面事件处理函数
+            methods: {
+                // 数量+1的点击事件
+                handleAdd(index){
+                    // 找到对应的商品数量加1
+                    this.goods[index].number++;
+                },
+                // 数量减1的点击事件
+                handleReduce(index){
+                    this.goods[index].number--;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

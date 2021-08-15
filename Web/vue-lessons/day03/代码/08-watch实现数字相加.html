@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model="first">
+        + 
+        <input v-model="last">
+        = {{result}}
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                first: 1,
+                last: 2,
+                result: 3
+            },
+            // 监听属性，监听this属性的变化
+            watch: {
+                // first表示需要监听该属性的变化
+                // 一旦first发生了变化就会执行这个函数
+                first(){
+                    this.result = Number(this.first) + Number(this.last);
+                },
+
+                last(){
+                    this.result = Number(this.first) + Number(this.last);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

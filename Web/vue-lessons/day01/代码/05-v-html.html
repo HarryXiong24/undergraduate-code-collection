@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 模板容器 -->
+    <div class="app">
+        <!-- v-渲染富文本html字符串 -->
+        <p v-html="message"></p>
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script>
+        // 通过 Vue构造函数构造出一个对象
+        var app = new Vue({
+            // 指定一个vue的模板容器
+            el: ".app",
+            // 模板的数据
+            data: {
+                // 随便的写的数据,富文本字符串
+                message: `<span style="color: red">
+                    hello vue
+                </span>`,
+            }
+        })
+    </script>
+</body>
+</html>

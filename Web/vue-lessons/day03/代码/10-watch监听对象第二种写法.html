@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        姓名：<input v-model="user.name">
+        年龄：<input v-model="user.age">
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                // 对象类型
+                user: {
+                    name: "",
+                    age: ""
+                }
+            },
+            watch: {
+                // 一次性监听对象内部所有属性的话，可以使用deep进行深度监听
+                user: {
+                    // 固定的声明
+                    deep: true,
+                    // handler也是固定的函数，表示监听属性的函数
+                    handler(){
+                        console.log("user发生了变化", this.user);
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

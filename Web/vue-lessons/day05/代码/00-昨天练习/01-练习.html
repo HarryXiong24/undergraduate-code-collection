@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        #app{
+            padding: 100px;
+            display: flex;
+        }
+        
+        #app > div{
+            width: 200px;
+            padding: 50px;
+            margin-left: 20px;
+            border: 1px #999 solid;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <!-- 商品列表 -->
+        <left @getgoods="getgoods"></left>
+
+        <!-- 购物车列表 -->
+        <right :cartgoods="cartGoods"></right>
+    </div>
+
+    <script src="./left.js"></script>
+    <script src="./right.js"></script>
+    <script>
+        // 根实例，父组件
+        var app = new Vue({
+            el: "#app",
+            components: {
+                left,
+                right
+            },
+            data: {
+                // 保存购物车的数据
+                cartGoods: []
+            },
+            methods: {
+                // 该函数提供给子组件，用来获取子组件的商品数据
+                getgoods(data){
+                    // console.log(data);
+
+                    // 把data保存到cartGoods
+                    this.cartGoods.push(data);
+
+                    console.log(this.cartGoods)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

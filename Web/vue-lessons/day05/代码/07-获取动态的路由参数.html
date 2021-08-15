@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <!-- 导入路由的js文件 -->
+    <script src="https://cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js"></script>
+</head>
+<body>
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <router-link to="/user/1">跳转到用户详情页</router-link>
+
+        <router-view></router-view>
+    </div>
+
+    <script>
+        // 用户信息的组件
+        var user = {
+            // 类似window.onload,组件加载完毕后触发的
+            mounted(){
+                // 通过 this.$route.params 可以获取到动态的参数
+                console.log(this.$route)
+            },
+            template: `
+                <div>
+                    <p>姓名：abc</p>
+                    <p>年龄：18</p>    
+                    <p>id：{{$route.params.id}}</p>  
+                </div>
+            `
+        }
+       
+        // 2.创建路由配置, 路由配置最重要的就是一个路径对应一个组件
+        var routes = [
+           {
+               // 带有冒号部分的路径称为动态参数，id是参数名，可以自定义的
+               // 必须加上冒号才是一个动态的值
+               path: "/user/:id",
+               component: user
+           }
+        ];
+
+        // 3.创建一个路由实例
+        var router = new VueRouter({
+            // 左边的routes属性是固定的
+            routes
+        })
+
+        // 根实例，父组件
+        var app = new Vue({
+            el: "#app",
+            // 4.挂载到根实例, router是固定的属性
+            router
+        })
+    </script>
+</body>
+</html>

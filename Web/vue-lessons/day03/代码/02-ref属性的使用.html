@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .box{
+           width: 200px;
+           height: 200px;
+           background: red;;
+       }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- ref相当于给div贴上一个标签，标签名字随便起，比如这里叫box -->
+        <div class="box" ref="box"></div>
+
+        <button @click="handleClick">点击修改颜色</button>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    
+    <script>
+        var app = new Vue({
+            el: "#app",
+            methods: {
+                // 点击修改颜色
+                handleClick(){
+                    // 可以通过实例的this.$refs来获取dom元素，原因不推荐通过document的方法来操作dom
+                    // 这些方法能不用就不要用
+                    console.log(this.$refs.box)
+                    this.$refs.box.style.background = 'blue';
+                }
+            }
+        })
+    </script>
+</body>
+</html>

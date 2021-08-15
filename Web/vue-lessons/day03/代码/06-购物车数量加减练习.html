@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 这里的内容都可以改，可以随意替换，但是界面的效果要实现 -->
+        苹果手机 
+        <div>单价 {{price}}块</div>
+        <div>数量: {{number}} 
+            <button @click="handleAdd">+</button>
+        </div>
+        <div>总价：{{result}}</div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                price: 10, // 单价
+                number: 1, // 数量
+                result: this.price * this.number
+            },
+            computed: {
+                // 总价
+                result(){
+                    return this.price * this.number;
+                }
+            },
+            methods: {
+                handleAdd(){
+                    this.number++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

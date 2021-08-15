@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 模板的容器 -->
+    <div id="app">
+        <ul>
+            <!-- 第一种简单的写法 -->
+            <!-- 当需要遍历哪个标签时候，就给哪个标签加上v-for指令 -->
+            <!-- v-for循环的写法比较类似for in，
+                item代表数组的每一个元素，item是一个变量名，可以修改这个变量名，
+                in是个关键字 -->
+            <!-- <li v-for="item in goods">
+                {{ item }}
+            </li> -->
+
+            <!-- 第二种写法 -->
+            <!-- 在循环体中获取到索引值, item表示当前的元素，index表示索引值 -->
+            <li v-for="(item, index) in goods">
+                {{item}} {{index}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script>
+        new Vue({
+            // 指定模板容器
+            el: "#app",
+            // 模板的数据
+            data: {
+                goods: [
+                    'iphone11',
+                    'iphonex',
+                    'iphone8',
+                    'iphone6',
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

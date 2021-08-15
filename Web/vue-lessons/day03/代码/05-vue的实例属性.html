@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 实例的属性都可以在模板中渲染的 -->
+        <div>{{first}}</div>
+        <div>{{last}}</div>
+        <div>{{result}}</div>
+        <button @click="handleClick">确定</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+               first: 1,
+               last: 2,
+
+            },
+            methods: {
+                // 测试的点击事件
+                handleClick(){
+                    alert(123);
+                }
+            },
+            // 计算属性,可以访问this
+            computed: {
+                result(){
+                    return Number(this.first) + Number(this.last);
+                }
+            }
+        })
+
+        console.log(app)
+    </script>
+</body>
+</html>

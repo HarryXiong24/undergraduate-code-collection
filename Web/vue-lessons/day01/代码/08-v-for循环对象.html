@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 模板的容器 -->
+    <div id="app">
+        <ul>
+            <!-- 循环对象 -->
+            <!-- item代表当前项的值，在这个例子中就是一个对象 -->
+            <!-- key代表当前项的属性 -->
+            <!-- index是索引值 -->
+            <li v-for="(item, key, index) in goods">
+               {{ index }} 型号：{{item}}  价格：{{item.price}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script>
+        new Vue({
+            // 指定模板容器
+            el: "#app",
+            // 模板的数据
+            data: {
+                goods: {
+                    iphone11: { price: 10000 },
+                    iphonex: { price: 8000 },
+                    iphone8: { price: 6000 },
+                }
+            }
+        })
+    </script>
+</body>
+</html>

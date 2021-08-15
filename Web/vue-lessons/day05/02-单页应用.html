@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            display: flex;
+        }
+
+        .left{
+            padding: 50px;
+            width: 200px;
+            height: 700px;
+            background: #eee;
+        }
+        .right{
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="left">
+            <p onclick="handleclick('/index')">首页</p>
+            <p onclick="handleclick('/login')">登录</p>
+            <p onclick="handleclick('/register')">注册</p>
+        </div>
+        
+        <!-- 展示html数据的 -->
+        <div id="views"></div>
+    </div>
+    <script>
+        // 路由配置对象，对象里面让路径对应一个组件（模块）
+        var routes = [
+            {
+                path: "/index",
+                template: `
+                    <div class="right">
+                        首页内容
+                    </div>
+                 `
+            },{
+                path: "/login",
+                template: `
+                <div class="right">
+                    <p>用户名：<input type="text"></p>
+                    <button>登录</button>
+                </div>
+                 `
+            },{
+                path: "/register",
+                template: `
+                <div class="right">
+                    <p>用户名：<input type="text"></p>
+                    <button>注册</button>
+                </div>
+                `
+            }
+        ]
+
+        // 左侧栏的点击事件, 假设 hash = /index
+        function handleclick(abc){ 
+            // 设置成url的hash值
+            window.location.hash = abc;
+
+            // 循环遍历routes，找到对应的template
+            routes.forEach(v => {
+                // 如果url的hash值和路径相等，展示对应v的template
+                if(abc === v.path){
+                    document.getElementById('views').innerHTML = v.template;
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>

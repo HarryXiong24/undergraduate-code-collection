@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <!-- 导入路由的js文件 -->
+    <script src="https://cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js"></script>
+    <style>
+        .links a{
+            display: inline-block;
+            width:100px;
+            height: 48px;
+            line-height: 48px;
+            border:1px #999 solid;
+            margin-right: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 根实例的模板 -->
+    <div id="app">
+        <router-link to="/goods">跳转到苹果手机</router-link>
+        <router-view></router-view>
+    </div>
+
+    <script>
+        // 1.创建组件
+        // 商品组件
+        var goods = {
+            template: `
+                <div>
+                    <p>标题：苹果手机原装正品</p>
+                    <p>价格：1000</p>
+                    <p class="links">
+                        <router-link to="/goods/detail">商品详情</router-link>
+                        <router-link to="/goods/comments">商品评价</router-link>
+                    </p>
+                    <!-- 展示goods的子路由匹配的组件 -->
+                    <router-view></router-view>
+                </div>
+            `
+        }
+
+        // 详情组件
+        var detail = {
+            template: `
+                <div>这是商品详情的组件</div>
+            `
+        }
+
+        // 详情组件
+        var comments = {
+            template: `
+                <div>这是商品评价的列表</div>
+            `
+        }
+
+        // 2.创建路由配置, 路由配置最重要的就是一个路径对应一个组件
+        var routes = [
+            {
+                path: "/goods",
+                component: goods,
+                // 子路由
+                children: [
+                    {
+                        // 子路由的path前面不能带斜杆
+                        path: "detail",
+                        component: detail
+                    },
+                    {
+                        // 子路由的path前面不能带斜杆
+                        path: "comments",
+                        component: comments
+                    }
+                ]
+            }
+        ];
+
+        // 3.创建一个路由实例
+        var router = new VueRouter({
+            // 左边的routes属性是固定的
+            routes
+        })
+
+        // 根实例，父组件
+        var app = new Vue({
+            el: "#app",
+            // 4.挂载到根实例, router是固定的属性
+            router
+        })
+    </script>
+</body>
+
+</html>

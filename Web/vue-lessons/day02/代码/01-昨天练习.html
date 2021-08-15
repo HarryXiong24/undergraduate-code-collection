@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <style>
+        #app{
+            display: flex;
+        }
+        #app > div{
+           
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 左边的列表 -->
+        <div>
+            <h3>男同学</h3>
+            <!-- 需要循环的div -->
+            <div v-for="(item, index) in users" v-if="item.gender === 1">
+                <p>姓名：{{ item.name }}</p>
+                <p>头像：<img :src="item.avatar"></p>
+                <p>性别：{{ item.gender === 1 ? '男' : '女' }}</p>
+            </div>
+        </div>
+
+        <!-- 右边的列表 -->
+        <div>
+            <h3>女同学</h3>
+            <!-- 需要循环的div -->
+            <div v-for="(item, index) in users" v-if="item.gender === 0">
+                <p>姓名：{{ item.name }}</p>
+                <p>头像：<img :src="item.avatar"></p>
+                <p>性别：{{ item.gender === 1 ? '男' : '女' }}</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                users: [
+                    {
+                        name: "张三",
+                        avatar: "https://avatars3.githubusercontent.com/u/57563568?s=64&v=4",
+                        gender: 1
+                    },
+                    {
+                        name: "李四",
+                        avatar: "https://avatars1.githubusercontent.com/u/46847886?s=64&v=4",
+                        gender: 1
+                    },
+                    {
+                        name: "王五",
+                        avatar: "https://avatars2.githubusercontent.com/u/57483340?s=64&v=4",
+                        gender: 0
+                    },
+                    {
+                        name: "赵六",
+                        avatar: "https://avatars1.githubusercontent.com/u/26160377?s=64&v=4",
+                        gender: 0
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
