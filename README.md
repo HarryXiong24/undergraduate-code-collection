@@ -7,7 +7,7 @@
 1. JavaScript
 2. TypeScript
 3. Java
-4. Python
+4. Python2/3
 5. C/C++
 6. Android
 7. SQL
