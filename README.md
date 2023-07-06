@@ -8,8 +8,8 @@
 2. TypeScript
 3. Java
 4. Python2/3
-5. C/C++
-6. Android
-7. SQL
-8. Shell
-
+5. go
+6. C/C++
+7. Android
+8. SQL
+9. Shell
