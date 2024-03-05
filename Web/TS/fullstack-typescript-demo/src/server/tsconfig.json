@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "sourceMap": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "outDir": "../../dist",
+    "rootDir": "..",
+    "lib": ["ES2020"],
+    "moduleResolution": "node",
+    "types": ["node"],
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+    "paths": {
+      "@shared/*": ["../shared/*"]
+    }
+  },
+  "include": ["**/*.ts", "../shared/*"],
+  "exclude": ["**/*.test.ts"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "check-js-true",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "rimraf dist && tsc"
+  }
+}

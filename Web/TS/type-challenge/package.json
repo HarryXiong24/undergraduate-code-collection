@@ -1,0 +1,15 @@
+{
+  "name": "ts-advance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yammyxing <yammy7chris@gmail.com> (https://yammyxing.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "@type-challenges/utils": "^0.1.1"
+  }
+}

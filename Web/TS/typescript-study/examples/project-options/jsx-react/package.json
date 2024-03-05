@@ -1,0 +1,16 @@
+{
+  "name": "jsx-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "rimraf dist && tsc"
+  },
+  "dependencies": {
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0"
+  }
+}

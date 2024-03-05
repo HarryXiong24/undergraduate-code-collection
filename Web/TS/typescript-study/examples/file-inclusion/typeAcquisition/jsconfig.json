@@ -1,0 +1,12 @@
+{
+  "typeAcquisition": {
+    "enable": true,
+    "include": [
+      "react"
+    ],
+    "exclude": [
+      "lodash"
+    ],
+    "disableFilenameBasedTypeAcquisition": false
+  }
+}

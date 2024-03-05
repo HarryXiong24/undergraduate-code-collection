@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "tsc -p .",
+    "fmt": "prettier --write ."
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@type-challenges/utils": "^0.1.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.3.2"
+  }
+}

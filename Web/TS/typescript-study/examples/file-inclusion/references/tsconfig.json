@@ -1,0 +1,6 @@
+{
+  "references": [
+    { "path": "./src/source1" },
+    { "path": "./src/source2" },
+  ]
+}

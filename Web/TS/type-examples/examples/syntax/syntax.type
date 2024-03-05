@@ -1,0 +1,141 @@
+/**
+ * ----------------------------------------
+ * The Basics
+ */
+
+/**
+ * Import types from another file
+ */
+import { Temp } from "./to-import"
+
+/**
+ * Keyword Types
+ */
+type keywordTypes = [string, number, boolean, never, any, bigint, object]
+
+/**
+ * Literal Types
+ */
+type literals = [
+    /**
+     * string: use double quote
+     */
+    "abc",
+    /**
+     * boolean
+     */
+    true, false,
+    /**
+     * number
+     */
+    0, 1, 2,
+    /**
+     * array
+     */
+    string[][],
+    /**
+     * template string
+     */
+    `name: ${string}`,
+    /**
+     * object: use "," to separate members
+     */
+    {
+        readonly a?: 1,
+        b: "abc",
+        c: {
+            a: boolean
+        }
+    }
+]
+
+/**
+ * Function Types
+ */
+type f1 = type () => void
+type f2 = type(a: number, b: string) => number
+type f3 = type () => type(a: number, b: string) => void
+
+/**
+ * ----------------------------------------
+ * Create Type From Type
+ */
+
+/**
+ * Union & Intersection Types
+ */
+type u1 = union[0, 1, 2]
+type u2 = | [0, 1, 2]
+/* add parenthesis for function in union */
+type u3 = union [
+    (type () => 1),
+    (type () => "1")
+]
+
+type i1 = combine[{ a: 1 }, { b: 2 }]
+type i2 = & [{ a: 1 }, { b: 2 }]
+
+/**
+ * Indexed Access Types
+ */
+type Person = { age: number, name: string, alive: boolean }
+type Age = Person["age"]
+
+/**
+ * Keyof Type Operator
+ */
+type Point = { x: number, y: number }
+type P = keyof Point
+
+
+/**
+ * Conditional Types
+ */
+
+/* type typeofNumber1 = 1 extends string ? "string" : "number" */
+type typeofNumber1 = ^{
+    if(1 extends string) {
+        return "string"
+    } else {
+        return "number"
+    }
+}
+
+/**
+ * Generic Types
+ */
+
+/* export type Foo<T> = T extends { a: infer U; b: infer U; } ? U : never */
+export type function Foo = (T) => ^{
+    if(T extends { a: infer U, b: infer U }) {
+        return U
+    } else {
+        return never
+    }
+}
+
+/**
+ * Mapped Types 
+ */
+type Keys = union ["Name", "Age"]
+
+
+/* type mapped1 = { [K in Keys]: boolean } */
+type mapped1 = ^{
+    for(K in Keys) {
+        return {
+            key: K,
+            value: boolean
+        }
+    }
+}
+
+/* type mapped2 = { [K in Keys as `get${K}`]: () => string } */
+type mapped2 = ^{
+    for(K in Keys) {
+        return {
+            key: `get${K}`,
+            value: type() => string
+        }
+    }
+}

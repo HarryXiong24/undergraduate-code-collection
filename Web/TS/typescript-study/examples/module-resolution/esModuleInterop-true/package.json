@@ -1,0 +1,13 @@
+{
+  "name": "es-module-interop-true",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "rimraf dist && tsc"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}

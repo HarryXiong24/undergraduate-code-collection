@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+			TypeScript and React
+    </title>
+    <link rel="icon" href="/assets/favicon.ico"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <body>
+        <div class="container">
+            <div id="app">Loading...</div>
+        </div>
+        <% if (IS_DEV) { %>
+            <script type="module">
+                import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+                RefreshRuntime.injectIntoGlobalHook(window)
+                window.$RefreshReg$ = () => {}
+                window.$RefreshSig$ = () => (type) => type
+                window.__vite_plugin_react_preamble_installed__ = true
+            </script>
+        <% } %>
+
+        <% 
+            Object.keys(manifest).forEach((key) => {
+                %><script type="module" src="<%- manifest[key].file %>"></script><%
+            })
+        %>
+    </body>
+</html>
